@@ -1,0 +1,103 @@
+# Maintainer: JackNapier <jacknapier151@gmail.com>
+# Contributor: 
+
+_nameC="Godot"
+_name="godot"
+_pkgname="godot"
+pkgname=godot-git
+pkgrel=1
+pkgver=r49305
+pkgdesc="Godot Game Engine: An advanced, feature packed, multi-platform 2D and 3D game engine. Git Compiled Version"
+url="http://www.godotengine.org"
+license=("MIT")
+source=("${_pkgname}::git+https://github.com/godotengine/godot.git")
+sha256sums=("SKIP")
+groups=(
+	"godot-full"
+	"godot-compiled"
+	"godot-git"
+	"godot${pkgver}"
+	"godot-gdscript"
+	"godot-standard"
+	"godot-standard64"
+	"godot-64"
+)
+arch=("any")
+_monodepends=(
+	"mono>=6.12.0"
+	"dotnet-sdk"
+	"msbuild"
+)
+depends=(
+	"godot-base"
+	"alsa-lib"
+	"freetype2"
+	"glu"
+	"libxcursor"
+	"libxinerama"
+	"mesa"
+)
+makedepends=(
+	"git"
+	"scons"
+	"pkgconf"
+	"xorg-xrandr"
+	"yasm"
+)
+
+
+prepare() {
+	if [ ! -d "${srcdir}/godot" ]
+	then
+		cd ${srcdir}
+		git clone https://github.com/godotengine/godot.git --branch master #--single-branch --depth 1
+	else
+		cd "${srcdir}/godot"
+		#git fetch --depth 1 origin master
+		git fetch origin master
+		git reset --hard origin/master
+	fi
+}
+
+pkgver() {
+	cd "${srcdir}/godot"
+	_revision=$(printf "r%s" "$(git rev-list --count HEAD)")
+	echo "${_revision}"
+}
+
+# pkgver() {
+# 	cd "${srcdir}/godot"
+# 	_date=$(date +%Y.%m.%d)
+# 	_major=$(cat version.py|grep "major" | sed "s/major = //")
+# 	_minor=$(cat version.py|grep "minor" | sed "s/minor = //")
+# 	_patch=$(cat version.py|grep "patch" | sed "s/patch = //")
+# 	_revision=$(printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)")
+# 	echo "${_major}.${_minor}.${_patch}.${_date}.${_revision}"
+# }
+
+build() {
+	cd "${srcdir}/godot"
+	scons platform=linuxbsd target=editor werror=no -j$((`nproc`+1))
+}
+
+package() {
+	cd "${srcdir}/godot"
+
+	install -D -m755 bin/godot.linuxbsd.editor.x86_64 "${pkgdir}/opt/godot/godot-git"
+	install -d "${pkgdir}/usr/bin/"
+	ln -s "/opt/godot/godot-git" "${pkgdir}/usr/bin/godot-git"
+	
+	install -d "${pkgdir}/usr/share/applications/"
+	cat > "${pkgdir}/usr/share/applications/godot-git.desktop" <<-EOF
+		[Desktop Entry]
+		Name=Godot Engine Git Compiled v${pkgver}-git
+		GenericName="Advanced cross-platform 2D and 3D libre game engine. Git Compiled Version"
+		Comment=Application for making games
+		Exec=/usr/bin/godot-git %U
+		Icon=godot
+		Terminal=false
+		Type=Application
+		MimeType=application/x-godot-project;
+		Categories=Development;IDE;
+	EOF
+}

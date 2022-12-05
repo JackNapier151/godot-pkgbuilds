@@ -1,0 +1,9 @@
+*
+!.gitignore
+!README.md
+
+!makegodot.sh
+!makerepogodot.sh
+
+!godot*/
+!godot*/PKGBUILD

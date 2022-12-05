@@ -1,0 +1,28 @@
+# Maintainer: JackNapier <jacknapier151@gmail.com>
+# Contributor: 
+
+pkgname=(
+	"godot-meta-full"
+	)
+pkgver="0.0"
+pkgrel=1
+pkgdesc="Godot Game Engine: An advanced, feature packed, multi-platform 2D and 3D game engine."
+url="http://www.godotengine.org"
+license=("MIT")
+groups=(
+	"gogot-meta-full"
+)
+arch=("any")
+depends=(
+	"godot-base"
+)
+
+package_godot-meta-full(){
+	pkgdesc+="  MetaPackages Full"
+	groups+=(
+		"godot-meta-group-full"
+	)
+	depends+=(
+	"godot-full"
+)
+}

@@ -1,0 +1,176 @@
+# Maintainer: JackNapier <jacknapier151@gmail.com>
+# Contributor: 
+
+pkgname=(
+	"godot4-dev-src"
+	# Godot GDScript
+	"godot4-dev-bin"
+	"godot4-dev-bin32"
+	"godot4-dev-export-templates-bin"
+	"libgodot4-dev-bin"
+	"godot4-dev-osx-bin"
+	"godot4-dev-win32-bin"
+	"godot4-dev-win64-bin"
+	)
+_pkgver="4.0"
+_pkgverb=20220118
+#pkgver="${_pkgver}dev${_pkgverb}"
+pkgver="${_pkgver}d${_pkgverb}"
+pkgrel=1
+pkgdesc="Godot4 Game Engine: An advanced, feature packed, multi-platform 2D and 3D game engine."
+url="http://www.godotengine.org"
+license=("MIT")
+groups=(
+	"godot-full"
+	"godot4"
+	"godot40"
+	"godot-bin"
+	"godot-dev"
+	"godot-gdscript"
+)
+arch=("any")
+_monodepends=(
+	"mono>=6.12.0"
+	"dotnet-sdk"
+	"msbuild"
+)
+depends=(
+	"godot-base"
+	"alsa-lib"
+	"freetype2"
+	"glu"
+	"libxcursor"
+	"libxinerama"
+	"mesa"
+)
+
+source=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/pre-alpha/${_pkgver}-dev.${_pkgverb}/godot-${_pkgver}-dev.${_pkgverb}.tar.xz")
+noextract=("godot-${_pkgver}-dev.${_pkgverb}.tar.xz")
+sha512sums=("SKIP")
+package_godot4-dev-src(){
+	pkgdesc+=" Developed SourceCode"
+	groups+=(
+		"godot-src"
+	)
+	install -Dm755 "${srcdir}/godot-${_pkgver}-dev.${_pkgverb}.tar.xz" "${pkgdir}/opt/godot/src/godot4-dev.tar.xz"
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/pre-alpha/${_pkgver}-dev.${_pkgverb}/Godot_v${_pkgver}-dev.${_pkgverb}_linux.64.zip")
+sha512sums+=("SKIP")
+package_godot4-dev-bin(){
+	pkgdesc+=" Developed Binary Version"
+	groups+=(
+		"godot-gdscript"
+		"godot-standard"
+		"godot-standard64"
+		"godot-64"
+	)
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-dev.${_pkgverb}_linux.64" "${pkgdir}/opt/godot/godot4-dev-bin"
+	
+	install -d "${pkgdir}/usr/bin/"
+	ln -s "/opt/godot/godot4-dev-bin" "${pkgdir}/usr/bin/godot4-dev-bin"
+	
+	install -d "${pkgdir}/usr/share/applications/"
+	cat > "${pkgdir}/usr/share/applications/godot4-dev-bin.desktop" <<-EOF
+		[Desktop Entry]
+		Name=Godot Engine Dev Binary v${_pkgver}-dev${_pkgverb}
+		GenericName="Advanced cross-platform 2D and 3D libre game engine. Developed Binary Version"
+		Comment=Application for making games
+		Exec=/usr/bin/godot4-dev-bin %U
+		Icon=godot
+		Terminal=false
+		Type=Application
+		MimeType=application/x-godot-project;
+		Categories=Development;IDE;
+	EOF
+	
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/pre-alpha/${_pkgver}-dev.${_pkgverb}/Godot_v${_pkgver}-dev.${_pkgverb}_linux.32.zip")
+sha512sums+=("SKIP")
+package_godot4-dev-bin32(){
+	pkgdesc+=" Developed Binary Version 32b"
+	groups+=(
+		"godot-gdscript"
+		"godot-standard"
+		"godot-standard32"
+		"godot-32"
+	)
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-dev.${_pkgverb}_linux.32" "${pkgdir}/opt/godot/godot4-dev-bin32"
+	
+	install -d "${pkgdir}/usr/bin/"
+	ln -s "/opt/godot/godot4-dev-bin32" "${pkgdir}/usr/bin/godot4-dev-bin32"
+	
+	install -d "${pkgdir}/usr/share/applications/"
+	cat > "${pkgdir}/usr/share/applications/godot4-dev-bin32.desktop" <<-EOF
+		[Desktop Entry]
+		Name=Godot Engine Dev Binary v${_pkgver}-dev${_pkgverb} 32b
+		GenericName="Advanced cross-platform 2D and 3D libre game engine. Developed Binary Version 32b"
+		Comment=Application for making games
+		Exec=/usr/bin/godot4-dev-bin32 %U
+		Icon=godot
+		Terminal=false
+		Type=Application
+		MimeType=application/x-godot-project;
+		Categories=Development;IDE;
+	EOF
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/pre-alpha/${_pkgver}-dev.${_pkgverb}/Godot_v${_pkgver}-dev.${_pkgverb}_export_templates.tpz")
+noextract+=("Godot_v${_pkgver}-dev.${_pkgverb}_export_templates.tpz")
+sha512sums+=("SKIP")
+package_godot4-dev-export-templates-bin(){
+	pkgdesc+=" Developed Export Templates Binary Version"
+	groups+=(
+		"godot-export-templates"
+	)
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-dev.${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot4-dev-export-templates-bin.tpz"
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/pre-alpha/${_pkgver}-dev.${_pkgverb}/godot-lib.${_pkgver}.dev.${_pkgverb}.release.aar")
+noextract+=("godot-lib.${_pkgver}.dev.${_pkgverb}.release.aar")
+sha512sums+=("SKIP")
+package_libgodot4-dev-bin(){
+	pkgdesc+=" Developed LibGodot Binary Version"
+	groups+=(
+		"godot-lib"
+	)
+	install -Dm755 "${srcdir}/godot-lib.${_pkgver}.dev.${_pkgverb}.release.aar" "${pkgdir}/opt/godot/godot-lib/libgodot4-dev-bin.aar"
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/pre-alpha/${_pkgver}-dev.${_pkgverb}/Godot_v${_pkgver}-dev.${_pkgverb}_osx.universal.zip")
+sha512sums+=("SKIP")
+package_godot4-dev-osx-bin(){
+	pkgdesc+=" Developed MacOSX Binary Version"
+	groups+=(
+		"godot-osx"
+		"godot-osx-universal"
+	)
+	install -Dm755 "${srcdir}/Godot.app/Contents/MacOS/Godot" "${pkgdir}/opt/godot/godot4-dev-osx-bin"
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/pre-alpha/${_pkgver}-dev.${_pkgverb}/Godot_v${_pkgver}-dev.${_pkgverb}_win32.exe.zip")
+sha512sums+=("SKIP")
+package_godot4-dev-win32-bin(){
+	pkgdesc+=" Developed Windows Binary Version 32b"
+	groups+=(
+		"godot-win"
+		"godot-win32"
+		"godot-32"
+	)
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-dev.${_pkgverb}_win32.exe" "${pkgdir}/opt/godot/godot4-dev-win32-bin.exe"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-dev.${_pkgverb}_win32_console.cmd" "${pkgdir}/opt/godot/godot4-dev-win32-bin.cmd"
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/pre-alpha/${_pkgver}-dev.${_pkgverb}/Godot_v${_pkgver}-dev.${_pkgverb}_win64.exe.zip")
+sha512sums+=("SKIP")
+package_godot4-dev-win64-bin(){
+	pkgdesc+=" Developed Windows Binary Version 64b"
+	groups+=(
+		"godot-win"
+		"godot-win64"
+		"godot-64"
+	)
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-dev.${_pkgverb}_win64.exe" "${pkgdir}/opt/godot/godot4-dev-win64-bin.exe"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-dev.${_pkgverb}_win64_console.cmd" "${pkgdir}/opt/godot/godot4-dev-win64-bin.cmd"
+}

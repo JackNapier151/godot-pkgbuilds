@@ -1,0 +1,466 @@
+# Maintainer: JackNapier <jacknapier151@gmail.com>
+# Contributor: 
+
+pkgname=(
+	"godot-stable-src"
+	# Godot GDScript
+	"godot-stable-bin"
+	"godot-stable-bin32"
+	"godot-stable-export-templates-bin"
+	"libgodot-stable-bin"
+	"godot-stable-web-bin"
+	"godot-stable-headless-bin"
+	"godot-stable-server-bin"
+	"godot-stable-osx-bin"
+	"godot-stable-win32-bin"
+	"godot-stable-win64-bin"
+	"godot-stable-android-bin"
+	# Godot Mono
+	"godot-stable-mono-bin"
+	"godot-stable-mono-bin32"
+	"godot-stable-mono-export-templates-bin"
+	"libgodot-stable-mono-bin"
+	"godot-stable-headless-mono-bin"
+	"godot-stable-server-mono-bin"
+	"godot-stable-mono-osx-bin"
+	"godot-stable-mono-win32-bin"
+	"godot-stable-mono-win64-bin"
+	)
+pkgver="3.5.1"
+pkgrel=1
+pkgdesc="Godot Game Engine: An advanced, feature packed, multi-platform 2D and 3D game engine."
+url="http://www.godotengine.org"
+license=("MIT")
+groups=(
+	"godot-full"
+	"godot3"
+	"godot35"
+  "godot-bin"
+  "godot-stable"
+)
+arch=("any")
+_monodepends=(
+	"mono>=6.12.0"
+	"dotnet-sdk"
+	"msbuild"
+)
+depends=(
+	"godot-base"
+	"alsa-lib"
+	"freetype2"
+	"glu"
+	"libxcursor"
+	"libxinerama"
+	"mesa"
+)
+
+source=("https://downloads.tuxfamily.org/godotengine/${pkgver}/godot-${pkgver}-stable.tar.xz")
+noextract=("godot-${pkgver}-stable.tar.xz")
+sha512sums=("SKIP")
+package_godot-stable-src(){
+	pkgdesc+=" Stable SourceCode"
+	groups+=(
+		"godot-src"
+	)
+	install -Dm755 "${srcdir}/godot-${pkgver}-stable.tar.xz" "${pkgdir}/opt/godot/src/godot-stable.tar.xz"
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}-stable_x11.64.zip")
+sha512sums+=("SKIP")
+package_godot-stable-bin(){
+	pkgdesc+=" Stable Binary Version"
+	groups+=(
+		"godot-gdscript"
+		"godot-standard"
+		"godot-standard64"
+		"godot-64"
+	)
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_x11.64" "${pkgdir}/opt/godot/godot-stable-bin"
+	
+	install -d "${pkgdir}/usr/bin/"
+	ln -s "/opt/godot/godot-stable-bin" "${pkgdir}/usr/bin/godot-stable-bin"
+	
+	install -d "${pkgdir}/usr/share/applications/"
+	cat > "${pkgdir}/usr/share/applications/godot-stable-bin.desktop" <<-EOF
+		[Desktop Entry]
+		Name=Godot Engine Stable Binary v${pkgver}
+		GenericName="Advanced cross-platform 2D and 3D libre game engine. Stable Binary Version"
+		Comment=Application for making games
+		Exec=/usr/bin/godot-stable-bin %U
+		Icon=godot
+		Terminal=false
+		Type=Application
+		MimeType=application/x-godot-project;
+		Categories=Development;IDE;
+	EOF
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}-stable_x11.32.zip")
+sha512sums+=("SKIP")
+package_godot-stable-bin32(){
+	pkgdesc+=" Stable Binary Version 32b"
+	groups+=(
+		"godot-gdscript"
+		"godot-standard"
+		"godot-standard32"
+		"godot-32"
+	)
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_x11.32" "${pkgdir}/opt/godot/godot-stable-bin32"
+	
+	install -d "${pkgdir}/usr/bin/"
+	ln -s "/opt/godot/godot-stable-bin32" "${pkgdir}/usr/bin/godot-stable-bin32"
+	
+	install -d "${pkgdir}/usr/share/applications/"
+	cat > "${pkgdir}/usr/share/applications/godot-stable-bin32.desktop" <<-EOF
+		[Desktop Entry]
+		Name=Godot Engine Stable Binary v${pkgver} 32b
+		GenericName="Advanced cross-platform 2D and 3D libre game engine. Stable Binary Version 32b"
+		Comment=Application for making games
+		Exec=/usr/bin/godot-stable-bin32 %U
+		Icon=godot
+		Terminal=false
+		Type=Application
+		MimeType=application/x-godot-project;
+		Categories=Development;IDE;
+	EOF
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}-stable_export_templates.tpz")
+noextract+=("Godot_v${pkgver}-stable_export_templates.tpz")
+sha512sums+=("SKIP")
+package_godot-stable-export-templates-bin(){
+	pkgdesc+=" Stable Export Templates Binary Version"
+	groups+=(
+		"godot-gdscript"
+		"godot-export-templates"
+	)
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot-stable-export-templates-bin.tpz"
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/godot-lib.${pkgver}.stable.release.aar")
+noextract+=("godot-lib.${pkgver}.stable.release.aar")
+sha512sums+=("SKIP")
+package_libgodot-stable-bin(){
+	pkgdesc+=" Stable LibGodot Binary Version"
+	groups+=(
+		"godot-gdscript"
+		"godot-lib"
+	)
+	install -Dm755 "${srcdir}/godot-lib.${pkgver}.stable.release.aar" "${pkgdir}/opt/godot/godot-lib/libgodot-stable-bin.aar"
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}-stable_web_editor.zip")
+noextract+=("Godot_v${pkgver}-stable_web_editor.zip")
+sha512sums+=("SKIP")
+package_godot-stable-web-bin(){
+	pkgdesc+=" Stable Web Binary Version"
+	groups+=(
+		"godot-gdscript"
+		"godot-web"
+	)
+	unzip "Godot_v${pkgver}-stable_web_editor.zip" -d "${srcdir}/godot-stable-bin"
+	install -d "${pkgdir}/opt/godot/web/godot-stable-bin"
+	cp -r "${srcdir}/godot-stable-bin" "${pkgdir}/opt/godot/web/godot-stable-bin"
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}-stable_linux_headless.64.zip")
+sha512sums+=("SKIP")
+package_godot-stable-headless-bin(){
+	pkgdesc+=" Stable Headless Binary Version"
+	groups+=(
+		"godot-gdscript"
+		"godot-headless"
+		"godot-64"
+	)
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_linux_headless.64" "${pkgdir}/opt/godot/godot-stable-headless-bin"
+	
+	install -d "${pkgdir}/usr/bin/"
+	ln -s "/opt/godot/godot-stable-headless-bin" "${pkgdir}/usr/bin/godot-stable-headless-bin"
+	
+	install -d "${pkgdir}/usr/share/applications/"
+	cat > "${pkgdir}/usr/share/applications/godot-stable-headless-bin.desktop" <<-EOF
+		[Desktop Entry]
+		Name=Godot Headless Engine Stable Binary v${pkgver}
+		GenericName="Advanced cross-platform 2D and 3D libre game engine. Stable Headless Binary Version"
+		Comment=Application for making games
+		Exec=/usr/bin/godot-stable-headless-bin %U
+		Icon=godot
+		Terminal=false
+		Type=Application
+		MimeType=application/x-godot-project;
+		Categories=Development;IDE;
+	EOF
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}-stable_linux_server.64.zip")
+sha512sums+=("SKIP")
+package_godot-stable-server-bin(){
+	pkgdesc+=" Stable Server Binary Version"
+	groups+=(
+		"godot-gdscript"
+		"godot-server"
+		"godot-64"
+	)
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_linux_server.64" "${pkgdir}/opt/godot/godot-stable-server-bin"
+	
+	install -d "${pkgdir}/usr/bin/"
+	ln -s "/opt/godot/godot-stable-server-bin" "${pkgdir}/usr/bin/godot-stable-server-bin"
+	
+	install -d "${pkgdir}/usr/share/applications/"
+	cat > "${pkgdir}/usr/share/applications/godot-stable-server-bin.desktop" <<-EOF
+		[Desktop Entry]
+		Name=Godot Server Engine Stable Binary v${pkgver}
+		GenericName="Advanced cross-platform 2D and 3D libre game engine. Stable Server Binary Version"
+		Comment=Application for making games
+		Exec=/usr/bin/godot-stable-server-bin %U
+		Icon=godot
+		Terminal=false
+		Type=Application
+		MimeType=application/x-godot-project;
+		Categories=Development;IDE;
+	EOF
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}-stable_osx.universal.zip")
+sha512sums+=("SKIP")
+package_godot-stable-osx-bin(){
+	pkgdesc+=" Stable MacOSX Binary Version"
+	groups+=(
+		"godot-gdscript"
+		"godot-osx"
+		"godot-osx-universal"
+	)
+	install -Dm755 "${srcdir}/Godot.app/Contents/MacOS/Godot" "${pkgdir}/opt/godot/godot-stable-osx-bin"
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}-stable_win32.exe.zip")
+sha512sums+=("SKIP")
+package_godot-stable-win32-bin(){
+	pkgdesc+=" Stable Windows Binary Version 32b"
+	groups+=(
+		"godot-gdscript"
+		"godot-win"
+		"godot-win32"
+		"godot-32"
+	)
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win32.exe" "${pkgdir}/opt/godot/godot-stable-win32-bin.exe"
+#	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win32_console.cmd" "${pkgdir}/opt/godot/godot-stable-win32-bin.cmd"
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}-stable_win64.exe.zip")
+sha512sums+=("SKIP")
+package_godot-stable-win64-bin(){
+	pkgdesc+=" Stable Windows Binary Version 64b"
+	groups+=(
+		"godot-gdscript"
+		"godot-win"
+		"godot-win64"
+		"godot-64"
+	)
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win64.exe" "${pkgdir}/opt/godot/godot-stable-win64-bin.exe"
+#	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win64_console.cmd" "${pkgdir}/opt/godot/godot-stable-win64-bin.cmd"
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}-stable_android_editor.apk")
+noextract+=("Godot_v${pkgver}-stable_android_editor.apk")
+sha512sums+=("SKIP")
+package_godot-stable-android-bin(){
+	pkgdesc+=" Stable Android Binary Version"
+	groups+=(
+		"godot-gdscript"
+		"godot-android"
+	)
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_android_editor.apk" "${pkgdir}/opt/godot/godot-stable-android-bin.apk"
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/mono/Godot_v${pkgver}-stable_mono_x11_64.zip")
+sha512sums+=("SKIP")
+package_godot-stable-mono-bin(){
+	pkgdesc+=" Stable Mono Binary Version"
+	depends+=("${_monodepends}")
+	groups+=(
+		"godot-mono"
+		"godot-standard"
+		"godot-standard64"
+		"godot-64"
+	)
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_x11_64/Godot_v${pkgver}-stable_mono_x11.64" "${pkgdir}/opt/godot/mono/stable/standard/godot-stable-mono-bin"
+	cp -r "${srcdir}/Godot_v${pkgver}-stable_mono_x11_64/GodotSharp" "${pkgdir}/opt/godot/mono/stable/standard/GodotSharp"
+	
+	install -d "${pkgdir}/usr/bin/"
+	ln -s "/opt/godot/mono/stable/standard/godot-stable-mono-bin" "${pkgdir}/usr/bin/godot-stable-mono-bin"
+	
+	install -d "${pkgdir}/usr/share/applications/"
+	cat > "${pkgdir}/usr/share/applications/godot-stable-mono-bin.desktop" <<-EOF
+		[Desktop Entry]
+		Name=Godot Engine Stable Mono Binary v${pkgver}
+		GenericName="Advanced cross-platform 2D and 3D libre game engine. Stable Mono Binary Version"
+		Comment=Application for making games
+		Exec=/usr/bin/godot-stable-mono-bin %U
+		Icon=godot
+		Terminal=false
+		Type=Application
+		MimeType=application/x-godot-project;
+		Categories=Development;IDE;
+	EOF
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/mono/Godot_v${pkgver}-stable_mono_x11_32.zip")
+sha512sums+=("SKIP")
+package_godot-stable-mono-bin32(){
+	pkgdesc+=" Stable Mono Binary Version 32b"
+	depends+=("${_monodepends}")
+	groups+=(
+		"godot-mono"
+		"godot-standard"
+		"godot-standard32"
+		"godot-32"
+	)
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_x11_32/Godot_v${pkgver}-stable_mono_x11.32" "${pkgdir}/opt/godot/mono/stable/standard32/godot-stable-mono-bin32"
+	cp -r "${srcdir}/Godot_v${pkgver}-stable_mono_x11_32/GodotSharp" "${pkgdir}/opt/godot/mono/stable/standard32/GodotSharp"
+	
+	install -d "${pkgdir}/usr/bin/"
+	ln -s "/opt/godot/mono/stable/standard32/godot-stable-mono-bin32" "${pkgdir}/usr/bin/godot-stable-mono-bin32"
+	
+	install -d "${pkgdir}/usr/share/applications/"
+	cat > "${pkgdir}/usr/share/applications/godot-stable-mono-bin32.desktop" <<-EOF
+		[Desktop Entry]
+		Name=Godot Engine Stable Mono Binary v${pkgver} 32b
+		GenericName="Advanced cross-platform 2D and 3D libre game engine. Stable Mono Binary Version 32b"
+		Comment=Application for making games
+		Exec=/usr/bin/godot-stable-mono-bin32 %U
+		Icon=godot
+		Terminal=false
+		Type=Application
+		MimeType=application/x-godot-project;
+		Categories=Development;IDE;
+	EOF
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/mono/Godot_v${pkgver}-stable_mono_export_templates.tpz")
+noextract+=("Godot_v${pkgver}-stable_mono_export_templates.tpz")
+sha512sums+=("SKIP")
+package_godot-stable-mono-export-templates-bin(){
+	pkgdesc+=" Stable Export Templates Mono Binary Version"
+	groups+=(
+		"godot-mono"
+		"godot-export-templates"
+	)
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot-stable-mono-export-templates-bin.tpz"
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/mono/godot-lib.${pkgver}.stable.mono.release.aar")
+noextract+=("godot-lib.${pkgver}.stable.mono.release.aar")
+sha512sums+=("SKIP")
+package_libgodot-stable-mono-bin(){
+	pkgdesc+=" Stable LibGodot Mono Binary Version"
+	groups+=(
+		"godot-mono"
+		"godot-lib"
+	)
+	install -Dm755 "${srcdir}/godot-lib.${pkgver}.stable.mono.release.aar" "${pkgdir}/opt/godot/godot-lib/libgodot-stable-mono-bin.aar"
+}
+
+
+source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/mono/Godot_v${pkgver}-stable_mono_linux_headless_64.zip")
+sha512sums+=("SKIP")
+package_godot-stable-headless-mono-bin(){
+	pkgdesc+=" Stable Headless Mono Binary Version"
+	depends+=("${_monodepends}")
+	groups+=(
+		"godot-mono"
+		"godot-headless"
+		"godot-64"
+	)
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_linux_headless_64/Godot_v${pkgver}-stable_mono_linux_headless.64" "${pkgdir}/opt/godot/mono/stable/headless/godot-stable-headless-mono-bin"
+	cp -r "${srcdir}/Godot_v${pkgver}-stable_mono_linux_headless_64/GodotSharp" "${pkgdir}/opt/godot/mono/stable/headless/GodotSharp"
+	
+	install -d "${pkgdir}/usr/bin/"
+	ln -s "/opt/godot/mono/stable/headless/godot-stable-headless-mono-bin" "${pkgdir}/usr/bin/godot-stable-headless-mono-bin"
+	
+	install -d "${pkgdir}/usr/share/applications/"
+	cat > "${pkgdir}/usr/share/applications/godot-stable-headless-mono-bin.desktop" <<-EOF
+		[Desktop Entry]
+		Name=Godot Headless Engine Stable Mono Binary v${pkgver}
+		GenericName="Advanced cross-platform 2D and 3D libre game engine. Stable Headless Mono Binary Version"
+		Comment=Application for making games
+		Exec=/usr/bin/godot-stable-headless-mono-bin %U
+		Icon=godot
+		Terminal=false
+		Type=Application
+		MimeType=application/x-godot-project;
+		Categories=Development;IDE;
+	EOF
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/mono/Godot_v${pkgver}-stable_mono_linux_server_64.zip")
+sha512sums+=("SKIP")
+package_godot-stable-server-mono-bin(){
+	pkgdesc+=" Stable Server Mono Binary Version"
+	depends+=("${_monodepends}")
+	groups+=(
+		"godot-mono"
+		"godot-server"
+		"godot-64"
+	)
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_linux_server_64/Godot_v${pkgver}-stable_mono_linux_server.64" "${pkgdir}/opt/godot/mono/stable/server/godot-stable-server-mono-bin"
+	cp -r "${srcdir}/Godot_v${pkgver}-stable_mono_linux_server_64/data_Godot_v${pkgver}-stable_mono_linux_server_64" "${pkgdir}/opt/godot/mono/stable/server/data_Godot_v${pkgver}-stable_mono_linux_server_64"
+	
+	install -d "${pkgdir}/usr/bin/"
+	ln -s "/opt/godot/mono/stable/server/godot-stable-server-mono-bin" "${pkgdir}/usr/bin/godot-stable-server-mono-bin"
+	
+	install -d "${pkgdir}/usr/share/applications/"
+	cat > "${pkgdir}/usr/share/applications/godot-stable-server-mono-bin.desktop" <<-EOF
+		[Desktop Entry]
+		Name=Godot Server Engine Stable Mono Binary v${pkgver}
+		GenericName="Advanced cross-platform 2D and 3D libre game engine. Stable Server Mono Binary Version"
+		Comment=Application for making games
+		Exec=/usr/bin/godot-stable-server-mono-bin %U
+		Icon=godot
+		Terminal=false
+		Type=Application
+		MimeType=application/x-godot-project;
+		Categories=Development;IDE;
+	EOF
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/mono/Godot_v${pkgver}-stable_mono_osx.universal.zip")
+sha512sums+=("SKIP")
+package_godot-stable-mono-osx-bin(){
+	pkgdesc+=" Stable MacOSX Mono Binary Version"
+	groups+=(
+		"godot-mono"
+		"godot-osx"
+		"godot-osx-universal"
+	)
+	install -Dm755 "${srcdir}/Godot_mono.app/Contents/MacOS/Godot" "${pkgdir}/opt/godot/mono/stable/standard-osx/godot-stable-mono-osx-bin"
+	cp -r "${srcdir}/Godot_mono.app/Contents/Resources/GodotSharp" "${pkgdir}/opt/godot/mono/stable/standard-osx/GodotSharp"
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/mono/Godot_v${pkgver}-stable_mono_win32.zip")
+sha512sums+=("SKIP")
+package_godot-stable-mono-win32-bin(){
+	pkgdesc+=" Stable Windows Mono Binary Version 32b"
+	groups+=(
+		"godot-mono"
+		"godot-win"
+		"godot-win32"
+		"godot-32"
+	)
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_win32/Godot_v${pkgver}-stable_mono_win32.exe" "${pkgdir}/opt/godot/mono/stable/standard-win32/godot-stable-win32-bin.exe"
+	cp -r "${srcdir}/Godot_v${pkgver}-stable_mono_win32/GodotSharp" "${pkgdir}/opt/godot/mono/stable/standard-win32/GodotSharp"
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/mono/Godot_v${pkgver}-stable_mono_win64.zip")
+sha512sums+=("SKIP")
+package_godot-stable-mono-win64-bin(){
+	pkgdesc+=" Stable Windows Mono Binary Version 64b"
+	groups+=(
+		"godot-mono"
+		"godot-win"
+		"godot-win64"
+		"godot-64"
+	)
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_win64/Godot_v${pkgver}-stable_mono_win64.exe" "${pkgdir}/opt/godot/mono/stable/standard-win64/godot-stable-win64-bin.exe"
+	cp -r "${srcdir}/Godot_v${pkgver}-stable_mono_win64/GodotSharp" "${pkgdir}/opt/godot/mono/stable/standard-win64/GodotSharp"
+}

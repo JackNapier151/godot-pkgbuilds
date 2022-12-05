@@ -1,0 +1,180 @@
+# Maintainer: JackNapier <jacknapier151@gmail.com>
+# Contributor: 
+
+_nameC="Godot"
+_name="godot"
+_branch="stable"
+_pkgname="godot1"
+_pkgbranch="-${_branch}"
+pkgname=(
+	# Godot GDScript
+	"godot1-stable-bin"
+	"godot1-stable-bin32"
+	"godot1-stable-server-bin"
+	"godot1-stable-export-templates-bin"
+	"godot1-stable-osx32-bin"
+	"godot1-stable-win32-bin"
+	"godot1-stable-win64-bin"
+	)
+pkgver="1.1"
+pkgrel=1
+pkgdesc="Godot1 Game Engine: An advanced, feature packed, multi-platform 2D and 3D game engine."
+url="http://www.godotengine.org"
+license=("MIT")
+groups=(
+	"godot-full"
+	"godot1"
+	"godot11"
+	"godot-old"
+	"godot-bin"
+	"godot-stable"
+	"godot-gdscript"
+)
+arch=("any")
+_monodepends=(
+	"mono>=6.12.0"
+	"dotnet-sdk"
+	"msbuild"
+)
+depends=(
+	"godot-base"
+	"alsa-lib"
+	"freetype2"
+	"glu"
+	"libxcursor"
+	"libxinerama"
+	"mesa"
+)
+
+source=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}_stable_x11.64.zip")
+sha512sums=("SKIP")
+package_godot1-stable-bin(){
+	pkgdesc+=" Stable Binary Version"
+	groups+=(
+		"godot-standard"
+		"godot-standard64"
+		"godot-64"
+	)
+	install -Dm755 "${srcdir}/Godot_v${pkgver}_stable_x11.64" "${pkgdir}/opt/godot/godot1-stable-bin"
+	
+	install -d "${pkgdir}/usr/bin/"
+	ln -s "/opt/godot/godot1-stable-bin" "${pkgdir}/usr/bin/godot1-stable-bin"
+	
+	install -d "${pkgdir}/usr/share/applications/"
+	cat > "${pkgdir}/usr/share/applications/godot1-stable-bin.desktop" <<-EOF
+		[Desktop Entry]
+		Name=Godot1 Engine Stable Binary v${pkgver}
+		GenericName="Advanced cross-platform 2D and 3D libre game engine. Stable Binary Version"
+		Comment=Application for making games
+		Exec=/usr/bin/godot1-stable-bin %U
+		Icon=godot
+		Terminal=false
+		Type=Application
+		MimeType=application/x-godot-project;
+		Categories=Development;IDE;
+	EOF
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}_stable_x11.32.zip")
+sha512sums+=("SKIP")
+package_godot1-stable-bin32(){
+	pkgdesc+=" Stable Binary Version 32b"
+	groups+=(
+		"godot-standard"
+		"godot-standard32"
+		"godot-32"
+	)
+	install -Dm755 "${srcdir}/Godot_v${pkgver}_stable_x11.32" "${pkgdir}/opt/godot/godot1-stable-bin32"
+	
+	install -d "${pkgdir}/usr/bin/"
+	ln -s "/opt/godot/godot1-stable-bin32" "${pkgdir}/usr/bin/godot1-stable-bin32"
+	
+	install -d "${pkgdir}/usr/share/applications/"
+	cat > "${pkgdir}/usr/share/applications/godot1-stable-bin32.desktop" <<-EOF
+		[Desktop Entry]
+		Name=Godot1 Engine Stable Binary v${pkgver} 32b
+		GenericName="Advanced cross-platform 2D and 3D libre game engine. Stable Binary Version 32b"
+		Comment=Application for making games
+		Exec=/usr/bin/godot1-stable-bin32 %U
+		Icon=godot
+		Terminal=false
+		Type=Application
+		MimeType=application/x-godot-project;
+		Categories=Development;IDE;
+	EOF
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}_stable_linux_server.64.zip")
+sha512sums+=("SKIP")
+package_godot1-stable-server-bin(){
+	pkgdesc+=" Stable Server Binary Version"
+	groups+=(
+		"godot-server"
+		"godot-64"
+	)
+	install -Dm755 "${srcdir}/Godot_v${pkgver}_stable_linux_server.64" "${pkgdir}/opt/godot/godot1-stable-server-bin"
+	
+	install -d "${pkgdir}/usr/bin/"
+	ln -s "/opt/godot/godot1-stable-server-bin" "${pkgdir}/usr/bin/godot1-stable-server-bin"
+	
+	install -d "${pkgdir}/usr/share/applications/"
+	cat > "${pkgdir}/usr/share/applications/godot1-stable-server-bin.desktop" <<-EOF
+		[Desktop Entry]
+		Name=Godot1 Server Engine Stable Binary v${pkgver}
+		GenericName="Advanced cross-platform 2D and 3D libre game engine. Stable Server Binary Version"
+		Comment=Application for making games
+		Exec=/usr/bin/godot1-stable-server-bin %U
+		Icon=godot
+		Terminal=false
+		Type=Application
+		MimeType=application/x-godot-project;
+		Categories=Development;IDE;
+	EOF
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}_stable_export_templates.tpz")
+noextract=("Godot_v${pkgver}_stable_export_templates.tpz")
+sha512sums+=("SKIP")
+package_godot1-stable-export-templates-bin(){
+	pkgdesc+=" Stable Export Templates Binary Version"
+	groups+=(
+		"godot-export-templates"
+	)
+	install -Dm755 "${srcdir}/Godot_v${pkgver}_stable_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot1-stable-export-templates-bin.tpz"
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}_stable_osx32.zip")
+sha512sums+=("SKIP")
+package_godot1-stable-osx32-bin(){
+	pkgdesc+=" Stable MacOSX Binary Version"
+	groups+=(
+		"godot-osx"
+		"godot-osx32"
+		"godot-32"
+	)
+	install -Dm755 "${srcdir}/Godot.app/Contents/MacOS/Godot" "${pkgdir}/opt/godot/godot1-stable-osx32-bin"
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}_stable_win32.exe.zip")
+sha512sums+=("SKIP")
+package_godot1-stable-win32-bin(){
+	pkgdesc+=" Stable Windows Binary Version 32b"
+	groups+=(
+		"godot-win"
+		"godot-win32"
+		"godot-32"
+	)
+	install -Dm755 "${srcdir}/Godot_v${pkgver}_stable_win32.exe" "${pkgdir}/opt/godot/godot1-stable-win32-bin.exe"
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}_stable_win64.exe.zip")
+sha512sums+=("SKIP")
+package_godot1-stable-win64-bin(){
+	pkgdesc+=" Stable Windows Binary Version 64b"
+	groups+=(
+		"godot-win"
+		"godot-win64"
+		"godot-64"
+	)
+	install -Dm755 "${srcdir}/Godot_v${pkgver}_stable_win64.exe" "${pkgdir}/opt/godot/godot1-stable-win64-bin.exe"
+}
