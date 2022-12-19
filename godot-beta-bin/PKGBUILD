@@ -32,7 +32,7 @@ pkgname=(
 	"godot-beta-mono-win64-bin"
 	)
 _pkgver="4.0"
-_pkgverb=8
+_pkgverb=9
 #pkgver="${_pkgver}beta${_pkgverb}"
 pkgver="${_pkgver}b${_pkgverb}"
 pkgrel=1
