@@ -54,12 +54,23 @@ makeapp () {
     cd ..
 }
 
+gitupdate (){
+    eval $(ssh-agent -s)
+    ssh-add /home/odin/.ssh/jacknapier151gmail
+    git add .
+    read -p "Commit: " input
+    git commit -m "${input}"
+    git push -u origin master
+    pkill ssh-agent
+}
+
 main (){
     for makedir in "${directories[@]}"  
     do
         makeapp ${makedir}
     done
     rmbrokenlinks
+    gitupdate
 }
 
 main
