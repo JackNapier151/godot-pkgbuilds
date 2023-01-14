@@ -27,7 +27,7 @@ pkgname=(
 	"godot3-stable-rc-mono-win64-bin"
 	)
 _pkgver="3.5.2"
-_pkgverb=1
+_pkgverb=2
 #pkgver="${_pkgver}stable.rc${_pkgverb}"
 pkgver="${_pkgver}src${_pkgverb}"
 pkgrel=1
