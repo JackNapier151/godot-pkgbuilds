@@ -8,7 +8,7 @@
 | Alpha    | 4.0a17       | 4.0a17       | 3.2a3     | ―                | ―       |
 | Beta     | 4.0b11       | 4.0b11       | 3.5b5     | ―                | ―       |
 | RC       | 3.5rc8       | ―            | 3.5rc8    | ―                | ―       |
-| StableRC | 3.5.2src1    | ―            | 3.5.2src1 | 2.1.7src20200815 | ―       |
+| StableRC | 3.5.2src2    | ―            | 3.5.2src2 | 2.1.7src20200815 | ―       |
 | Stable   | 3.5.1        | ―            | 3.5.1     | 2.1.6            | 1.1     |
 
 # Package in PKGBUILDS
