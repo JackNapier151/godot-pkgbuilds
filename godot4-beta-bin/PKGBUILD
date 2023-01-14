@@ -27,7 +27,7 @@ pkgname=(
 	"godot4-beta-mono-win64-bin"
 	)
 _pkgver="4.0"
-_pkgverb=11
+_pkgverb=12
 #pkgver="${_pkgver}beta${_pkgverb}"
 pkgver="${_pkgver}b${_pkgverb}"
 pkgrel=1
