@@ -10,6 +10,7 @@ directories=(
 'godot4-dev-bin' # 8+8=16 packages
 'godot4-alpha-bin' # 9+9=18 packages
 'godot4-beta-bin' # 21+21=42 packages
+'godot4-rc-bin' # 21+21=42 packages
 
 'godot3-alpha-bin' # 13 packages
 'godot3-beta-bin' # 21 packages
@@ -39,7 +40,7 @@ rmbrokenlinks (){
 }
 
 makeapp () {
-    cd ${1}
+    cd "${1}"
     makepkg -c --sign --allsource
     makepkg -c --sign
     makerepo ${1}
