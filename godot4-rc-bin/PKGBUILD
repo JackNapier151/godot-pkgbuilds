@@ -27,7 +27,7 @@ pkgname=(
 	"godot4-rc-mono-win64-bin"
 	)
 _pkgver="4.0"
-_pkgverb=4
+_pkgverb=5
 pkgver="${_pkgver}rc${_pkgverb}"
 pkgrel=1
 pkgdesc="Godot4 Game Engine: An advanced, feature packed, multi-platform 2D and 3D game engine."
