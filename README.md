@@ -4,6 +4,7 @@
 
 | Package  | Godot        | Godot 4      | Godot 3   | Godot 2          | Godot 1 |
 |:--------:|:------------:|:------------:|:---------:|:----------------:|:-------:|
+| Latest   | 4.0rc2       | 4.0rc2       | ―         | ―                | ―       |
 | Dev      | 4.0d20220118 | 4.0d20220118 | ―         | ―                | ―       |
 | Alpha    | 4.0a17       | 4.0a17       | 3.2a3     | ―                | ―       |
 | Beta     | 4.0b17       | 4.0b17       | 3.5b5     | ―                | ―       |
@@ -17,191 +18,163 @@
 
 ### Godot
 
-| Package | Dev | Alpha | Beta | RC | StableRC | Stable |
-|:-------:|:---:|:-----:|:----:|:--:|:--------:|:------:|
-| src     | X   | X     | X    | X  | X        | X      |
+| Package | Latest | Dev | Alpha | Beta | RC | StableRC | Stable |
+|:-------:|:------:|:---:|:-----:|:----:|:--:|:--------:|:------:|
+| src     | X      | X   | X     | X    | X  | X        | X      |
 
 ### Godot 4
 
-| Package | Dev | Alpha | Beta | RC | StableRC | Stable |
-|:-------:|:---:|:-----:|:----:|:--:|:--------:|:------:|
-| src     | X   | X     | X    | X  | X        | X      |
+| Package | Latest | Dev | Alpha | Beta | RC | StableRC | Stable |
+|:-------:|:------:|:---:|:-----:|:----:|:--:|:--------:|:------:|
+| src     | X      | X   | X     | X    | X  | X        | X      |
 
 ### Godot 3
 
-| Package | Alpha | Beta | RC | StableRC | Stable |
-|:-------:|:-----:|:----:|:--:|:--------:|:------:|
-| src     | X     | X    | X  | X        | X      |
+| Package | Latest | Alpha | Beta | RC | StableRC | Stable |
+|:-------:|:------:|:-----:|:----:|:--:|:--------:|:------:|
+| src     | X      | X     | X    | X  | X        | X      |
 
 ### Godot 2
 
-| Package | StableRC | Stable |
-|:-------:|:--------:|:------:|
-| src     | X        | X      |
+| Package | Latest | StableRC | Stable |
+|:-------:|:------:|:--------:|:------:|
+| src     | X      | X        | X      |
 
 ### Godot 1
 
-| Package | Stable |
-|:-------:|:------:|
-| src     | X      |
+| Package | Latest | Stable |
+|:-------:|:------:|:------:|
+| src     | X      | X      |
 
 
 
 ## GDScript
 
 ### Godot
-| Package    | Dev | Alpha | Beta | RC | StableRC | Stable |
-|:----------:|:---:|:-----:|:----:|:--:|:--------:|:------:|
-| standard   | X   | X     | X    | X  | X        | X      |
-| standard32 | X   | X     | X    | X  | X        | X      |
-| templates  | X   | X     | X    | X  | X        | X      |
-| lib        | X   | X     | X    | X  | X        | X      |
-| web        | ―   | ―     | X    | X  | X        | X      |
-| headless   | ―   | ―     | ―    | ―  | X        | X      |
-| server     | ―   | ―     | ―    | ―  | X        | X      |
-| osx        | X   | X     | X    | X  | X        | X      |
-| win32      | X   | X     | X    | X  | X        | X      |
-| win64      | X   | X     | X    | X  | X        | X      |
-| android    | ―   | X     | X    | X  | X        | X      |
+| Package    | Latest | Dev | Alpha | Beta | RC | StableRC | Stable |
+|:----------:|:------:|:---:|:-----:|:----:|:--:|:--------:|:------:|
+| standard   | X      | X   | X     | X    | X  | X        | X      |
+| standard32 | X      | X   | X     | X    | X  | X        | X      |
+| templates  | X      | X   | X     | X    | X  | X        | X      |
+| lib        | X      | X   | X     | X    | X  | X        | X      |
+| web        | X      | ―   | ―     | X    | X  | X        | X      |
+| headless   | ―      | ―   | ―     | ―    | ―  | X        | X      |
+| server     | ―      | ―   | ―     | ―    | ―  | X        | X      |
+| osx        | X      | X   | X     | X    | X  | X        | X      |
+| win32      | X      | X   | X     | X    | X  | X        | X      |
+| win64      | X      | X   | X     | X    | X  | X        | X      |
+| android    | X      | ―   | X     | X    | X  | X        | X      |
 
 ### Godot 4
 
-| Package    | Dev | Alpha | Beta | RC |
-|:----------:|:---:|:-----:|:----:|:--:|
-| standard   | X   | X     | X    | X  |
-| standard32 | X   | X     | X    | X  |
-| templates  | X   | X     | X    | X  |
-| lib        | X   | X     | X    | X  |
-| web        | ―   | ―     | X    | X  |
-| headless   | ―   | ―     | ―    | ―  |
-| server     | ―   | ―     | ―    | ―  |
-| osx        | X   | X     | X    | X  |
-| win32      | X   | X     | X    | X  |
-| win64      | X   | X     | X    | X  |
-| android    | ―   | X     | X    | X  |
+| Package    | Latest | Dev | Alpha | Beta | RC |
+|:----------:|:------:|:---:|:-----:|:----:|:--:|
+| standard   | X      | X   | X     | X    | X  |
+| standard32 | X      | X   | X     | X    | X  |
+| templates  | X      | X   | X     | X    | X  |
+| lib        | X      | X   | X     | X    | X  |
+| web        | X      | ―   | ―     | X    | X  |
+| headless   | ―      | ―   | ―     | ―    | ―  |
+| server     | ―      | ―   | ―     | ―    | ―  |
+| osx        | X      | X   | X     | X    | X  |
+| win32      | X      | X   | X     | X    | X  |
+| win64      | X      | X   | X     | X    | X  |
+| android    | X      | ―   | X     | X    | X  |
 
 ### Godot 3
-| Package    | Alpha | Beta | RC | StableRC | Stable |
-|:----------:|:-----:|:----:|:--:|:--------:|:------:|
-| standard   | X     | X    | X  | X        | X      |
-| standard32 | X     | X    | X  | X        | X      |
-| templates  | X     | X    | X  | X        | X      |
-| lib        | X     | X    | X  | X        | X      |
-| web        | ―     | X    | X  | X        | X      |
-| headless   | ―     | X    | X  | X        | X      |
-| server     | ―     | X    | X  | X        | X      |
-| osx        | X     | X    | X  | X        | X      |
-| win32      | X     | X    | X  | X        | X      |
-| win64      | X     | X    | X  | X        | X      |
-| android    | X     | X    | X  | X        | X      |
+| Package    | Latest | Alpha | Beta | RC | StableRC | Stable |
+|:----------:|:------:|:-----:|:----:|:--:|:--------:|:------:|
+| standard   | X      | X     | X    | X  | X        | X      |
+| standard32 | X      | X     | X    | X  | X        | X      |
+| templates  | X      | X     | X    | X  | X        | X      |
+| lib        | X      | X     | X    | X  | X        | X      |
+| web        | X      | ―     | X    | X  | X        | X      |
+| headless   | X      | ―     | X    | X  | X        | X      |
+| server     | X      | ―     | X    | X  | X        | X      |
+| osx        | X      | X     | X    | X  | X        | X      |
+| win32      | X      | X     | X    | X  | X        | X      |
+| win64      | X      | X     | X    | X  | X        | X      |
+| android    | X      | X     | X    | X  | X        | X      |
 
 ### Godot 2
-| Package    | RC | Stable |
-|:----------:|:--:|:------:|
-| standard   | X  | X      |
-| standard32 | X  | X      |
-| templates  | ―  | ―      |
-| lib        | ―  | ―      |
-| web        | ―  | ―      |
-| headless   | X  | X      |
-| server     | X  | X      |
-| osx        | X  | X      |
-| win32      | X  | X      |
-| win64      | X  | X      |
-| android    | ―  | ―      |
+| Package    | Latest | RC | Stable |
+|:----------:|:------:|:--:|:------:|
+| standard   | X      | X  | X      |
+| standard32 | X      | X  | X      |
+| templates  | ―      | ―  | ―      |
+| lib        | ―      | ―  | ―      |
+| web        | ―      | ―  | ―      |
+| headless   | X      | X  | X      |
+| server     | X      | X  | X      |
+| osx        | X      | X  | X      |
+| win32      | X      | X  | X      |
+| win64      | X      | X  | X      |
+| android    | ―      | ―  | ―      |
 
 ### Godot 1
-| Package    | Stable |
-|:----------:|:------:|
-| standard   | X      |
-| standard32 | X      |
-| templates  | ―      |
-| lib        | ―      |
-| web        | ―      |
-| headless   | ―      |
-| server     | X      |
-| osx        | X      |
-| win32      | X      |
-| win64      | X      |
-| android    | ―      |
+| Package    | Latest | Stable |
+|:----------:|:------:|:------:|
+| standard   | X      | X      |
+| standard32 | X      | X      |
+| templates  | ―      | ―      |
+| lib        | ―      | ―      |
+| web        | ―      | ―      |
+| headless   | ―      | ―      |
+| server     | X      | X      |
+| osx        | X      | X      |
+| win32      | X      | X      |
+| win64      | X      | X      |
+| android    | ―      | ―      |
 
 ## Mono
 
 ### Godot
-| Package    | Dev | Alpha | Beta | RC | StableRC | Stable |
-|:----------:|:---:|:-----:|:----:|:--:|:--------:|:------:|
-| standard   | ―   | ―     | X    | X  | X        | X      |
-| standard32 | ―   | ―     | X    | X  | X        | X      |
-| templates  | ―   | ―     | X    | X  | X        | X      |
-| lib        | ―   | ―     | ―    | X  | X        | X      |
-| web        | ―   | ―     | ―    | ―  | ―        | ―      |
-| headless   | ―   | ―     | ―    | X  | X        | X      |
-| server     | ―   | ―     | ―    | X  | X        | X      |
-| osx        | ―   | ―     | X    | X  | X        | X      |
-| win32      | ―   | ―     | X    | X  | X        | X      |
-| win64      | ―   | ―     | X    | X  | X        | X      |
-| android    | ―   | ―     | ―    | ―  | ―        | ―      |
+| Package    | Latest | Beta | RC | StableRC | Stable |
+|:----------:|:------:|:----:|:--:|:--------:|:------:|
+| standard   | X      | X    | X  | X        | X      |
+| standard32 | X      | X    | X  | X        | X      |
+| templates  | X      | X    | X  | X        | X      |
+| lib        | ―      | ―    | ―  | X        | X      |
+| web        | ―      | ―    | ―  | ―        | ―      |
+| headless   | ―      | ―    | ―  | X        | X      |
+| server     | ―      | ―    | ―  | X        | X      |
+| osx        | X      | X    | X  | X        | X      |
+| win32      | X      | X    | X  | X        | X      |
+| win64      | X      | X    | X  | X        | X      |
+| android    | ―      | ―    | ―  | ―        | ―      |
 
 ### Godot 4
 
-| Package    | Dev | Alpha | Beta | RC |
-|:----------:|:---:|:-----:|:----:|:--:|
-| standard   | ―   | ―     | X    | X  |
-| standard32 | ―   | ―     | X    | X  |
-| templates  | ―   | ―     | X    | X  |
-| lib        | ―   | ―     | ―    | ―  |
-| web        | ―   | ―     | ―    | ―  |
-| headless   | ―   | ―     | ―    | ―  |
-| server     | ―   | ―     | ―    | ―  |
-| osx        | ―   | ―     | X    | X  |
-| win32      | ―   | ―     | X    | X  |
-| win64      | ―   | ―     | X    | X  |
-| android    | ―   | ―     | ―    | ―  |
+| Package    | Latest | Beta | RC |
+|:----------:|:------:|:----:|:--:|
+| standard   | X      | X    | X  |
+| standard32 | X      | X    | X  |
+| templates  | X      | X    | X  |
+| lib        | ―      | ―    | ―  |
+| web        | ―      | ―    | ―  |
+| headless   | ―      | ―    | ―  |
+| server     | ―      | ―    | ―  |
+| osx        | X      | X    | X  |
+| win32      | X      | X    | X  |
+| win64      | X      | X    | X  |
+| android    | ―      | ―    | ―  |
 
 ### Godot 3
-| Package    | Alpha | Beta | RC | StableRC | Stable |
-|:----------:|:-----:|:----:|:--:|:--------:|:------:|
-| standard   | X     | X    | X  | X        | X      |
-| standard32 | X     | X    | X  | X        | X      |
-| templates  | X     | X    | X  | X        | X      |
-| lib        | X     | X    | X  | X        | X      |
-| web        | ―     | ―    | ―  | ―        | ―      |
-| headless   | ―     | X    | X  | X        | X      |
-| server     | ―     | X    | X  | X        | X      |
-| osx        | X     | X    | X  | X        | X      |
-| win32      | X     | X    | X  | X        | X      |
-| win64      | X     | X    | X  | X        | X      |
-| android    | ―     | ―    | ―  | ―        | ―      |
+| Package    | Latest | Alpha | Beta | RC | StableRC | Stable |
+|:----------:|:------:|:-----:|:----:|:--:|:--------:|:------:|
+| standard   | X      | X     | X    | X  | X        | X      |
+| standard32 | X      | X     | X    | X  | X        | X      |
+| templates  | X      | X     | X    | X  | X        | X      |
+| lib        | X      | X     | X    | X  | X        | X      |
+| web        | ―      | ―     | ―    | ―  | ―        | ―      |
+| headless   | X      | ―     | X    | X  | X        | X      |
+| server     | X      | ―     | X    | X  | X        | X      |
+| osx        | X      | X     | X    | X  | X        | X      |
+| win32      | X      | X     | X    | X  | X        | X      |
+| win64      | X      | X     | X    | X  | X        | X      |
+| android    | ―      | ―     | ―    | ―  | ―        | ―      |
 
-### Godot 2
-| Package    | RC | Stable |
-|:----------:|:--:|:------:|
-| standard   | ―  | ―      |
-| standard32 | ―  | ―      |
-| templates  | ―  | ―      |
-| lib        | ―  | ―      |
-| web        | ―  | ―      |
-| headless   | ―  | ―      |
-| server     | ―  | ―      |
-| osx        | ―  | ―      |
-| win32      | ―  | ―      |
-| win64      | ―  | ―      |
-| android    | ―  | ―      |
-
-### Godot 1
-| Package    | Stable |
-|:----------:|:------:|
-| standard   | ―      |
-| standard32 | ―      |
-| templates  | ―      |
-| lib        | ―      |
-| web        | ―      |
-| headless   | ―      |
-| server     | ―      |
-| osx        | ―      |
-| win32      | ―      |
-| win64      | ―      |
-| android    | ―      |
+# TODO ↓↓↓↓↓
 
 # List Package in PKGBUILDS: Total 138 Packages
 
