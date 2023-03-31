@@ -1,9 +1,14 @@
 # Maintainer: JackNapier <jacknapier151@gmail.com>
 # Contributor: 
 
+##########
+# Godot4 #
+##########
 pkgname=(
 	"godot4-alpha-src"
-	# Godot GDScript
+	##################
+	# Godot GDScript #
+	##################
 	"godot4-alpha-bin"
 	"godot4-alpha-bin32"
 	"godot4-alpha-export-templates-bin"
@@ -46,15 +51,19 @@ depends=(
 )
 
 source=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/alpha${_pkgverb}/godot-${_pkgver}-alpha${_pkgverb}.tar.xz")
-noextract=("godot-${_pkgver}-alpha${_pkgverb}.tar.xz")
 sha512sums=("SKIP")
 package_godot4-alpha-src(){
 	pkgdesc+=" Alpha SourceCode"
 	groups+=(
 		"godot-src"
 	)
-	install -Dm755 "${srcdir}/godot-${_pkgver}-alpha${_pkgverb}.tar.xz" "${pkgdir}/opt/godot/src/godot4-alpha.tar.xz"
+	install -d "${pkgdir}/opt/godot/src/godot4-alpha/"
+	cp -r "${srcdir}/godot-${_pkgver}-alpha${_pkgverb}/"* "${pkgdir}/opt/godot/src/godot4-alpha/"
 }
+
+##################
+# Godot GDScript #
+##################
 
 source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/alpha"${_pkgverb}"/Godot_v${_pkgver}-alpha"${_pkgverb}"_linux.x86_64.zip")
 sha512sums+=("SKIP")
@@ -117,7 +126,7 @@ package_godot4-alpha-bin32(){
 }
 
 source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/alpha${_pkgverb}/Godot_v${_pkgver}-alpha${_pkgverb}_export_templates.tpz")
-noextract+=("Godot_v${_pkgver}-alpha${_pkgverb}_export_templates.tpz")
+noextract=("Godot_v${_pkgver}-alpha${_pkgverb}_export_templates.tpz")
 sha512sums+=("SKIP")
 package_godot4-alpha-export-templates-bin(){
 	pkgdesc+=" Alpha Export Templates Binary Version"
@@ -192,7 +201,9 @@ package_godot4-alpha-android-bin(){
 
 pkgname+=(
 	"godot-alpha-src"
-	# Godot GDScript
+	##################
+	# Godot GDScript #
+	##################
 	"godot-alpha-bin"
 	"godot-alpha-bin32"
 	"godot-alpha-export-templates-bin"
@@ -203,19 +214,23 @@ pkgname+=(
 	"godot-alpha-android-bin"
 	)
 
-
 pkgdescalt="Godot Game Engine: An advanced, feature packed, multi-platform 2D and 3D game engine."
 
 package_godot-alpha-src(){
-	pkgdesc="${pkgdescalt} Alpha SourceCode"
+	pkgdesc+="${pkgdescalt} Alpha SourceCode"
 	groups+=(
 		"godot-src"
 	)
-	install -Dm755 "${srcdir}/godot-${_pkgver}-alpha${_pkgverb}.tar.xz" "${pkgdir}/opt/godot/src/godot-alpha.tar.xz"
+	install -d "${pkgdir}/opt/godot/src/godot-alpha/"
+	cp -r "${srcdir}/godot-${_pkgver}-alpha${_pkgverb}/"* "${pkgdir}/opt/godot/src/godot-alpha/"
 }
 
+##################
+# Godot GDScript #
+##################
+
 package_godot-alpha-bin(){
-	pkgdesc="${pkgdescalt} Alpha Binary Version"
+	pkgdesc+="${pkgdescalt} Alpha Binary Version"
 	groups+=(
 		"godot-standard"
 		"godot-standard64"
@@ -243,7 +258,7 @@ package_godot-alpha-bin(){
 }
 
 package_godot-alpha-bin32(){
-	pkgdesc="${pkgdescalt} Alpha Binary Version 32b"
+	pkgdesc+="${pkgdescalt} Alpha Binary Version 32b"
 	groups+=(
 		"godot-standard"
 		"godot-standard32"
@@ -270,7 +285,7 @@ package_godot-alpha-bin32(){
 }
 
 package_godot-alpha-export-templates-bin(){
-	pkgdesc="${pkgdescalt} Alpha Export Templates Binary Version"
+	pkgdesc+="${pkgdescalt} Alpha Export Templates Binary Version"
 	groups+=(
 		"godot-export-templates"
 	)
@@ -278,7 +293,7 @@ package_godot-alpha-export-templates-bin(){
 }
 
 package_libgodot-alpha-bin(){
-	pkgdesc="${pkgdescalt} Alpha LibGodot Binary Version"
+	pkgdesc+="${pkgdescalt} Alpha LibGodot Binary Version"
 	groups+=(
 		"godot-lib"
 	)
@@ -286,7 +301,7 @@ package_libgodot-alpha-bin(){
 }
 
 package_godot-alpha-osx-bin(){
-	pkgdesc="${pkgdescalt} Alpha MacOSX Binary Version"
+	pkgdesc+="${pkgdescalt} Alpha MacOSX Binary Version"
 	groups+=(
 		"godot-osx"
 		"godot-osx-universal"
@@ -295,7 +310,7 @@ package_godot-alpha-osx-bin(){
 }
 
 package_godot-alpha-win32-bin(){
-	pkgdesc="${pkgdescalt} Alpha Windows Binary Version 32b"
+	pkgdesc+="${pkgdescalt} Alpha Windows Binary Version 32b"
 	groups+=(
 		"godot-win"
 		"godot-win32"
@@ -306,7 +321,7 @@ package_godot-alpha-win32-bin(){
 }
 
 package_godot-alpha-win64-bin(){
-	pkgdesc="${pkgdescalt} Alpha Windows Binary Version 64b"
+	pkgdesc+="${pkgdescalt} Alpha Windows Binary Version 64b"
 	groups+=(
 		"godot-win"
 		"godot-win64"
@@ -317,7 +332,7 @@ package_godot-alpha-win64-bin(){
 }
 
 package_godot-alpha-android-bin(){
-	pkgdesc="${pkgdescalt} Alpha Android Binary Version"
+	pkgdesc+="${pkgdescalt} Alpha Android Binary Version"
 	groups+=(
 		"godot-android"
 	)

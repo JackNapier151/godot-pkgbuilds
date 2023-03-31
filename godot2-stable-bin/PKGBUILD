@@ -2,15 +2,17 @@
 # Contributor: 
 
 pkgname=(
-	"godot2-stable-rc-src"
-	# Godot GDScript
-	"godot2-stable-rc-bin"
-	"godot2-stable-rc-bin32"
-	"godot2-stable-rc-server-bin"
-	"godot2-stable-rc-export-templates-bin"
-	"godot2-stable-rc-osx-bin"
-	"godot2-stable-rc-win32-bin"
-	"godot2-stable-rc-win64-bin"
+	"godot2-stable-src"
+	##################
+	# Godot GDScript #
+	##################
+	"godot2-stable-bin"
+	"godot2-stable-bin32"
+	"godot2-stable-server-bin"
+	"godot2-stable-export-templates-bin"
+	"godot2-stable-osx-bin"
+	"godot2-stable-win32-bin"
+	"godot2-stable-win64-bin"
 	)
 pkgver="2.1.6"
 pkgrel=1
@@ -22,9 +24,9 @@ groups=(
 	"godot2"
 	"godot21"
 	"godot216"
-	"godot-legazy"
+	"godot-old"
 	"godot-bin"
-	"godot-stable-rc"
+	"godot-stable"
 	"godot-gdscript"
 )
 arch=("any")
@@ -46,35 +48,39 @@ depends=(
 source=("https://downloads.tuxfamily.org/godotengine/${pkgver}/godot-${pkgver}-stable.tar.xz")
 noextract=("godot_v${pkgver}-stable.tar.xz")
 sha512sums=("SKIP")
-package_godot2-stable-rc-src(){
-	pkgdesc+=" Stable Release Candidate SourceCode"
+package_godot2-stable-src(){
+	pkgdesc+=" Stable SourceCode"
 	groups+=(
 		"godot-src"
 	)
-	install -Dm755 "${srcdir}/godot-${pkgver}-stable.tar.xz" "${pkgdir}/opt/godot/src/godot2-stable-rc.tar.xz"
+	install -d "${pkgdir}/opt/godot/src/godot2-stable/"
+	cp -r "${srcdir}/godot-${pkgver}-stable/"* "${pkgdir}/opt/godot/src/godot2-stable/"
 }
 
+##################
+# Godot GDScript #
+##################
 source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}-stable_x11.64.zip")
 sha512sums+=("SKIP")
-package_godot2-stable-rc-bin(){
-	pkgdesc+=" Stable Release Candidate Binary Version"
+package_godot2-stable-bin(){
+	pkgdesc+=" Stable Binary Version"
 	groups+=(
 		"godot-standard"
 		"godot-standard64"
 		"godot-64"
 	)
-	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_x11.64" "${pkgdir}/opt/godot/godot2-stable-rc-bin"
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_x11.64" "${pkgdir}/opt/godot/godot2-stable-bin"
 	
 	install -d "${pkgdir}/usr/bin/"
-	ln -s "/opt/godot/godot2-stable-rc-bin" "${pkgdir}/usr/bin/godot2-stable-rc-bin"
+	ln -s "/opt/godot/godot2-stable-bin" "${pkgdir}/usr/bin/godot2-stable-bin"
 	
 	install -d "${pkgdir}/usr/share/applications/"
-	cat > "${pkgdir}/usr/share/applications/godot2-stable-rc-bin.desktop" <<-EOF
+	cat > "${pkgdir}/usr/share/applications/godot2-stable-bin.desktop" <<-EOF
 		[Desktop Entry]
-		Name=Godot2 Engine Stable Release Candidate Binary v${pkgver}
-		GenericName="Advanced cross-platform 2D and 3D libre game engine. Stable Release Candidate Binary Version"
+		Name=Godot2 Engine Stable Binary v${pkgver}
+		GenericName="Advanced cross-platform 2D and 3D libre game engine. Stable Binary Version"
 		Comment=Application for making games
-		Exec=/usr/bin/godot2-stable-rc-bin %U
+		Exec=/usr/bin/godot2-stable-bin %U
 		Icon=godot
 		Terminal=false
 		Type=Application
@@ -85,25 +91,25 @@ package_godot2-stable-rc-bin(){
 
 source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}-stable_x11.32.zip")
 sha512sums+=("SKIP")
-package_godot2-stable-rc-bin32(){
-	pkgdesc+=" Stable Release Candidate Binary Version 32b"
+package_godot2-stable-bin32(){
+	pkgdesc+=" Stable Binary Version 32b"
 	groups+=(
 		"godot-standard"
 		"godot-standard32"
 		"godot-32"
 	)
-	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_x11.32" "${pkgdir}/opt/godot/godot2-stable-rc-bin32"
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_x11.32" "${pkgdir}/opt/godot/godot2-stable-bin32"
 	
 	install -d "${pkgdir}/usr/bin/"
-	ln -s "/opt/godot/godot2-stable-rc-bin32" "${pkgdir}/usr/bin/godot2-stable-rc-bin32"
+	ln -s "/opt/godot/godot2-stable-bin32" "${pkgdir}/usr/bin/godot2-stable-bin32"
 	
 	install -d "${pkgdir}/usr/share/applications/"
-	cat > "${pkgdir}/usr/share/applications/godot2-stable-rc-bin32.desktop" <<-EOF
+	cat > "${pkgdir}/usr/share/applications/godot2-stable-bin32.desktop" <<-EOF
 		[Desktop Entry]
-		Name=Godot2 Engine Stable Release Candidate Binary v${pkgver} 32b
-		GenericName="Advanced cross-platform 2D and 3D libre game engine. Stable Release Candidate Binary Version 32b"
+		Name=Godot2 Engine Stable Binary v${pkgver} 32b
+		GenericName="Advanced cross-platform 2D and 3D libre game engine. Stable Binary Version 32b"
 		Comment=Application for making games
-		Exec=/usr/bin/godot2-stable-rc-bin32 %U
+		Exec=/usr/bin/godot2-stable-bin32 %U
 		Icon=godot
 		Terminal=false
 		Type=Application
@@ -114,24 +120,24 @@ package_godot2-stable-rc-bin32(){
 
 source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}-stable_linux_server.64.zip")
 sha512sums+=("SKIP")
-package_godot2-stable-rc-server-bin(){
-	pkgdesc+=" Stable Release Candidate Server Binary Version"
+package_godot2-stable-server-bin(){
+	pkgdesc+=" Stable Server Binary Version"
 	groups+=(
 		"godot-server"
 		"godot-64"
 	)
-	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_linux_server.64" "${pkgdir}/opt/godot/godot2-stable-rc-server-bin"
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_linux_server.64" "${pkgdir}/opt/godot/godot2-stable-server-bin"
 	
 	install -d "${pkgdir}/usr/bin/"
-	ln -s "/opt/godot/godot2-stable-rc-server-bin" "${pkgdir}/usr/bin/godot2-stable-rc-server-bin"
+	ln -s "/opt/godot/godot2-stable-server-bin" "${pkgdir}/usr/bin/godot2-stable-server-bin"
 	
 	install -d "${pkgdir}/usr/share/applications/"
-	cat > "${pkgdir}/usr/share/applications/godot2-stable-rc-server-bin.desktop" <<-EOF
+	cat > "${pkgdir}/usr/share/applications/godot2-stable-server-bin.desktop" <<-EOF
 		[Desktop Entry]
-		Name=Godot2 Server Engine Stable Release Candidate Binary v${pkgver}
-		GenericName="Advanced cross-platform 2D and 3D libre game engine. Stable Release Candidate Server Binary Version"
+		Name=Godot2 Server Engine Stable Binary v${pkgver}
+		GenericName="Advanced cross-platform 2D and 3D libre game engine. Stable Server Binary Version"
 		Comment=Application for making games
-		Exec=/usr/bin/godot2-stable-rc-server-bin %U
+		Exec=/usr/bin/godot2-stable-server-bin %U
 		Icon=godot
 		Terminal=false
 		Type=Application
@@ -143,45 +149,45 @@ package_godot2-stable-rc-server-bin(){
 source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}-stable_export_templates.tpz")
 noextract+=("Godot_v${pkgver}-stable_export_templates.tpz")
 sha512sums+=("SKIP")
-package_godot2-stable-rc-export-templates-bin(){
-	pkgdesc+=" Stable Release Candidate Export Templates Binary Version"
+package_godot2-stable-export-templates-bin(){
+	pkgdesc+=" Stable Export Templates Binary Version"
 	groups+=(
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot2-stable-rc-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot2-stable-export-templates-bin.tpz"
 }
 
 source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}-stable_osx.fat.zip")
 sha512sums+=("SKIP")
-package_godot2-stable-rc-osx-bin(){
-	pkgdesc+=" Stable Release Candidate MacOSX Binary Version"
+package_godot2-stable-osx-bin(){
+	pkgdesc+=" Stable MacOSX Binary Version"
 	groups+=(
 		"godot-osx"
 		"godot-osxfat"
 	)
-	install -Dm755 "${srcdir}/Godot.app/Contents/MacOS/Godot" "${pkgdir}/opt/godot/godot2-stable-rc-osx-bin"
+	install -Dm755 "${srcdir}/Godot.app/Contents/MacOS/Godot" "${pkgdir}/opt/godot/godot2-stable-osx-bin"
 }
 
 source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}-stable_win32.exe.zip")
 sha512sums+=("SKIP")
-package_godot2-stable-rc-win32-bin(){
-	pkgdesc+=" Stable Release Candidate Windows Binary Version 32b"
+package_godot2-stable-win32-bin(){
+	pkgdesc+=" Stable Windows Binary Version 32b"
 	groups+=(
 		"godot-win"
 		"godot-win32"
 		"godot-32"
 	)
-	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win32.exe" "${pkgdir}/opt/godot/godot2-stable-rc-win32-bin.exe"
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win32.exe" "${pkgdir}/opt/godot/godot2-stable-win32-bin.exe"
 }
 
 source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}-stable_win64.exe.zip")
 sha512sums+=("SKIP")
-package_godot2-stable-rc-win64-bin(){
-	pkgdesc+=" Stable Release Candidate Windows Binary Version 64b"
+package_godot2-stable-win64-bin(){
+	pkgdesc+=" Stable Windows Binary Version 64b"
 	groups+=(
 		"godot-win"
 		"godot-win64"
 		"godot-64"
 	)
-	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win64.exe" "${pkgdir}/opt/godot/godot2-stable-rc-win64-bin.exe"
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win64.exe" "${pkgdir}/opt/godot/godot2-stable-win64-bin.exe"
 }

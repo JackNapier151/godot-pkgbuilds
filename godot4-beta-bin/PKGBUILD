@@ -1,27 +1,29 @@
 # Maintainer: JackNapier <jacknapier151@gmail.com>
 # Contributor: 
 
+##########
+# Godot4 #
+##########
 pkgname=(
 	"godot4-beta-src"
-	# Godot GDScript
+	##################
+	# Godot GDScript #
+	##################
 	"godot4-beta-bin"
 	"godot4-beta-bin32"
 	"godot4-beta-export-templates-bin"
 	"libgodot4-beta-bin"
 	"godot4-beta-web-bin"
-	#"godot4-beta-headless-bin"
-	#"godot4-beta-server-bin"
 	"godot4-beta-osx-bin"
 	"godot4-beta-win32-bin"
 	"godot4-beta-win64-bin"
 	"godot4-beta-android-bin"
-	# Godot Mono"
+	##############
+	# Godot Mono #
+	##############
 	"godot4-beta-mono-bin"
 	"godot4-beta-mono-bin32"
 	"godot4-beta-mono-export-templates-bin"
-	#"libgodot4-beta-mono-bin"
-	#"godot4-beta-headless-mono-bin"
-	#"godot4-beta-server-mono-bin"
 	"godot4-beta-mono-osx-bin"
 	"godot4-beta-mono-win32-bin"
 	"godot4-beta-mono-win64-bin"
@@ -37,6 +39,7 @@ license=("MIT")
 groups=(
 	"godot-full"
 	"godot4"
+	"godot40"
 	"godot-bin"
 	"godot-beta"
 )
@@ -57,15 +60,19 @@ depends=(
 )
 
 source=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/beta${_pkgverb}/godot-${_pkgver}-beta${_pkgverb}.tar.xz")
-noextract=("godot-${_pkgver}-beta${_pkgverb}.tar.xz")
 sha512sums=("SKIP")
 package_godot4-beta-src(){
 	pkgdesc+=" Beta SourceCode"
 	groups+=(
 		"godot-src"
 	)
-	install -Dm755 "${srcdir}/godot-${_pkgver}-beta${_pkgverb}.tar.xz" "${pkgdir}/opt/godot/src/godot4-beta.tar.xz"
+	install -d "${pkgdir}/opt/godot/src/godot4-beta/"
+	cp -r "${srcdir}/godot-${_pkgver}-beta${_pkgverb}/"* "${pkgdir}/opt/godot/src/godot4-beta/"
 }
+
+##################
+# Godot GDScript #
+##################
 
 source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/beta${_pkgverb}/Godot_v${_pkgver}-beta${_pkgverb}_linux.x86_64.zip")
 sha512sums+=("SKIP")
@@ -128,7 +135,7 @@ package_godot4-beta-bin32(){
 }
 
 source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/beta${_pkgverb}/Godot_v${_pkgver}-beta${_pkgverb}_export_templates.tpz")
-noextract+=("Godot_v${_pkgver}-beta${_pkgverb}_export_templates.tpz")
+noextract=("Godot_v${_pkgver}-beta${_pkgverb}_export_templates.tpz")
 sha512sums+=("SKIP")
 package_godot4-beta-export-templates-bin(){
 	pkgdesc+=" Beta Export Templates Binary Version"
@@ -161,67 +168,9 @@ package_godot4-beta-web-bin(){
 		"godot-web"
 	)
 	unzip "Godot_v${_pkgver}-beta${_pkgverb}_web_editor.zip" -d "${srcdir}/godot4-beta-bin"
-	install -d "${pkgdir}/opt/godot/web/godot4-beta-bin"
-	cp -r "${srcdir}/godot4-beta-bin" "${pkgdir}/opt/godot/web/godot4-beta-bin"
+	install -d "${pkgdir}/opt/godot/web/"
+	cp -r "${srcdir}/godot4-beta-bin" "${pkgdir}/opt/godot/web/"
 }
-alpha='
-source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/beta${_pkgverb}/Godot_v${_pkgver}-beta${_pkgverb}_linux_headless.64.zip")
-sha512sums+=("SKIP")
-package_godot4-beta-headless-bin(){
-	pkgdesc+=" Beta Headless Binary Version"
-	groups+=(
-		"godot-gdscript"
-		"godot-headless"
-		"godot-64"
-	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_linux_headless.64" "${pkgdir}/opt/godot/godot-beta-headless-bin"
-	
-	install -d "${pkgdir}/usr/bin/"
-	ln -s "/opt/godot/godot-beta-headless-bin" "${pkgdir}/usr/bin/godot-beta-headless-bin"
-	
-	install -d "${pkgdir}/usr/share/applications/"
-	cat > "${pkgdir}/usr/share/applications/godot-beta-headless-bin.desktop" <<-EOF
-		[Desktop Entry]
-		Name=Godot Headless Engine Beta Binary v${_pkgver}-beta${_pkgverb}
-		GenericName="Advanced cross-platform 2D and 3D libre game engine. Beta Headless Binary Version"
-		Comment=Application for making games
-		Exec=/usr/bin/godot-beta-headless-bin %U
-		Icon=godot
-		Terminal=false
-		Type=Application
-		MimeType=application/x-godot-project;
-		Categories=Development;IDE;
-	EOF
-}
-
-source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/beta${_pkgverb}/Godot_v${_pkgver}-beta${_pkgverb}_linux_server.64.zip")
-sha512sums+=("SKIP")
-package_godot4-beta-server-bin(){
-	pkgdesc+=" Beta Server Binary Version"
-	groups+=(
-		"godot-gdscript"
-		"godot-server"
-		"godot-64"
-	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_linux_server.64" "${pkgdir}/opt/godot/godot4-beta-server-bin"
-	
-	install -d "${pkgdir}/usr/bin/"
-	ln -s "/opt/godot/godot4-beta-server-bin" "${pkgdir}/usr/bin/godot4-beta-server-bin"
-	
-	install -d "${pkgdir}/usr/share/applications/"
-	cat > "${pkgdir}/usr/share/applications/godot4-beta-server-bin.desktop" <<-EOF
-		[Desktop Entry]
-		Name=Godot4 Engine Beta Binary v${_pkgver}-beta${_pkgverb}
-		GenericName="Advanced cross-platform 2D and 3D libre game engine. Beta Headless Binary Version"
-		Comment=Application for making games
-		Exec=/usr/bin/godot4-beta-server-bin %U
-		Icon=godot
-		Terminal=false
-		Type=Application
-		MimeType=application/x-godot-project;
-		Categories=Development;IDE;
-	EOF
-}'
 
 source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/beta${_pkgverb}/Godot_v${_pkgver}-beta${_pkgverb}_macos.universal.zip")
 sha512sums+=("SKIP")
@@ -275,6 +224,9 @@ package_godot4-beta-android-bin(){
 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_android_editor.apk" "${pkgdir}/opt/godot/godot4-beta-android-bin.apk"
 }
 
+##############
+# Godot Mono #
+##############
 source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/beta${_pkgverb}/mono/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_x86_64.zip")
 sha512sums+=("SKIP")
 package_godot4-beta-mono-bin(){
@@ -286,11 +238,12 @@ package_godot4-beta-mono-bin(){
 		"godot-standard64"
 		"godot-64"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_x86_64/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux.x86_64" "${pkgdir}/opt/godot/mono/beta/standard/godot4-beta-mono-bin"
-	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_x86_64/GodotSharp" "${pkgdir}/opt/godot/mono/beta/standard/Godot4Sharp"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_x86_64/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux.x86_64" "${pkgdir}/opt/godot/mono/godot4/beta/bin/desktop/godot4-beta-mono-bin"
+	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_x86_64/GodotSharp" "${pkgdir}/opt/godot/mono/godot4/beta/bin/desktop/GodotSharp"
+	ln -s "/opt/godot/mono/godot4/beta/bin/desktop/godot4-beta-mono-bin" "${pkgdir}/opt/godot/godot4-beta-mono-bin"
 	
 	install -d "${pkgdir}/usr/bin/"
-	ln -s "/opt/godot/mono/beta/standard/godot4-beta-mono-bin" "${pkgdir}/usr/bin/godot4-beta-mono-bin"
+	ln -s "/opt/godot/mono/godot4/beta/bin/desktop/godot4-beta-mono-bin" "${pkgdir}/usr/bin/godot4-beta-mono-bin"
 	
 	install -d "${pkgdir}/usr/share/applications/"
 	cat > "${pkgdir}/usr/share/applications/godot4-beta-mono-bin.desktop" <<-EOF
@@ -318,11 +271,12 @@ package_godot4-beta-mono-bin32(){
 		"godot-standard32"
 		"godot-32"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_x86_32/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux.x86_32" "${pkgdir}/opt/godot/mono/beta/standard32/godot4-beta-mono-bin32"
-	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_x86_32/GodotSharp" "${pkgdir}/opt/godot/mono/beta/standard32/Godot4Sharp"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_x86_32/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux.x86_32" "${pkgdir}/opt/godot/mono/godot4/beta/bin/desktop32/godot4-beta-mono-bin32"
+	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_x86_32/GodotSharp" "${pkgdir}/opt/godot/mono/godot4/beta/bin/desktop32/GodotSharp"
+	ln -s "/opt/godot/mono/godot4/beta/bin/desktop32/godot4-beta-mono-bin32" "${pkgdir}/opt/godot/godot4-beta-mono-bin32"
 	
 	install -d "${pkgdir}/usr/bin/"
-	ln -s "/opt/godot/mono/beta/standard/godot4-beta-mono-bin32" "${pkgdir}/usr/bin/godot4-beta-mono-bin32"
+	ln -s "/opt/godot/mono/godot4/beta/bin/desktop32/godot4-beta-mono-bin32" "${pkgdir}/usr/bin/godot4-beta-mono-bin32"
 	
 	install -d "${pkgdir}/usr/share/applications/"
 	cat > "${pkgdir}/usr/share/applications/godot4-beta-mono-bin32.desktop" <<-EOF
@@ -350,81 +304,7 @@ package_godot4-beta-mono-export-templates-bin(){
 	)
 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot4-beta-mono-export-templates-bin.tpz"
 }
-beta='
-source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/beta${_pkgverb}/mono/godot-lib.${_pkgver}.beta${_pkgverb}.mono.release.aar")
-noextract+=("godot-lib.${_pkgver}.beta${_pkgverb}mono.release.aar")
-sha512sums+=("SKIP")
-package_libgodot4-beta-mono-bin(){
-	pkgdesc+=" Beta LibGodot Mono Binary Version"
-	groups+=(
-		"godot-mono"
-		"godot-lib"
-	)
-	install -Dm755 "${srcdir}/godot-lib.${_pkgver}.beta${_pkgverb}.mono.release.aar" "${pkgdir}/opt/godot/godot-lib/libgodot4-beta-mono-bin.aar"
-}
 
-source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/beta${_pkgverb}/mono/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_headless_64.zip")
-sha512sums+=("SKIP")
-package_godot4-beta-headless-mono-bin(){
-	pkgdesc+=" Beta Headless Mono Binary Version"
-	depends+=("${_monodepends}")
-	groups+=(
-		"godot-mono"
-		"godot-headless"
-		"godot-64"
-	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_headless_64/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_headless.64" "${pkgdir}/opt/godot/mono/beta/headless/godot4-beta-headless-mono-bin"
-	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_headless_64/GodotSharp" "${pkgdir}/opt/godot/mono/beta/headless/Godot4Sharp"
-	
-	install -d "${pkgdir}/usr/bin/"
-	ln -s "/opt/godot/mono/beta/headless/godot4-beta-headless-bin" "${pkgdir}/usr/bin/godot4-beta-headless-mono-bin"
-	
-	install -d "${pkgdir}/usr/share/applications/"
-	cat > "${pkgdir}/usr/share/applications/godot4-beta-headless-mono-bin.desktop" <<-EOF
-		[Desktop Entry]
-		Name=Godot4 Headless Engine Beta Mono Binary v${_pkgver}-beta${_pkgverb}
-		GenericName="Advanced cross-platform 2D and 3D libre game engine. Beta Headless Mono Binary Version"
-		Comment=Application for making games
-		Exec=/usr/bin/godot4-beta-headless-mono-bin %U
-		Icon=godot
-		Terminal=false
-		Type=Application
-		MimeType=application/x-godot-project;
-		Categories=Development;IDE;
-	EOF
-}
-
-source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/beta${_pkgverb}/mono/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_server_64.zip")
-sha512sums+=("SKIP")
-package_godot4-beta-server-mono-bin(){
-	pkgdesc+=" Beta Server Mono Binary Version"
-	depends+=("${_monodepends}")
-	groups+=(
-		"godot-mono"
-		"godot-server"
-		"godot-64"
-	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_server_64/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_server.64" "${pkgdir}/opt/godot/mono/beta/server/godot4-beta-server-mono-bin"
-	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_server_64/data_Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_server_64" "${pkgdir}/opt/godot/mono/beta/server/Godot4Sharp
-	
-	install -d "${pkgdir}/usr/bin/"
-	ln -s "/opt/godot/mono/beta/server/godot4-beta-server-mono-bin" "${pkgdir}/usr/bin/godot4-beta-server-mono-bin"
-	
-	install -d "${pkgdir}/usr/share/applications/"
-	cat > "${pkgdir}/usr/share/applications/godot-4beta-server-mono-bin.desktop" <<-EOF
-		[Desktop Entry]
-		Name=Godot4 Engine Beta Mono Binary v${_pkgver}-beta${_pkgverb}
-		GenericName="Advanced cross-platform 2D and 3D libre game engine. Beta Headless Mono Binary Version"
-		Comment=Application for making games
-		Exec=/usr/bin/godot4-beta-server-mono-bin %U
-		Icon=godot
-		Terminal=false
-		Type=Application
-		MimeType=application/x-godot-project;
-		Categories=Development;IDE;
-	EOF
-}
-'
 source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/beta${_pkgverb}/mono/Godot_v${_pkgver}-beta${_pkgverb}_mono_macos.universal.zip")
 sha512sums+=("SKIP")
 package_godot4-beta-mono-osx-bin(){
@@ -434,8 +314,9 @@ package_godot4-beta-mono-osx-bin(){
 		"godot-osx"
 		"godot-osx-universal"
 	)
-	install -Dm755 "${srcdir}/Godot_mono.app/Contents/MacOS/Godot" "${pkgdir}/opt/godot/mono/beta/standard-osx/godot4-beta-mono-osx-bin"
-	cp -r "${srcdir}/Godot_mono.app/Contents/Resources/GodotSharp" "${pkgdir}/opt/godot/mono/beta/standard-osx/Godot4Sharp"
+	install -Dm755 "${srcdir}/Godot_mono.app/Contents/MacOS/Godot" "${pkgdir}/opt/godot/mono/godot4/beta/bin/osx/godot4-beta-mono-osx-bin"
+	cp -r "${srcdir}/Godot_mono.app/Contents/Resources/GodotSharp" "${pkgdir}/opt/godot/mono/godot4/beta/bin/osx/GodotSharp"
+	ln -s "/opt/godot/mono/godot4/beta/bin/osx/godot4-beta-mono-osx-bin" "${pkgdir}/opt/godot/godot4-beta-mono-osx-bin"
 }
 
 source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/beta${_pkgverb}/mono/Godot_v${_pkgver}-beta${_pkgverb}_mono_win32.zip")
@@ -448,8 +329,9 @@ package_godot4-beta-mono-win32-bin(){
 		"godot-win32"
 		"godot-32"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_win32/Godot_v${_pkgver}-beta${_pkgverb}_mono_win32.exe" "${pkgdir}/opt/godot/mono/beta/standard-win32/godot4-beta-win32-bin.exe"
-	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_win32/GodotSharp" "${pkgdir}/opt/godot/mono/beta/standard-win32/Godot4Sharp"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_win32/Godot_v${_pkgver}-beta${_pkgverb}_mono_win32.exe" "${pkgdir}/opt/godot/mono/godot4/beta/bin/win32/godot4-beta-win32-bin.exe"
+	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_win32/GodotSharp" "${pkgdir}/opt/godot/mono/godot4/beta/bin/win32/GodotSharp"
+	ln -s "/opt/godot/mono/godot4/beta/bin/win32/godot4-beta-mono-win32-bin.exe" "${pkgdir}/opt/godot/godot4-beta-mono-win32-bin.exe"
 }
 
 source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/beta${_pkgverb}/mono/Godot_v${_pkgver}-beta${_pkgverb}_mono_win64.zip")
@@ -462,8 +344,9 @@ package_godot4-beta-mono-win64-bin(){
 		"godot-win64"
 		"godot-64"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_win64/Godot_v${_pkgver}-beta${_pkgverb}_mono_win64.exe" "${pkgdir}/opt/godot/mono/beta/standard-win64/godot4-beta-win64-bin.exe"
-	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_win64/GodotSharp" "${pkgdir}/opt/godot/mono/beta/standard-win64/Godot4Sharp"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_win64/Godot_v${_pkgver}-beta${_pkgverb}_mono_win64.exe" "${pkgdir}/opt/godot/mono/godot4/beta/bin/win64/godot4-beta-mono-win64-bin.exe"
+	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_win64/GodotSharp" "${pkgdir}/opt/godot/mono/godot4/beta/bin/win64/GodotSharp"
+	ln -s "/opt/godot/mono/godot4/beta/bin/win64/godot4-beta-mono-win64-bin.exe" "${pkgdir}/opt/godot/godot4-beta-mono-win64-bin.exe"
 }
 
 #########
@@ -472,25 +355,24 @@ package_godot4-beta-mono-win64-bin(){
 
 pkgname+=(
 	"godot-beta-src"
-	# Godot GDScript
+	##################
+	# Godot GDScript #
+	##################
 	"godot-beta-bin"
 	"godot-beta-bin32"
 	"godot-beta-export-templates-bin"
 	"libgodot-beta-bin"
 	"godot-beta-web-bin"
-	#"godot-beta-headless-bin"
-	#"godot-beta-server-bin"
 	"godot-beta-osx-bin"
 	"godot-beta-win32-bin"
 	"godot-beta-win64-bin"
 	"godot-beta-android-bin"
-	# Godot Mono"
+	##############
+	# Godot Mono #
+	##############
 	"godot-beta-mono-bin"
 	"godot-beta-mono-bin32"
 	"godot-beta-mono-export-templates-bin"
-	#"libgodot-beta-mono-bin"
-	#"godot-beta-headless-mono-bin"
-	#"godot-beta-server-mono-bin"
 	"godot-beta-mono-osx-bin"
 	"godot-beta-mono-win32-bin"
 	"godot-beta-mono-win64-bin"
@@ -499,15 +381,20 @@ pkgname+=(
 pkgdescalt="Godot Game Engine: An advanced, feature packed, multi-platform 2D and 3D game engine."
 
 package_godot-beta-src(){
-	pkgdesc="${pkgdescalt} Beta SourceCode"
+	pkgdesc+="${pkgdescalt} Beta SourceCode"
 	groups+=(
 		"godot-src"
 	)
-	install -Dm755 "${srcdir}/godot-${_pkgver}-beta${_pkgverb}.tar.xz" "${pkgdir}/opt/godot/src/godot-beta.tar.xz"
+	install -d "${pkgdir}/opt/godot/src/godot-beta/"
+	cp -r "${srcdir}/godot-${_pkgver}-beta${_pkgverb}/"* "${pkgdir}/opt/godot/src/godot-beta/"
 }
 
+##################
+# Godot GDScript #
+##################
+
 package_godot-beta-bin(){
-	pkgdesc="${pkgdescalt} Beta Binary Version"
+	pkgdesc+="${pkgdescalt} Beta Binary Version"
 	groups+=(
 		"godot-gdscript"
 		"godot-standard"
@@ -535,7 +422,7 @@ package_godot-beta-bin(){
 }
 
 package_godot-beta-bin32(){
-	pkgdesc="${pkgdescalt} Beta Binary Version 32b"
+	pkgdesc+="${pkgdescalt} Beta Binary Version 32b"
 	groups+=(
 		"godot-gdscript"
 		"godot-standard"
@@ -563,7 +450,7 @@ package_godot-beta-bin32(){
 }
 
 package_godot-beta-export-templates-bin(){
-	pkgdesc="${pkgdescalt} Beta Export Templates Binary Version"
+	pkgdesc+="${pkgdescalt} Beta Export Templates Binary Version"
 	groups+=(
 		"godot-gdscript"
 		"godot-export-templates"
@@ -572,7 +459,7 @@ package_godot-beta-export-templates-bin(){
 }
 
 package_libgodot-beta-bin(){
-	pkgdesc="${pkgdescalt} Beta LibGodot Binary Version"
+	pkgdesc+="${pkgdescalt} Beta LibGodot Binary Version"
 	groups+=(
 		"godot-gdscript"
 		"godot-lib"
@@ -581,72 +468,18 @@ package_libgodot-beta-bin(){
 }
 
 package_godot-beta-web-bin(){
-	pkgdesc="${pkgdescalt} Beta Web Binary Version"
+	pkgdesc+="${pkgdescalt} Beta Web Binary Version"
 	groups+=(
 		"godot-gdscript"
 		"godot-web"
 	)
 	unzip "Godot_v${_pkgver}-beta${_pkgverb}_web_editor.zip" -d "${srcdir}/godot-beta-bin"
-	install -d "${pkgdir}/opt/godot/web/godot-beta-bin"
-	cp -r "${srcdir}/godot-beta-bin" "${pkgdir}/opt/godot/web/godot-beta-bin"
+	install -d "${pkgdir}/opt/godot/web/"
+	cp -r "${srcdir}/godot-beta-bin" "${pkgdir}/opt/godot/web/"
 }
-alpha='
-package_godot-beta-headless-bin(){
-	pkgdesc="${pkgdescalt} Beta Headless Binary Version"
-	groups+=(
-		"godot-gdscript"
-		"godot-headless"
-		"godot-64"
-	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_linux_headless.64" "${pkgdir}/opt/godot/godot-beta-headless-bin"
-	
-	install -d "${pkgdir}/usr/bin/"
-	ln -s "/opt/godot/godot-beta-headless-bin" "${pkgdir}/usr/bin/godot-beta-headless-bin"
-	
-	install -d "${pkgdir}/usr/share/applications/"
-	cat > "${pkgdir}/usr/share/applications/godot-beta-headless-bin.desktop" <<-EOF
-		[Desktop Entry]
-		Name=Godot Headless Engine Beta Binary v${_pkgver}-beta${_pkgverb}
-		GenericName="Advanced cross-platform 2D and 3D libre game engine. Beta Headless Binary Version"
-		Comment=Application for making games
-		Exec=/usr/bin/godot-beta-headless-bin %U
-		Icon=godot
-		Terminal=false
-		Type=Application
-		MimeType=application/x-godot-project;
-		Categories=Development;IDE;
-	EOF
-}
-
-package_godot-beta-server-bin(){
-	pkgdesc="${pkgdescalt} Beta Server Binary Version"
-	groups+=(
-		"godot-gdscript"
-		"godot-server"
-		"godot-64"
-	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_linux_server.64" "${pkgdir}/opt/godot/godot-beta-server-bin"
-	
-	install -d "${pkgdir}/usr/bin/"
-	ln -s "/opt/godot/godot-beta-server-bin" "${pkgdir}/usr/bin/godot-beta-server-bin"
-	
-	install -d "${pkgdir}/usr/share/applications/"
-	cat > "${pkgdir}/usr/share/applications/godot-beta-server-bin.desktop" <<-EOF
-		[Desktop Entry]
-		Name=Godot Engine Beta Binary v${_pkgver}-beta${_pkgverb}
-		GenericName="Advanced cross-platform 2D and 3D libre game engine. Beta Headless Binary Version"
-		Comment=Application for making games
-		Exec=/usr/bin/godot-beta-server-bin %U
-		Icon=godot
-		Terminal=false
-		Type=Application
-		MimeType=application/x-godot-project;
-		Categories=Development;IDE;
-	EOF
-}'
 
 package_godot-beta-osx-bin(){
-	pkgdesc="${pkgdescalt} Beta MacOSX Binary Version"
+	pkgdesc+="${pkgdescalt} Beta MacOSX Binary Version"
 	groups+=(
 		"godot-gdscript"
 		"godot-osx"
@@ -656,7 +489,7 @@ package_godot-beta-osx-bin(){
 }
 
 package_godot-beta-win32-bin(){
-	pkgdesc="${pkgdescalt} Beta Windows Binary Version 32b"
+	pkgdesc+="${pkgdescalt} Beta Windows Binary Version 32b"
 	groups+=(
 		"godot-gdscript"
 		"godot-win"
@@ -669,7 +502,7 @@ package_godot-beta-win32-bin(){
 }
 
 package_godot-beta-win64-bin(){
-	pkgdesc="${pkgdescalt} Beta Windows Binary Version"
+	pkgdesc+="${pkgdescalt} Beta Windows Binary Version"
 	groups+=(
 		"godot-gdscript"
 		"godot-win"
@@ -682,7 +515,7 @@ package_godot-beta-win64-bin(){
 }
 
 package_godot-beta-android-bin(){
-	pkgdesc="${pkgdescalt} Beta Android Binary Version"
+	pkgdesc+="${pkgdescalt} Beta Android Binary Version"
 	groups+=(
 		"godot-gdscript"
 		"godot-android"
@@ -690,8 +523,11 @@ package_godot-beta-android-bin(){
 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_android_editor.apk" "${pkgdir}/opt/godot/godot-beta-android-bin.apk"
 }
 
+##############
+# Godot Mono #
+##############
 package_godot-beta-mono-bin(){
-	pkgdesc="${pkgdescalt} Beta Mono Binary Version"
+	pkgdesc+="${pkgdescalt} Beta Mono Binary Version"
 	depends+=("${_monodepends}")
 	groups+=(
 		"godot-mono"
@@ -699,11 +535,12 @@ package_godot-beta-mono-bin(){
 		"godot-standard64"
 		"godot-64"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_x86_64/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux.x86_64" "${pkgdir}/opt/godot/mono/beta/standard/godot-beta-mono-bin"
-	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_x86_64/GodotSharp" "${pkgdir}/opt/godot/mono/beta/standard/GodotSharp"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_x86_64/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux.x86_64" "${pkgdir}/opt/godot/mono/godot/beta/bin/desktop/godot-beta-mono-bin"
+	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_x86_64/GodotSharp" "${pkgdir}/opt/godot/mono/godot/beta/bin/desktop/GodotSharp"
+	ln -s "/opt/godot/mono/godot/beta/bin/desktop/godot-beta-mono-bin" "${pkgdir}/opt/godot/godot-beta-mono-bin"
 	
 	install -d "${pkgdir}/usr/bin/"
-	ln -s "/opt/godot/mono/beta/standard/godot-beta-mono-bin" "${pkgdir}/usr/bin/godot-beta-mono-bin"
+	ln -s "/opt/godot/mono/godot/beta/bin/desktop/godot-beta-mono-bin" "${pkgdir}/usr/bin/godot-beta-mono-bin"
 	
 	install -d "${pkgdir}/usr/share/applications/"
 	cat > "${pkgdir}/usr/share/applications/godot-beta-mono-bin.desktop" <<-EOF
@@ -721,7 +558,7 @@ package_godot-beta-mono-bin(){
 }
 
 package_godot-beta-mono-bin32(){
-	pkgdesc="${pkgdescalt} Beta Mono Binary Version 32b"
+	pkgdesc+="${pkgdescalt} Beta Mono Binary Version 32b"
 	depends+=("${_monodepends}")
 	groups+=(
 		"godot-mono"
@@ -729,11 +566,12 @@ package_godot-beta-mono-bin32(){
 		"godot-standard32"
 		"godot-32"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_x86_32/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux.x86_32" "${pkgdir}/opt/godot/mono/beta/standard32/godot-beta-mono-bin32"
-	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_x86_32/GodotSharp" "${pkgdir}/opt/godot/mono/beta/standard32/GodotSharp"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_x86_32/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux.x86_32" "${pkgdir}/opt/godot/mono/godot/beta/bin/desktop32/godot-beta-mono-bin32"
+	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_x86_32/GodotSharp" "${pkgdir}/opt/godot/mono/godot/beta/bin/desktop32/GodotSharp"
+	ln -s "/opt/godot/mono/godot/beta/bin/desktop32/godot-beta-mono-bin32" "${pkgdir}/opt/godot/godot-beta-mono-bin32"
 	
 	install -d "${pkgdir}/usr/bin/"
-	ln -s "/opt/godot/mono/beta/standard/godot-beta-mono-bin32" "${pkgdir}/usr/bin/godot-beta-mono-bin32"
+	ln -s "/opt/godot/mono/godot/beta/bin/desktop32/godot-beta-mono-bin32" "${pkgdir}/usr/bin/godot-beta-mono-bin32"
 	
 	install -d "${pkgdir}/usr/share/applications/"
 	cat > "${pkgdir}/usr/share/applications/godot-beta-mono-bin32.desktop" <<-EOF
@@ -751,112 +589,48 @@ package_godot-beta-mono-bin32(){
 }
 
 package_godot-beta-mono-export-templates-bin(){
-	pkgdesc="${pkgdescalt} Beta Export Templates Mono Binary Version"
+	pkgdesc+="${pkgdescalt} Beta Export Templates Mono Binary Version"
 	groups+=(
 		"godot-mono"
 		"godot-export-templates"
 	)
 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot-beta-mono-export-templates-bin.tpz"
 }
-beta='
-package_libgodot-beta-mono-bin(){
-	pkgdesc="${pkgdescalt} Beta LibGodot Mono Binary Version"
-	groups+=(
-		"godot-mono"
-		"godot-lib"
-	)
-	install -Dm755 "${srcdir}/godot-lib.${_pkgver}.beta${_pkgverb}.mono.release.aar" "${pkgdir}/opt/godot/godot-lib/libgodot-beta-mono-bin.aar"
-}
-
-package_godot-beta-headless-mono-bin(){
-	pkgdesc="${pkgdescalt} Beta Headless Mono Binary Version"
-	depends+=("${_monodepends}")
-	groups+=(
-		"godot-mono"
-		"godot-headless"
-		"godot-64"
-	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_headless_64/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_headless.64" "${pkgdir}/opt/godot/mono/beta/headless/godot-beta-headless-mono-bin"
-	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_headless_64/GodotSharp" "${pkgdir}/opt/godot/mono/beta/headless/GodotSharp"
-	
-	install -d "${pkgdir}/usr/bin/"
-	ln -s "/opt/godot/mono/beta/headless/godot-beta-headless-bin" "${pkgdir}/usr/bin/godot-beta-headless-mono-bin"
-	
-	install -d "${pkgdir}/usr/share/applications/"
-	cat > "${pkgdir}/usr/share/applications/godot-beta-headless-mono-bin.desktop" <<-EOF
-		[Desktop Entry]
-		Name=Godot Headless Engine Beta Mono Binary v${_pkgver}-beta${_pkgverb}
-		GenericName="Advanced cross-platform 2D and 3D libre game engine. Beta Headless Mono Binary Version"
-		Comment=Application for making games
-		Exec=/usr/bin/godot-beta-headless-mono-bin %U
-		Icon=godot
-		Terminal=false
-		Type=Application
-		MimeType=application/x-godot-project;
-		Categories=Development;IDE;
-	EOF
-}
-
-package_godot-beta-server-mono-bin(){
-	pkgdesc="${pkgdescalt} Beta Server Mono Binary Version"
-	depends+=("${_monodepends}")
-	groups+=(
-		"godot-mono"
-		"godot-server"
-		"godot-64"
-	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_server_64/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_server.64" "${pkgdir}/opt/godot/mono/beta/server/godot-beta-server-mono-bin"
-	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_server_64/data_Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_server_64" "${pkgdir}/opt/godot/mono/beta/server/data_Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_server_64"
-	
-	install -d "${pkgdir}/usr/bin/"
-	ln -s "/opt/godot/mono/beta/server/godot-beta-server-mono-bin" "${pkgdir}/usr/bin/godot-beta-server-mono-bin"
-	
-	install -d "${pkgdir}/usr/share/applications/"
-	cat > "${pkgdir}/usr/share/applications/godot-beta-server-mono-bin.desktop" <<-EOF
-		[Desktop Entry]
-		Name=Godot Engine Beta Mono Binary v${_pkgver}-beta${_pkgverb}
-		GenericName="Advanced cross-platform 2D and 3D libre game engine. Beta Headless Mono Binary Version"
-		Comment=Application for making games
-		Exec=/usr/bin/godot-beta-server-mono-bin %U
-		Icon=godot
-		Terminal=false
-		Type=Application
-		MimeType=application/x-godot-project;
-		Categories=Development;IDE;
-	EOF
-}'
 
 package_godot-beta-mono-osx-bin(){
-	pkgdesc="${pkgdescalt} Beta MacOSX Mono Binary Version"
+	pkgdesc+="${pkgdescalt} Beta MacOSX Mono Binary Version"
 	groups+=(
 		"godot-mono"
 		"godot-osx"
 		"godot-osx-universal"
 	)
-	install -Dm755 "${srcdir}/Godot_mono.app/Contents/MacOS/Godot" "${pkgdir}/opt/godot/mono/beta/standard-osx/godot-beta-mono-osx-bin"
-	cp -r "${srcdir}/Godot_mono.app/Contents/Resources/GodotSharp" "${pkgdir}/opt/godot/mono/beta/standard-osx/GodotSharp-bin"
+	install -Dm755 "${srcdir}/Godot_mono.app/Contents/MacOS/Godot" "${pkgdir}/opt/godot/mono/godot/beta/bin/osx/godot-beta-mono-osx-bin"
+	cp -r "${srcdir}/Godot_mono.app/Contents/Resources/GodotSharp" "${pkgdir}/opt/godot/mono/godot/beta/bin/osx/GodotSharp"
+	ln -s "/opt/godot/mono/godot/beta/bin/osx/godot-beta-mono-osx-bin" "${pkgdir}/opt/godot/godot-beta-mono-osx-bin"
 }
 
 package_godot-beta-mono-win32-bin(){
-	pkgdesc="${pkgdescalt} Beta Windows Mono Binary Version 32b"
+	pkgdesc+="${pkgdescalt} Beta Windows Mono Binary Version 32b"
 	groups+=(
 		"godot-mono"
 		"godot-win"
 		"godot-win32"
 		"godot-32"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_win32/Godot_v${_pkgver}-beta${_pkgverb}_mono_win32.exe" "${pkgdir}/opt/godot/mono/beta/standard-win32/godot-beta-win32-bin.exe"
-	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_win32/GodotSharp" "${pkgdir}/opt/godot/mono/beta/standard-win32/GodotSharp"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_win32/Godot_v${_pkgver}-beta${_pkgverb}_mono_win32.exe" "${pkgdir}/opt/godot/mono/godot/beta/bin/win32/godot-beta-win32-bin.exe"
+	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_win32/GodotSharp" "${pkgdir}/opt/godot/mono/godot/beta/bin/win32/GodotSharp"
+	ln -s "/opt/godot/mono/godot/beta/bin/win32/godot-beta-mono-win32-bin.exe" "${pkgdir}/opt/godot/godot-beta-mono-win32-bin.exe"
 }
 
 package_godot-beta-mono-win64-bin(){
-	pkgdesc="${pkgdescalt} Beta Windows Mono Binary Version 64b"
+	pkgdesc+="${pkgdescalt} Beta Windows Mono Binary Version 64b"
 	groups+=(
 		"godot-mono"
 		"godot-win"
 		"godot-win64"
 		"godot-64"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_win64/Godot_v${_pkgver}-beta${_pkgverb}_mono_win64.exe" "${pkgdir}/opt/godot/mono/beta/standard-win64/godot-beta-win64-bin.exe"
-	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_win64/GodotSharp" "${pkgdir}/opt/godot/mono/beta/standard-win64/GodotSharp"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_win64/Godot_v${_pkgver}-beta${_pkgverb}_mono_win64.exe" "${pkgdir}/opt/godot/mono/godot/beta/bin/win64/godot-beta-mono-win64-bin.exe"
+	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_win64/GodotSharp" "${pkgdir}/opt/godot/mono/godot/beta/bin/win64/GodotSharp"
+	ln -s "/opt/godot/mono/godot/beta/bin/win64/godot-beta-mono-win64-bin.exe" "${pkgdir}/opt/godot/godot-beta-mono-win64-bin.exe"
 }

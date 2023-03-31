@@ -1,6 +1,9 @@
 *
 !.gitignore
 !README.md
+!LICENSE
+
+!makegodot.env.bak
 
 !makegodot.sh
 !makerepogodot.sh

@@ -1,33 +1,30 @@
 # Maintainer: JackNapier <jacknapier151@gmail.com>
 # Contributor: 
 
-_nameC="Godot"
-_nameL="godotengine"
-_name="godot"
-pkgname="${_name}-base"
+pkgname="godot-base"
 pkgver="0.0"
-pkgrel=1
+pkgrel=0
 pkgdesc="Godot Game Engine: An advanced, feature packed, multi-platform 2D and 3D game engine. Base Documents"
-url="http://www.${_nameL}.org"
+url="http://www.godotengine.org"
 license=("MIT")
 groups=(
-	"${_name}-full"
+	"godot-full"
 )
 arch=("any")
 source=(
-	"${_name}.png::https://github.com/${_nameL}/${_name}/raw/master/icon.png"
-	"${_name}.svg::https://github.com/${_nameL}/${_name}/raw/master/icon.svg"
-	"${_name}_outlined.png::https://github.com/${_nameL}/${_name}/raw/master/icon_outlined.png"
-	"${_name}_outlined.svg::https://github.com/${_nameL}/${_name}/raw/master/icon_outlined.svg"
-	"${_name}_logo.png::https://github.com/${_nameL}/${_name}/raw/master/logo.png"
-	"${_name}_logo.svg::https://github.com/${_nameL}/${_name}/raw/master/logo.svg"
-	"${_name}_logo_outlined.png::https://github.com/${_nameL}/${_name}/raw/master/logo_outlined.png"
-	"${_name}_logo_outlined.svg::https://github.com/${_nameL}/${_name}/raw/master/logo_outlined.svg"
-	"LICENSE::https://github.com/${_nameL}/${_name}/raw/master/LICENSE.txt"
-	"LOGO_LICENSE::https://github.com/${_nameL}/${_name}/raw/master/LOGO_LICENSE.md"
-	"COPYRIGHT::https://github.com/${_nameL}/${_name}/raw/master/COPYRIGHT.txt"
-	"AUTHORS::https://github.com/${_nameL}/${_name}/raw/master/AUTHORS.md"
-	"DONORS::https://github.com/${_nameL}/${_name}/raw/master/DONORS.md"
+	"godot_icon.png::https://github.com/godotengine/godot/raw/master/icon.png"
+	"godot_icon.svg::https://github.com/godotengine/godot/raw/master/icon.svg"
+	"godot_icon_outlined.png::https://github.com/godotengine/godot/raw/master/icon_outlined.png"
+	"godot_icon_outlined.svg::https://github.com/godotengine/godot/raw/master/icon_outlined.svg"
+	"godot_logo.png::https://github.com/godotengine/godot/raw/master/logo.png"
+	"godot_logo.svg::https://github.com/godotengine/godot/raw/master/logo.svg"
+	"godot_logo_outlined.png::https://github.com/godotengine/godot/raw/master/logo_outlined.png"
+	"godot_logo_outlined.svg::https://github.com/godotengine/godot/raw/master/logo_outlined.svg"
+	"LICENSE.txt::https://github.com/godotengine/godot/raw/master/LICENSE.txt"
+	"LOGO_LICENSE.md::https://github.com/godotengine/godot/raw/master/LOGO_LICENSE.md"
+	"COPYRIGHT.txt::https://github.com/godotengine/godot/raw/master/COPYRIGHT.txt"
+	"AUTHORS.md::https://github.com/godotengine/godot/raw/master/AUTHORS.md"
+	"DONORS.md::https://github.com/godotengine/godot/raw/master/DONORS.md"
 )
 sha512sums=(
 	"SKIP"
@@ -45,20 +42,20 @@ sha512sums=(
 	"SKIP"
 )
 package() {
-	cd "${srcdir}"
+	install -Dm644 "${srcdir}"/godot_icon.png "${pkgdir}"/usr/share/pixmaps/godot_icon.png
+	install -Dm644 "${srcdir}"/godot_icon.svg "${pkgdir}"/usr/share/pixmaps/godot_icon.svg
+	install -Dm644 "${srcdir}"/godot_icon_outlined.png "${pkgdir}"/usr/share/pixmaps/godot_icon_outlined.png
+	install -Dm644 "${srcdir}"/godot_icon_outlined.svg "${pkgdir}"/usr/share/pixmaps/godot_icon_outlined.svg
+	install -Dm644 "${srcdir}"/godot_logo.png "${pkgdir}"/usr/share/pixmaps/godot_logo.png
+	install -Dm644 "${srcdir}"/godot_logo.svg "${pkgdir}"/usr/share/pixmaps/godot_logo.svg
+	install -Dm644 "${srcdir}"/godot_logo_outlined.png "${pkgdir}"/usr/share/pixmaps/godot_logo_outlined.png
+	install -Dm644 "${srcdir}"/godot_logo_outlined.svg "${pkgdir}"/usr/share/pixmaps/godot_logo_outlined.svg
 
-	install -Dm644 "${_name}".png "${pkgdir}"/usr/share/pixmaps/"${_name}".png
-#	install -Dm644 "${_name}".svg "${pkgdir}"/usr/share/pixmaps/"${_name}".svg
-	install -Dm644 "${_name}"_outlined.png "${pkgdir}"/usr/share/pixmaps/"${_name}"_outlined.png
-	install -Dm644 "${_name}"_outlined.svg "${pkgdir}"/usr/share/pixmaps/"${_name}"_outlined.svg
-	install -Dm644 "${_name}"_logo.png "${pkgdir}"/usr/share/pixmaps/"${_name}"_logo.png
-	install -Dm644 "${_name}"_logo.svg "${pkgdir}"/usr/share/pixmaps/"${_name}"_logo.svg
-	install -Dm644 "${_name}"_logo_outlined.png "${pkgdir}"/usr/share/pixmaps/"${_name}"_logo_outlined.png
-	install -Dm644 "${_name}"_logo_outlined.svg "${pkgdir}"/usr/share/pixmaps/"${_name}"_logo_outlined.svg
+	install -Dm644 "${srcdir}"/LICENSE.txt "${pkgdir}"/usr/share/licenses/godot-base/LICENSE
+	install -Dm644 "${srcdir}"/LOGO_LICENSE.md "${pkgdir}"/usr/share/licenses/godot-base/LOGO_LICENSE.md
+	install -Dm644 "${srcdir}"/COPYRIGHT.txt "${pkgdir}"/usr/share/licenses/godot-base/COPYRIGHT
+	install -Dm644 "${srcdir}"/AUTHORS.md "${pkgdir}"/usr/share/licenses/godot-base/AUTHORS.md
+	install -Dm644 "${srcdir}"/DONORS.md "${pkgdir}"/usr/share/licenses/godot-base/DONORS.md
 
-	install -Dm644 LICENSE "${pkgdir}"/usr/share/licenses/"${pkgname}"/LICENSE
-	install -Dm644 LOGO_LICENSE "${pkgdir}"/usr/share/licenses/"${pkgname}"/LOGO_LICENSE
-	install -Dm644 COPYRIGHT "${pkgdir}"/usr/share/licenses/"${pkgname}"/COPYRIGHT
-	install -Dm644 AUTHORS "${pkgdir}"/usr/share/licenses/"${pkgname}"/AUTHORS
-	install -Dm644 DONORS "${pkgdir}"/usr/share/licenses/"${pkgname}"/DONORS
+	ln -s "/usr/share/pixmaps/godot_icon.png" "${pkgdir}/usr/share/pixmaps/godot.png"
 }

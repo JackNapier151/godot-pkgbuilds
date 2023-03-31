@@ -1,13 +1,10 @@
 # Maintainer: JackNapier <jacknapier151@gmail.com>
 # Contributor: 
 
-_nameC="Godot"
-_name="godot"
-_branch="stable"
-_pkgname="godot1"
-_pkgbranch="-${_branch}"
 pkgname=(
-	# Godot GDScript
+	##################
+	# Godot GDScript #
+	##################
 	"godot1-stable-bin"
 	"godot1-stable-bin32"
 	"godot1-stable-server-bin"
@@ -25,7 +22,7 @@ groups=(
 	"godot-full"
 	"godot1"
 	"godot11"
-	"godot-old"
+	"godot-oldold"
 	"godot-bin"
 	"godot-stable"
 	"godot-gdscript"
@@ -46,6 +43,9 @@ depends=(
 	"mesa"
 )
 
+##################
+# Godot GDScript #
+##################
 source=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}_stable_x11.64.zip")
 sha512sums=("SKIP")
 package_godot1-stable-bin(){
