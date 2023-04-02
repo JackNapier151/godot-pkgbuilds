@@ -3,13 +3,13 @@
 # Versions Package
 | Package  | Godot 4/Godot | Godot 3/GodotLTS | Godot 2          | Godot 1 |
 |:--------:|:-------------:|:----------------:|:----------------:|:-------:|
-| Latest   | 4.0.1src2     | 3.5.2            | ―                | ―       |
+| Latest   | 4.0.2rc1      | 3.5.2            | ―                | ―       |
 | Dev      | 4.0d20220118  | ―                | ―                | ―       |
 | Alpha    | 4.0a17        | 3.2a3            | ―                | ―       |
 | Beta     | 4.0b17        | 3.5b5            | ―                | ―       |
 | RC       | 4.0rc6        | 3.5rc8           | ―                | ―       |
-| StableRC | 4.0.1src2     | 3.5.2src2        | 2.1.7src20200815 | ―       |
-| Stable   | 4.0           | 3.5.2            | 2.1.6            | 1.1     |
+| StableRC | 4.0.2rc1      | 3.5.2src2        | 2.1.7src20200815 | ―       |
+| Stable   | 4.0.1         | 3.5.2            | 2.1.6            | 1.1     |
 
 # Package in PKGBUILDS
 
