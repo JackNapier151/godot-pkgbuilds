@@ -966,7 +966,7 @@ package_godot3-latest-src(){
 		"godot-src"
 	)
 	install -d "${pkgdir}/opt/godot/src/godot3-latest/"
-	cp -r "${srcdir}/godot-${_pkgver}-latest${_pkgverb}/"* "${pkgdir}/opt/godot/src/godot3-latest/"
+	cp -r "${srcdir}/godot-${_pkgver}-beta${_pkgverb}/"* "${pkgdir}/opt/godot/src/godot3-latest/"
 }
 
 ##################
@@ -982,7 +982,7 @@ package_godot3-latest-bin(){
 		"godot-standard64"
 		"godot-64"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_x11.64" "${pkgdir}/opt/godot/godot3-latest-bin"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_x11.64" "${pkgdir}/opt/godot/godot3-latest-bin"
 	
 	install -d "${pkgdir}/usr/bin/"
 	ln -s "/opt/godot/godot3-latest-bin" "${pkgdir}/usr/bin/godot3-latest-bin"
@@ -1011,7 +1011,7 @@ package_godot3-latest-bin32(){
 		"godot-standard32"
 		"godot-32"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_x11.32" "${pkgdir}/opt/godot/godot3-latest-bin32"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_x11.32" "${pkgdir}/opt/godot/godot3-latest-bin32"
 	
 	install -d "${pkgdir}/usr/bin/"
 	ln -s "/opt/godot/godot3-latest-bin32" "${pkgdir}/usr/bin/godot3-latest-bin32"
@@ -1038,7 +1038,7 @@ package_godot3-latest-export-templates-bin(){
 		"godot-gdscript"
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot3-latest-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot3-latest-export-templates-bin.tpz"
 }
 
 package_libgodot3-latest-bin(){
@@ -1048,7 +1048,7 @@ package_libgodot3-latest-bin(){
 		"godot-gdscript"
 		"godot-lib"
 	)
-	install -Dm755 "${srcdir}/godot-lib.${_pkgver}.latest${_pkgverb}.release.aar" "${pkgdir}/opt/godot/godot-lib/libgodot3-latest-bin.aar"
+	install -Dm755 "${srcdir}/godot-lib.${_pkgver}.beta${_pkgverb}.release.aar" "${pkgdir}/opt/godot/godot-lib/libgodot3-latest-bin.aar"
 }
 
 package_godot3-latest-web-bin(){
@@ -1058,7 +1058,7 @@ package_godot3-latest-web-bin(){
 		"godot-gdscript"
 		"godot-web"
 	)
-	unzip "Godot_v${_pkgver}-latest${_pkgverb}_web_editor.zip" -d "${srcdir}/godot3-latest-bin"
+	unzip "Godot_v${_pkgver}-beta${_pkgverb}_web_editor.zip" -d "${srcdir}/godot3-latest-bin"
 	install -d "${pkgdir}/opt/godot/web/"
 	cp -r "${srcdir}/godot3-latest-bin" "${pkgdir}/opt/godot/web/"
 }
@@ -1071,7 +1071,7 @@ package_godot3-latest-headless-bin(){
 		"godot-headless"
 		"godot-64"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_linux_headless.64" "${pkgdir}/opt/godot/godot3-latest-headless-bin"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_linux_headless.64" "${pkgdir}/opt/godot/godot3-latest-headless-bin"
 	
 	install -d "${pkgdir}/usr/bin/"
 	ln -s "/opt/godot/godot3-latest-headless-bin" "${pkgdir}/usr/bin/godot3-latest-headless-bin"
@@ -1099,7 +1099,7 @@ package_godot3-latest-server-bin(){
 		"godot-server"
 		"godot-64"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_linux_server.64" "${pkgdir}/opt/godot/godot3-latest-server-bin"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_linux_server.64" "${pkgdir}/opt/godot/godot3-latest-server-bin"
 	
 	install -d "${pkgdir}/usr/bin/"
 	ln -s "/opt/godot/godot3-latest-server-bin" "${pkgdir}/usr/bin/godot3-latest-server-bin"
@@ -1139,8 +1139,8 @@ package_godot3-latest-win32-bin(){
 		"godot-win32"
 		"godot-32"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_win32.exe" "${pkgdir}/opt/godot/godot3-latest-win32-bin.exe"
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_win32_console.cmd" "${pkgdir}/opt/godot/godot3-latest-win32-bin.cmd"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_win32.exe" "${pkgdir}/opt/godot/godot3-latest-win32-bin.exe"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_win32_console.cmd" "${pkgdir}/opt/godot/godot3-latest-win32-bin.cmd"
 }
 
 package_godot3-latest-win64-bin(){
@@ -1152,8 +1152,8 @@ package_godot3-latest-win64-bin(){
 		"godot-win64"
 		"godot-64"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_win64.exe" "${pkgdir}/opt/godot/godot3-latest-win64-bin.exe"
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_win64_console.cmd" "${pkgdir}/opt/godot/godot3-latest-win64-bin.cmd"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_win64.exe" "${pkgdir}/opt/godot/godot3-latest-win64-bin.exe"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_win64_console.cmd" "${pkgdir}/opt/godot/godot3-latest-win64-bin.cmd"
 }
 
 package_godot3-latest-android-bin(){
@@ -1163,7 +1163,7 @@ package_godot3-latest-android-bin(){
 		"godot-gdscript"
 		"godot-android"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_android_editor.apk" "${pkgdir}/opt/godot/godot3-latest-android-bin.apk"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_android_editor.apk" "${pkgdir}/opt/godot/godot3-latest-android-bin.apk"
 }
 
 ##############
@@ -1180,8 +1180,8 @@ package_godot3-latest-mono-bin(){
 		"godot-standard64"
 		"godot-64"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_mono_x11_64/Godot_v${_pkgver}-latest${_pkgverb}_mono_x11.64" "${pkgdir}/opt/godot/mono/godot3/latest/bin/desktop/godot3-latest-mono-bin"
-	cp -r "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_mono_x11_64/GodotSharp" "${pkgdir}/opt/godot/mono/godot3/latest/bin/desktop/GodotSharp"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_x11_64/Godot_v${_pkgver}-beta${_pkgverb}_mono_x11.64" "${pkgdir}/opt/godot/mono/godot3/latest/bin/desktop/godot3-latest-mono-bin"
+	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_x11_64/GodotSharp" "${pkgdir}/opt/godot/mono/godot3/latest/bin/desktop/GodotSharp"
 	ln -s "/opt/godot/mono/godot3/latest/bin/desktop/godot3-latest-mono-bin" "${pkgdir}/opt/godot/godot3-latest-mono-bin"
 	
 	install -d "${pkgdir}/usr/bin/"
@@ -1212,8 +1212,8 @@ package_godot3-latest-mono-bin32(){
 		"godot-standard32"
 		"godot-32"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_mono_x11_32/Godot_v${_pkgver}-latest${_pkgverb}_mono_x11.32" "${pkgdir}/opt/godot/mono/godot3/latest/bin/desktop32/godot3-latest-mono-bin32"
-	cp -r "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_mono_x11_32/GodotSharp" "${pkgdir}/opt/godot/mono/godot3/latest/bin/desktop32/GodotSharp"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_x11_32/Godot_v${_pkgver}-beta${_pkgverb}_mono_x11.32" "${pkgdir}/opt/godot/mono/godot3/latest/bin/desktop32/godot3-latest-mono-bin32"
+	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_x11_32/GodotSharp" "${pkgdir}/opt/godot/mono/godot3/latest/bin/desktop32/GodotSharp"
 	ln -s "/opt/godot/mono/godot3/latest/bin/desktop32/godot3-latest-mono-bin32" "${pkgdir}/opt/godot/godot3-latest-mono-bin32"
 	
 	install -d "${pkgdir}/usr/bin/"
@@ -1241,7 +1241,7 @@ package_godot3-latest-mono-export-templates-bin(){
 		"godot-mono"
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot3-latest-mono-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot3-latest-mono-export-templates-bin.tpz"
 }
 
 package_libgodot3-latest-mono-bin(){
@@ -1251,7 +1251,7 @@ package_libgodot3-latest-mono-bin(){
 		"godot-mono"
 		"godot-lib"
 	)
-	install -Dm755 "${srcdir}/godot-lib.${_pkgver}.latest${_pkgverb}.mono.release.aar" "${pkgdir}/opt/godot/godot-lib/libgodot3-latest-mono-bin.aar"
+	install -Dm755 "${srcdir}/godot-lib.${_pkgver}.beta${_pkgverb}.mono.release.aar" "${pkgdir}/opt/godot/godot-lib/libgodot3-latest-mono-bin.aar"
 }
 
 package_godot3-latest-headless-mono-bin(){
@@ -1263,8 +1263,8 @@ package_godot3-latest-headless-mono-bin(){
 		"godot-headless"
 		"godot-64"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_mono_linux_headless_64/Godot_v${_pkgver}-latest${_pkgverb}_mono_linux_headless.64" "${pkgdir}/opt/godot/mono/godot3/latest/bin/headless/godot3-latest-headless-mono-bin"
-	cp -r "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_mono_linux_headless_64/GodotSharp" "${pkgdir}/opt/godot/mono/godot3/latest/bin/headless/GodotSharp"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_headless_64/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_headless.64" "${pkgdir}/opt/godot/mono/godot3/latest/bin/headless/godot3-latest-headless-mono-bin"
+	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_headless_64/GodotSharp" "${pkgdir}/opt/godot/mono/godot3/latest/bin/headless/GodotSharp"
 	ln -s "/opt/godot/mono/godot3/latest/bin/headless/godot3-latest-headless-mono-bin" "${pkgdir}/opt/godot/godot3-latest-headless-mono-bin"
 	
 	install -d "${pkgdir}/usr/bin/"
@@ -1294,9 +1294,9 @@ package_godot3-latest-server-mono-bin(){
 		"godot-server"
 		"godot-64"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_mono_linux_server_64/Godot_v${_pkgver}-latest${_pkgverb}_mono_linux_server.64" "${pkgdir}/opt/godot/mono/godot3/latest/bin/server/godot3-latest-server-mono-bin"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_server_64/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_server.64" "${pkgdir}/opt/godot/mono/godot3/latest/bin/server/godot3-latest-server-mono-bin"
 	install -d "${pkgdir}/opt/godot/mono/godot3/latest/bin/server/GodotSharp"
-	cp -r "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_mono_linux_server_64/data_Godot_v${_pkgver}-latest${_pkgverb}_mono_linux_server_64" "${pkgdir}/opt/godot/mono/godot3/latest/bin/server/GodotSharp"
+	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_server_64/data_Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_server_64" "${pkgdir}/opt/godot/mono/godot3/latest/bin/server/GodotSharp"
 	ln -s "/opt/godot/mono/godot3/latest/bin/server/godot3-latest-server-mono-bin" "${pkgdir}/opt/godot/godot3-latest-server-mono-bin"
 	
 	install -d "${pkgdir}/usr/bin/"
@@ -1339,8 +1339,8 @@ package_godot3-latest-mono-win32-bin(){
 		"godot-win32"
 		"godot-32"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_mono_win32/Godot_v${_pkgver}-latest${_pkgverb}_mono_win32.exe" "${pkgdir}/opt/godot/mono/godot3/latest/win32/godot3-latest-mono-win32-bin.exe"
-	cp -r "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_mono_win32/GodotSharp" "${pkgdir}/opt/godot/mono/godot3/latest/win32/GodotSharp"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_win32/Godot_v${_pkgver}-beta${_pkgverb}_mono_win32.exe" "${pkgdir}/opt/godot/mono/godot3/latest/win32/godot3-latest-mono-win32-bin.exe"
+	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_win32/GodotSharp" "${pkgdir}/opt/godot/mono/godot3/latest/win32/GodotSharp"
 	ln -s "/opt/godot/mono/godot3/latest/bin/win32/godot3-latest-mono-win32-bin.exe" "${pkgdir}/opt/godot/godot3-latest-mono-win32-bin.exe"
 }
 
@@ -1353,8 +1353,8 @@ package_godot3-latest-mono-win64-bin(){
 		"godot-win64"
 		"godot-64"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_mono_win64/Godot_v${_pkgver}-latest${_pkgverb}_mono_win64.exe" "${pkgdir}/opt/godot/mono/godot3/latest/bin-win64/godot3-latest-mono-win64-bin.exe"
-	cp -r "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_mono_win64/GodotSharp" "${pkgdir}/opt/godot/mono/godot3/latest/bin-win64/GodotSharp"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_win64/Godot_v${_pkgver}-beta${_pkgverb}_mono_win64.exe" "${pkgdir}/opt/godot/mono/godot3/latest/bin-win64/godot3-latest-mono-win64-bin.exe"
+	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_win64/GodotSharp" "${pkgdir}/opt/godot/mono/godot3/latest/bin-win64/GodotSharp"
 	ln -s "/opt/godot/mono/godot3/latest/bin/win64/godot3-latest-mono-win64-bin.exe" "${pkgdir}/opt/godot/godot3-latest-mono-win64-bin.exe"
 }
 
@@ -1402,7 +1402,7 @@ package_godotlts-latest-src(){
 		"godot-src"
 	)
 	install -d "${pkgdir}/opt/godot/src/godotlts-latest/"
-	cp -r "${srcdir}/godot-${_pkgver}-latest${_pkgverb}/"* "${pkgdir}/opt/godot/src/godotlts-latest/"
+	cp -r "${srcdir}/godot-${_pkgver}-beta${_pkgverb}/"* "${pkgdir}/opt/godot/src/godotlts-latest/"
 }
 
 ##################
@@ -1419,7 +1419,7 @@ package_godotlts-latest-bin(){
 		"godot-standard64"
 		"godot-64"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_x11.64" "${pkgdir}/opt/godot/godotlts-latest-bin"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_x11.64" "${pkgdir}/opt/godot/godotlts-latest-bin"
 	
 	install -d "${pkgdir}/usr/bin/"
 	ln -s "/opt/godot/godotlts-latest-bin" "${pkgdir}/usr/bin/godotlts-latest-bin"
@@ -1449,7 +1449,7 @@ package_godotlts-latest-bin32(){
 		"godot-standard32"
 		"godot-32"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_x11.32" "${pkgdir}/opt/godot/godotlts-latest-bin32"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_x11.32" "${pkgdir}/opt/godot/godotlts-latest-bin32"
 	
 	install -d "${pkgdir}/usr/bin/"
 	ln -s "/opt/godot/godotlts-latest-bin32" "${pkgdir}/usr/bin/godotlts-latest-bin32"
@@ -1477,7 +1477,7 @@ package_godotlts-latest-export-templates-bin(){
 		"godot-gdscript"
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godotlts-latest-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godotlts-latest-export-templates-bin.tpz"
 }
 
 package_libgodotlts-latest-bin(){
@@ -1488,7 +1488,7 @@ package_libgodotlts-latest-bin(){
 		"godot-gdscript"
 		"godot-lib"
 	)
-	install -Dm755 "${srcdir}/godot-lib.${_pkgver}.latest${_pkgverb}.release.aar" "${pkgdir}/opt/godot/godot-lib/libgodotlts-latest-bin.aar"
+	install -Dm755 "${srcdir}/godot-lib.${_pkgver}.beta${_pkgverb}.release.aar" "${pkgdir}/opt/godot/godot-lib/libgodotlts-latest-bin.aar"
 }
 
 package_godotlts-latest-web-bin(){
@@ -1499,7 +1499,7 @@ package_godotlts-latest-web-bin(){
 		"godot-gdscript"
 		"godot-web"
 	)
-	unzip "Godot_v${_pkgver}-latest${_pkgverb}_web_editor.zip" -d "${srcdir}/godotlts-latest-bin"
+	unzip "Godot_v${_pkgver}-beta${_pkgverb}_web_editor.zip" -d "${srcdir}/godotlts-latest-bin"
 	install -d "${pkgdir}/opt/godot/web/"
 	cp -r "${srcdir}/godotlts-latest-bin" "${pkgdir}/opt/godot/web/"
 }
@@ -1513,7 +1513,7 @@ package_godotlts-latest-headless-bin(){
 		"godot-headless"
 		"godot-64"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_linux_headless.64" "${pkgdir}/opt/godot/godotlts-latest-headless-bin"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_linux_headless.64" "${pkgdir}/opt/godot/godotlts-latest-headless-bin"
 	
 	install -d "${pkgdir}/usr/bin/"
 	ln -s "/opt/godot/godotlts-latest-headless-bin" "${pkgdir}/usr/bin/godotlts-latest-headless-bin"
@@ -1542,7 +1542,7 @@ package_godotlts-latest-server-bin(){
 		"godot-server"
 		"godot-64"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_linux_server.64" "${pkgdir}/opt/godot/godotlts-latest-server-bin"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_linux_server.64" "${pkgdir}/opt/godot/godotlts-latest-server-bin"
 	
 	install -d "${pkgdir}/usr/bin/"
 	ln -s "/opt/godot/godotlts-latest-server-bin" "${pkgdir}/usr/bin/godotlts-latest-server-bin"
@@ -1584,8 +1584,8 @@ package_godotlts-latest-win32-bin(){
 		"godot-win32"
 		"godot-32"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_win32.exe" "${pkgdir}/opt/godot/godotlts-latest-win32-bin.exe"
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_win32_console.cmd" "${pkgdir}/opt/godot/godotlts-latest-win32-bin.cmd"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_win32.exe" "${pkgdir}/opt/godot/godotlts-latest-win32-bin.exe"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_win32_console.cmd" "${pkgdir}/opt/godot/godotlts-latest-win32-bin.cmd"
 }
 
 package_godotlts-latest-win64-bin(){
@@ -1598,8 +1598,8 @@ package_godotlts-latest-win64-bin(){
 		"godot-win64"
 		"godot-64"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_win64.exe" "${pkgdir}/opt/godot/godotlts-latest-win64-bin.exe"
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_win64_console.cmd" "${pkgdir}/opt/godot/godotlts-latest-win64-bin.cmd"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_win64.exe" "${pkgdir}/opt/godot/godotlts-latest-win64-bin.exe"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_win64_console.cmd" "${pkgdir}/opt/godot/godotlts-latest-win64-bin.cmd"
 }
 
 package_godotlts-latest-android-bin(){
@@ -1610,7 +1610,7 @@ package_godotlts-latest-android-bin(){
 		"godot-gdscript"
 		"godot-android"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_android_editor.apk" "${pkgdir}/opt/godot/godotlts-latest-android-bin.apk"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_android_editor.apk" "${pkgdir}/opt/godot/godotlts-latest-android-bin.apk"
 }
 
 ##############
@@ -1628,8 +1628,8 @@ package_godotlts-latest-mono-bin(){
 		"godot-standard64"
 		"godot-64"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_mono_x11_64/Godot_v${_pkgver}-latest${_pkgverb}_mono_x11.64" "${pkgdir}/opt/godot/mono/godotlts/latest/bin/desktop/godotlts-latest-mono-bin"
-	cp -r "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_mono_x11_64/GodotSharp" "${pkgdir}/opt/godot/mono/godotlts/latest/bin/desktop/GodotSharp"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_x11_64/Godot_v${_pkgver}-beta${_pkgverb}_mono_x11.64" "${pkgdir}/opt/godot/mono/godotlts/latest/bin/desktop/godotlts-latest-mono-bin"
+	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_x11_64/GodotSharp" "${pkgdir}/opt/godot/mono/godotlts/latest/bin/desktop/GodotSharp"
 	ln -s "/opt/godot/mono/godotlts/latest/bin/desktop/godotlts-latest-mono-bin" "${pkgdir}/opt/godot/godotlts-latest-mono-bin"
 	
 	install -d "${pkgdir}/usr/bin/"
@@ -1661,8 +1661,8 @@ package_godotlts-latest-mono-bin32(){
 		"godot-standard32"
 		"godot-32"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_mono_x11_32/Godot_v${_pkgver}-latest${_pkgverb}_mono_x11.32" "${pkgdir}/opt/godot/mono/godotlts/latest/bin/desktop32/godotlts-latest-mono-bin32"
-	cp -r "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_mono_x11_32/GodotSharp" "${pkgdir}/opt/godot/mono/godotlts/latest/bin/desktop32/GodotSharp"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_x11_32/Godot_v${_pkgver}-beta${_pkgverb}_mono_x11.32" "${pkgdir}/opt/godot/mono/godotlts/latest/bin/desktop32/godotlts-latest-mono-bin32"
+	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_x11_32/GodotSharp" "${pkgdir}/opt/godot/mono/godotlts/latest/bin/desktop32/GodotSharp"
 	ln -s "/opt/godot/mono/godotlts/latest/bin/desktop32/godotlts-latest-mono-bin32" "${pkgdir}/opt/godot/godotlts-latest-mono-bin32"
 	
 	install -d "${pkgdir}/usr/bin/"
@@ -1691,7 +1691,7 @@ package_godotlts-latest-mono-export-templates-bin(){
 		"godot-mono"
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godotlts-latest-mono-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godotlts-latest-mono-export-templates-bin.tpz"
 }
 
 package_libgodotlts-latest-mono-bin(){
@@ -1702,7 +1702,7 @@ package_libgodotlts-latest-mono-bin(){
 		"godot-mono"
 		"godot-lib"
 	)
-	install -Dm755 "${srcdir}/godot-lib.${_pkgver}.latest${_pkgverb}.mono.release.aar" "${pkgdir}/opt/godot/godot-lib/libgodotlts-latest-mono-bin.aar"
+	install -Dm755 "${srcdir}/godot-lib.${_pkgver}.beta${_pkgverb}.mono.release.aar" "${pkgdir}/opt/godot/godot-lib/libgodotlts-latest-mono-bin.aar"
 }
 
 package_godotlts-latest-headless-mono-bin(){
@@ -1715,8 +1715,8 @@ package_godotlts-latest-headless-mono-bin(){
 		"godot-headless"
 		"godot-64"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_mono_linux_headless_64/Godot_v${_pkgver}-latest${_pkgverb}_mono_linux_headless.64" "${pkgdir}/opt/godot/mono/godotlts/latest/bin/headless/godotlts-latest-headless-mono-bin"
-	cp -r "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_mono_linux_headless_64/GodotSharp" "${pkgdir}/opt/godot/mono/godotlts/latest/bin/headless/GodotSharp"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_headless_64/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_headless.64" "${pkgdir}/opt/godot/mono/godotlts/latest/bin/headless/godotlts-latest-headless-mono-bin"
+	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_headless_64/GodotSharp" "${pkgdir}/opt/godot/mono/godotlts/latest/bin/headless/GodotSharp"
 	ln -s "/opt/godot/mono/godotlts/latest/bin/headless/godotlts-latest-headless-mono-bin" "${pkgdir}/opt/godot/godotlts-latest-headless-mono-bin"
 	
 	install -d "${pkgdir}/usr/bin/"
@@ -1747,9 +1747,9 @@ package_godotlts-latest-server-mono-bin(){
 		"godot-server"
 		"godot-64"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_mono_linux_server_64/Godot_v${_pkgver}-latest${_pkgverb}_mono_linux_server.64" "${pkgdir}/opt/godot/mono/godotlts/latest/bin/server/godotlts-latest-server-mono-bin"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_server_64/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_server.64" "${pkgdir}/opt/godot/mono/godotlts/latest/bin/server/godotlts-latest-server-mono-bin"
 	install -d "${pkgdir}/opt/godot/mono/godotlts/latest/bin/server/GodotSharp"
-	cp -r "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_mono_linux_server_64/data_Godot_v${_pkgver}-latest${_pkgverb}_mono_linux_server_64" "${pkgdir}/opt/godot/mono/godotlts/latest/bin/server/GodotSharp"
+	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_server_64/data_Godot_v${_pkgver}-beta${_pkgverb}_mono_linux_server_64" "${pkgdir}/opt/godot/mono/godotlts/latest/bin/server/GodotSharp"
 	ln -s "/opt/godot/mono/godotlts/latest/bin/server/godotlts-latest-server-mono-bin" "${pkgdir}/opt/godot/godotlts-latest-server-mono-bin"
 	
 	install -d "${pkgdir}/usr/bin/"
@@ -1794,8 +1794,8 @@ package_godotlts-latest-mono-win32-bin(){
 		"godot-win32"
 		"godot-32"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_mono_win32/Godot_v${_pkgver}-latest${_pkgverb}_mono_win32.exe" "${pkgdir}/opt/godot/mono/godotlts/latest/bin/win32/godotlts-latest-mono-win32-bin.exe"
-	cp -r "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_mono_win32/GodotSharp" "${pkgdir}/opt/godot/mono/godotlts/latest/bin/win32/GodotSharp"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_win32/Godot_v${_pkgver}-beta${_pkgverb}_mono_win32.exe" "${pkgdir}/opt/godot/mono/godotlts/latest/bin/win32/godotlts-latest-mono-win32-bin.exe"
+	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_win32/GodotSharp" "${pkgdir}/opt/godot/mono/godotlts/latest/bin/win32/GodotSharp"
 	ln -s "/opt/godot/mono/godotlts/latest/bin/win32/godotlts-latest-mono-win32-bin.exe" "${pkgdir}/opt/godot/godotlts-latest-mono-win32-bin.exe"
 }
 
@@ -1809,7 +1809,7 @@ package_godotlts-latest-mono-win64-bin(){
 		"godot-win64"
 		"godot-64"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_mono_win64/Godot_v${_pkgver}-latest${_pkgverb}_mono_win64.exe" "${pkgdir}/opt/godot/mono/godotlts/latest/bin/win64/godotlts-latest-mono-win64-bin.exe"
-	cp -r "${srcdir}/Godot_v${_pkgver}-latest${_pkgverb}_mono_win64/GodotSharp" "${pkgdir}/opt/godot/mono/godotlts/latest/bin/win64/GodotSharp"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_win64/Godot_v${_pkgver}-beta${_pkgverb}_mono_win64.exe" "${pkgdir}/opt/godot/mono/godotlts/latest/bin/win64/godotlts-latest-mono-win64-bin.exe"
+	cp -r "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_win64/GodotSharp" "${pkgdir}/opt/godot/mono/godotlts/latest/bin/win64/GodotSharp"
 	ln -s "/opt/godot/mono/godotlts/latest/bin/win64/godotlts-latest-mono-win64-bin.exe" "${pkgdir}/opt/godot/godotlts-latest-mono-win64-bin.exe"
 }
