@@ -3,13 +3,13 @@
 # Versions Package
 | Package  | Godot 4/Godot | Godot 3/GodotLTS | Godot 2          | Godot 1 |
 |:--------:|:-------------:|:----------------:|:----------------:|:-------:|
-| Latest   | 4.0.2         | 3.6b1            | ―                | ―       |
-| Dev      | 4.0d20220118  | ―                | ―                | ―       |
+| Latest   | 4.1b2         | 3.6b2            | ―                | ―       |
+| Dev      | 4.1d4         | ―                | ―                | ―       |
 | Alpha    | 4.0a17        | 3.2a3            | ―                | ―       |
-| Beta     | 4.0b17        | 3.6b1            | ―                | ―       |
+| Beta     | 4.1b2         | 3.6b2            | ―                | ―       |
 | RC       | 4.0rc6        | 3.5rc8           | ―                | ―       |
-| StableRC | 4.0.2rc1      | 3.5.2src2        | 2.1.7src20200815 | ―       |
-| Stable   | 4.0.2         | 3.5.2            | 2.1.6            | 1.1     |
+| StableRC | 4.0.3rc2      | 3.5.2src2        | 2.1.7src20200815 | ―       |
+| Stable   | 4.0.3         | 3.5.2            | 2.1.6            | 1.1     |
 
 # Package in PKGBUILDS
 
@@ -40,19 +40,20 @@
 ## GDScript
 
 ### Godot 4
-| Package    | Latest | Dev | Alpha | Beta | RC |
-|:----------:|:------:|:---:|:-----:|:----:|:--:|
-| standard   | X      | X   | X     | X    | X  |
-| standard32 | X      | X   | X     | X    | X  |
-| templates  | X      | X   | X     | X    | X  |
-| lib        | X      | X   | X     | X    | X  |
-| web        | X      | ―   | ―     | X    | X  |
-| headless   | ―      | ―   | ―     | ―    | ―  |
-| server     | ―      | ―   | ―     | ―    | ―  |
-| osx        | X      | X   | X     | X    | X  |
-| win32      | X      | X   | X     | X    | X  |
-| win64      | X      | X   | X     | X    | X  |
-| android    | X      | ―   | X     | X    | X  |
+| Package     | Latest | Dev | Alpha | Beta | RC | Stable |
+|:-----------:|:------:|:---:|:-----:|:----:|:--:|:------:|
+| standard    | X      | X   | X     | X    | X  | X      |
+| standard32  | X      | X   | X     | X    | X  | X      |
+| templates   | X      | X   | X     | X    | X  | X      |
+| lib         | X      | X   | X     | X    | X  | X      |
+| web         | X      | X   | ―     | X    | X  | X      |
+| headless    | ―      | ―   | ―     | ―    | ―  | ―      |
+| server      | ―      | ―   | ―     | ―    | ―  | ―      |
+| osx         | X      | X   | X     | X    | X  | X      |
+| win32       | X      | X   | X     | X    | X  | X      |
+| win64       | X      | X   | X     | X    | X  | X      |
+| android apk | X      | X   | X     | X    | X  | X      |
+| android aab | X      | X   | ―     | X    | ―  | ―      |
 
 ### Godot 3
 | Package    | Latest | Alpha | Beta | RC | StableRC | Stable |
@@ -102,19 +103,20 @@
 ## Mono
 
 ### Godot 4
-| Package    | Latest | Beta | RC |
-|:----------:|:------:|:----:|:--:|
-| standard   | X      | X    | X  |
-| standard32 | X      | X    | X  |
-| templates  | X      | X    | X  |
-| lib        | ―      | ―    | ―  |
-| web        | ―      | ―    | ―  |
-| headless   | ―      | ―    | ―  |
-| server     | ―      | ―    | ―  |
-| osx        | X      | X    | X  |
-| win32      | X      | X    | X  |
-| win64      | X      | X    | X  |
-| android    | ―      | ―    | ―  |
+| Package     | Latest | Dev | Alpha | Beta | RC | StableRC | Stable |
+|:-----------:|:------:|:---:|:-----:|:----:|:--:|:--------:|:------:|
+| standard    | X      | X   | X     | X    | X  | X        | X      |
+| standard32  | X      | X   | X     | X    | X  | X        | X      |
+| templates   | X      | X   | X     | X    | X  | X        | X      |
+| lib         | ―      | ―   | ―     | ―    | ―  | ―        | ―      |
+| web         | ―      | ―   | ―     | ―    | ―  | ―        | ―      |
+| headless    | ―      | ―   | ―     | ―    | ―  | ―        | ―      |
+| server      | ―      | ―   | ―     | ―    | ―  | ―        | ―      |
+| osx         | X      | X   | X     | X    | X  | X        | X      |
+| win32       | X      | X   | X     | X    | X  | X        | X      |
+| win64       | X      | X   | X     | X    | X  | X        | X      |
+| android apk | ―      | ―   | ―     | ―    | ―  | ―        | ―      |
+| android aab | ―      | ―   | ―     | ―    | ―  | ―        | ―      |
 
 ### Godot 3
 | Package    | Latest | Alpha | Beta | RC | StableRC | Stable |

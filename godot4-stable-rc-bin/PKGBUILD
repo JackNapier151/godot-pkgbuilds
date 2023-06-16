@@ -28,8 +28,8 @@ pkgname=(
 	"godot4-stable-rc-mono-win32-bin"
 	"godot4-stable-rc-mono-win64-bin"
 	)
-_pkgver="4.0.2"
-_pkgverb=1
+_pkgver="4.0.3"
+_pkgverb=2
 pkgver="${_pkgver}src${_pkgverb}"
 pkgrel=1
 pkgdesc="Godot4 Game Engine: An advanced, feature packed, multi-platform 2D and 3D game engine."
@@ -39,7 +39,7 @@ groups=(
 	"godot-full"
 	"godot4"
 	"godot40"
-	"godot401"
+	"godot403"
 	"godot-bin"
 	"godot-src"
 )
