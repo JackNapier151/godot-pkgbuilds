@@ -28,7 +28,7 @@ pkgname=(
 	"godot4-stable-mono-win32-bin"
 	"godot4-stable-mono-win64-bin"
 	)
-pkgver="4.0.3"
+pkgver="4.1.1"
 pkgrel=1
 pkgdesc="Godot4 Game Engine: An advanced, feature packed, multi-platform 2D and 3D game engine."
 url="http://www.godotengine.org"

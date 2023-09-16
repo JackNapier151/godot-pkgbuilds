@@ -1,15 +1,15 @@
 # Godot PKGBUILDS to ArchWay Distributions
 
 # Versions Package
-| Package  | Godot 4/Godot | Godot 3/GodotLTS | Godot 2          | Godot 1 |
-|:--------:|:-------------:|:----------------:|:----------------:|:-------:|
-| Latest   | 4.1b2         | 3.6b2            | ―                | ―       |
-| Dev      | 4.1d4         | ―                | ―                | ―       |
-| Alpha    | 4.0a17        | 3.2a3            | ―                | ―       |
-| Beta     | 4.1b2         | 3.6b2            | ―                | ―       |
-| RC       | 4.0rc6        | 3.5rc8           | ―                | ―       |
-| StableRC | 4.0.3rc2      | 3.5.2src2        | 2.1.7src20200815 | ―       |
-| Stable   | 4.0.3         | 3.5.2            | 2.1.6            | 1.1     |
+| Package  | Godot 4 / Godot | Godot 3/ Godot LTS | Godot 2          | Godot 1 |
+|:--------:|:---------------:|:------------------:|:----------------:|:-------:|
+| Latest   | 4.2d4           | 3.6b3              | ―                | ―       |
+| Dev      | 4.2d4           | ―                  | ―                | ―       |
+| Alpha    | 4.0a17          | 3.2a3              | ―                | ―       |
+| Beta     | 4.1b3           | 3.6b3              | ―                | ―       |
+| RC       | 4.1rc3          | 3.5rc8             | ―                | ―       |
+| StableRC | 4.1.1rc1        | 3.5.3src1          | 2.1.7src20200815 | ―       |
+| Stable   | 4.1.1           | 3.5.2              | 2.1.6            | 1.1     |
 
 # Package in PKGBUILDS
 

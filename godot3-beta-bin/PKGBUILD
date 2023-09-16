@@ -34,7 +34,7 @@ pkgname=(
 	"godot3-beta-mono-win64-bin"
 	)
 _pkgver="3.6"
-_pkgverb=2
+_pkgverb=3
 #pkgver="${_pkgver}beta${_pkgverb}"
 pkgver="${_pkgver}b${_pkgverb}"
 pkgrel=1

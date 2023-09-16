@@ -28,7 +28,7 @@ pkgname=(
 	"godot4-dev-mono-win32-bin"
 	"godot4-dev-mono-win64-bin"
 	)
-_pkgver="4.1"
+_pkgver="4.2"
 _pkgverb=4
 #pkgver="${_pkgver}dev${_pkgverb}"
 pkgver="${_pkgver}d${_pkgverb}"
