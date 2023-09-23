@@ -20,11 +20,38 @@ source=(
 	"godot_logo.svg::https://github.com/godotengine/godot/raw/master/logo.svg"
 	"godot_logo_outlined.png::https://github.com/godotengine/godot/raw/master/logo_outlined.png"
 	"godot_logo_outlined.svg::https://github.com/godotengine/godot/raw/master/logo_outlined.svg"
+
+	"godot_icon_console.svg::https://github.com/godotengine/godot/raw/master/misc/dist/icon_console.svg"
+	"godot_project_icon.svg::https://github.com/godotengine/godot/raw/master/misc/dist/project_icon.svg"
+	"godot_gdscript.svg::https://github.com/godotengine/godot/raw/master/dist/document_icons/gdscript.svg"
+	"godot_gdscript_extra_small.svg::https://github.com/godotengine/godot/raw/master/dist/document_icons/gdscript_extra_small.svg"
+	"godot_gdscript_small.svg::https://github.com/godotengine/godot/raw/master/dist/document_icons/gdscript_small.svg"
+	"godot_project.svg::https://github.com/godotengine/godot/raw/master/dist/document_icons/project.svg"
+	"godot_project_extra_small.svg::https://github.com/godotengine/godot/raw/master/dist/document_icons/project_extra_small.svg"
+	"godot_project_small.svg::https://github.com/godotengine/godot/raw/master/dist/document_icons/project_small.svg"
+	"godot_resource.svg::https://github.com/godotengine/godot/raw/master/dist/document_icons/resource.svg"
+	"godot_resource_extra_small.svg::https://github.com/godotengine/godot/raw/master/dist/document_icons/resource_extra_small.svg"
+	"godot_resource_small.svg::https://github.com/godotengine/godot/raw/master/dist/document_icons/resource_small.svg"
+	"godot_scene.svg::https://github.com/godotengine/godot/raw/master/dist/document_icons/scene.svg"
+	"godot_scene_extra_small.svg::https://github.com/godotengine/godot/raw/master/dist/document_icons/scene_extra_small.svg"
+	"godot_scene_small.svg::https://github.com/godotengine/godot/raw/master/dist/document_icons/scene_small.svg"
+	"godot_shader.svg::https://github.com/godotengine/godot/raw/master/dist/document_icons/shader.svg"
+	"godot_shader_extra_small.svg::https://github.com/godotengine/godot/raw/master/dist/document_icons/shader_extra_small.svg"
+	"godot_shader_small.svg::https://github.com/godotengine/godot/raw/master/dist/document_icons/shader_small.svg"
+
 	"LICENSE.txt::https://github.com/godotengine/godot/raw/master/LICENSE.txt"
 	"LOGO_LICENSE.md::https://github.com/godotengine/godot/raw/master/LOGO_LICENSE.md"
 	"COPYRIGHT.txt::https://github.com/godotengine/godot/raw/master/COPYRIGHT.txt"
 	"AUTHORS.md::https://github.com/godotengine/godot/raw/master/AUTHORS.md"
 	"DONORS.md::https://github.com/godotengine/godot/raw/master/DONORS.md"
+
+	"godot-base.6::https://github.com/godotengine/godot/raw/master/misc/dist/linux/godot.6"
+	"org.godotengine.godot-base.desktop::https://github.com/godotengine/godot/raw/master/misc/dist/linux/org.godotengine.Godot.desktop"
+	"org.godotengine.godot-base.xml::https://github.com/godotengine/godot/raw/master/misc/dist/linux/org.godotengine.Godot.xml"
+	"org.godotengine.godot-base.appdata.xml::https://github.com/godotengine/godot/raw/master/misc/dist/linux/org.godotengine.Godot.appdata.xml"
+	"godot-base.fish::https://github.com/godotengine/godot/raw/master//misc/dist/shell/godot.fish"
+	"godot-base.bash-completion::https://github.com/godotengine/godot/raw/master/misc/dist/shell/godot.bash-completion"
+	"_godot-base.zsh-completion::https://github.com/godotengine/godot/raw/master/_godot.zsh-completion"
 )
 sha512sums=(
 	"SKIP"
@@ -33,6 +60,33 @@ sha512sums=(
 	"SKIP"
 	"SKIP"
 	"SKIP"
+	"SKIP"
+	"SKIP"
+
+	"SKIP"
+	"SKIP"
+	"SKIP"
+	"SKIP"
+	"SKIP"
+	"SKIP"
+	"SKIP"
+	"SKIP"
+	"SKIP"
+	"SKIP"
+	"SKIP"
+	"SKIP"
+	"SKIP"
+	"SKIP"
+	"SKIP"
+	"SKIP"
+	"SKIP"
+
+	"SKIP"
+	"SKIP"
+	"SKIP"
+	"SKIP"
+	"SKIP"
+
 	"SKIP"
 	"SKIP"
 	"SKIP"
@@ -44,6 +98,7 @@ sha512sums=(
 package() {
 	install -Dm644 "${srcdir}"/godot_icon.png "${pkgdir}"/usr/share/pixmaps/godot_icon.png
 	install -Dm644 "${srcdir}"/godot_icon.svg "${pkgdir}"/usr/share/pixmaps/godot_icon.svg
+	ln -s "/usr/share/pixmaps/godot_icon.png" "${pkgdir}/usr/share/pixmaps/godot.png"
 	install -Dm644 "${srcdir}"/godot_icon_outlined.png "${pkgdir}"/usr/share/pixmaps/godot_icon_outlined.png
 	install -Dm644 "${srcdir}"/godot_icon_outlined.svg "${pkgdir}"/usr/share/pixmaps/godot_icon_outlined.svg
 	install -Dm644 "${srcdir}"/godot_logo.png "${pkgdir}"/usr/share/pixmaps/godot_logo.png
@@ -51,11 +106,43 @@ package() {
 	install -Dm644 "${srcdir}"/godot_logo_outlined.png "${pkgdir}"/usr/share/pixmaps/godot_logo_outlined.png
 	install -Dm644 "${srcdir}"/godot_logo_outlined.svg "${pkgdir}"/usr/share/pixmaps/godot_logo_outlined.svg
 
+	install -Dm644 "${srcdir}"/godot_icon_console.svg "${pkgdir}"/usr/share/pixmaps/godot_icon_console.svg
+	install -Dm644 "${srcdir}"/godot_project_icon.svg "${pkgdir}"/usr/share/pixmaps/godot_project_icon.svg
+	install -Dm644 "${srcdir}"/godot_gdscript.svg "${pkgdir}"/usr/share/pixmaps/godot_gdscript.svg
+	install -Dm644 "${srcdir}"/godot_gdscript_extra_small.svg "${pkgdir}"/usr/share/pixmaps/godot_gdscript_extra_small.svg
+	install -Dm644 "${srcdir}"/godot_gdscript_small.svg "${pkgdir}"/usr/share/pixmaps/godot_gdscript_small.svg
+	install -Dm644 "${srcdir}"/godot_project.svg "${pkgdir}"/usr/share/pixmaps/godot_project.svg
+	install -Dm644 "${srcdir}"/godot_project_extra_small.svg "${pkgdir}"/usr/share/pixmaps/godot_project_extra_small.svg
+	install -Dm644 "${srcdir}"/godot_project_small.svg "${pkgdir}"/usr/share/pixmaps/godot_project_small.svg
+	install -Dm644 "${srcdir}"/godot_resource.svg "${pkgdir}"/usr/share/pixmaps/godot_resource.svg
+	install -Dm644 "${srcdir}"/godot_resource_extra_small.svg "${pkgdir}"/usr/share/pixmaps/godot_resource_extra_small.svg
+	install -Dm644 "${srcdir}"/godot_resource_small.svg "${pkgdir}"/usr/share/pixmaps/godot_resource_small.svg
+	install -Dm644 "${srcdir}"/godot_scene.svg "${pkgdir}"/usr/share/pixmaps/godot_scene.svg
+	install -Dm644 "${srcdir}"/godot_scene_extra_small.svg "${pkgdir}"/usr/share/pixmaps/godot_scene_extra_small.svg
+	install -Dm644 "${srcdir}"/godot_scene_small.svg "${pkgdir}"/usr/share/pixmaps/godot_scene_small.svg
+	install -Dm644 "${srcdir}"/godot_shader.svg "${pkgdir}"/usr/share/pixmaps/godot_shader.svg
+	install -Dm644 "${srcdir}"/godot_shader_extra_small.svg "${pkgdir}"/usr/share/pixmaps/godot_shader_extra_small.svg
+	install -Dm644 "${srcdir}"/godot_shader_small.svg "${pkgdir}"/usr/share/pixmaps/godot_shader_small.svg
+
 	install -Dm644 "${srcdir}"/LICENSE.txt "${pkgdir}"/usr/share/licenses/godot-base/LICENSE
 	install -Dm644 "${srcdir}"/LOGO_LICENSE.md "${pkgdir}"/usr/share/licenses/godot-base/LOGO_LICENSE.md
 	install -Dm644 "${srcdir}"/COPYRIGHT.txt "${pkgdir}"/usr/share/licenses/godot-base/COPYRIGHT
 	install -Dm644 "${srcdir}"/AUTHORS.md "${pkgdir}"/usr/share/licenses/godot-base/AUTHORS.md
 	install -Dm644 "${srcdir}"/DONORS.md "${pkgdir}"/usr/share/licenses/godot-base/DONORS.md
+	
+	install -Dm644 "${srcdir}"/godot-base.6 "${pkgdir}usr/share/man/man6/godot-base.6"
+	ln -s "/usr/share/man/man6/godot-base.6" "${pkgdir}/usr/share/man/man6/godot.6"
+	install -Dm644 "${srcdir}"/org.godotengine.godot-base.xml "$pkgdir/usr/share/mime/packages/org.godotengine.godot-base.xml"
+	ln -s "/usr/share/mime/packages/org.godotengine.godot-base.xml" "${pkgdir}/usr/share/mime/packages/org.godotengine.godot.xml"
+	install -Dm644 "${srcdir}"/org.godotengine.godot-base.appdata.xml "$pkgdir/usr/share/mime/packages/org.godotengine.godot-base.appdata.xml"
+	ln -s "/usr/share/mime/packages/org.godotengine.godot-base.appdata.xml" "${pkgdir}/usr/share/mime/packages/org.godotengine.godot.appdata.xml"
+	install -Dm644 "${srcdir}"/org.godotengine.godot-base.desktop "$pkgdir/usr/share/applications/org.godotengine.godot-base.desktop"
+	ln -s "/usr/share/applications/org.godotengine.godot-base.desktop" "${pkgdir}/usr/share/applications/org.godotengine.godot.desktop"
+	install -Dm644 "${srcdir}"/godot-base.fish "${pkgdir}/usr/share/fish/completions/godot-base"
+	ln -s "/usr/share/fish/completions/godot-base" "${pkgdir}/usr/share/fish/completions/godot"
+	install -Dm644 "${srcdir}"/godot-base.bash-completion "$pkgdir/usr/share/bash-completion/completions/godot-base"
+	ln -s "/usr/share/bash-completion/completions/godot-base" "/usr/share/bash-completion/completions/godot"
+	install -Dm644 "${srcdir}"/_godot-base.zsh-completion "$pkgdir/usr/share/zsh/site-functions/_godot-base"
+	ln -s "/usr/share/zsh/site-functions/_godot-base" "${pkgdir}/usr/share/zsh/site-functions/_godot"
 
-	ln -s "/usr/share/pixmaps/godot_icon.png" "${pkgdir}/usr/share/pixmaps/godot.png"
 }
