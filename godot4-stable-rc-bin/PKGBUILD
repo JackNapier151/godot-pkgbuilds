@@ -28,7 +28,7 @@ pkgname=(
 	"godot4-stable-rc-mono-win32-bin"
 	"godot4-stable-rc-mono-win64-bin"
 	)
-_pkgver="4.1.1"
+_pkgver="4.1.2"
 _pkgverb=1
 pkgver="${_pkgver}src${_pkgverb}"
 pkgrel=1
@@ -38,8 +38,8 @@ license=("MIT")
 groups=(
 	"godot-full"
 	"godot4"
-	"godot40"
-	"godot403"
+	"godot41"
+	"godot412"
 	"godot-bin"
 	"godot-src"
 )
