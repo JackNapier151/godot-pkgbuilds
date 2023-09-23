@@ -3,32 +3,32 @@
 # -*- coding: utf-8 -*-
 
 srdir='/directorio/en/el/que/estoy/' # Manual
-srdir=$(cat ./makegodot.env) # En Archivo .env (cambiar el nombre quitandole el .bak)
+srdir=$(cat ./makegodot.env) # In .env file (rename by removing .bak)
 
 directories=(
-'godot-base' # 1 packages
+'godot-base'
 
 # 'godot-meta'
 
-# 'godot-git' # 1 packages
+# 'godot-git'
 
-'godot4-dev-bin' # 8+8=16 packages
-'godot4-alpha-bin' # 9+9=18 packages
-'godot4-beta-bin' # 21 packages
-'godot4-rc-bin' # 21 packages
-'godot4-stable-rc-bin' # 21 packages
-'godot4-stable-bin' # 21 packages
+'godot4-dev-bin'
+'godot4-alpha-bin'
+'godot4-beta-bin'
+'godot4-rc-bin'
+'godot4-stable-rc-bin'
+'godot4-stable-bin'
 
-'godot3-alpha-bin' # 13 packages
-'godot3-beta-bin' # 21 packages
-'godot3-rc-bin' # 21 packages
-'godot3-stable-rc-bin' # 20 packages
-'godot3-stable-bin' # 20 packages
+'godot3-alpha-bin'
+'godot3-beta-bin'
+'godot3-rc-bin'
+'godot3-stable-rc-bin'
+'godot3-stable-bin'
 
-'godot2-stable-rc-bin' # 8 packages
-'godot2-stable-bin' # 8 packages
+'godot2-stable-rc-bin'
+'godot2-stable-bin'
 
-'godot1-stable-bin' # 8 packages
+'godot1-stable-bin'
 )
 
 makerepo () {
@@ -49,14 +49,22 @@ makeapp () {
 	makepkg -c --sign
 }
 
+controlssh (){
+	if [[ "$1" == "init" ]] ; then
+		eval $(ssh-agent -s)
+		ssh-add /home/odin/.ssh/jacknapier151gmail
+	fi
+
+	if [[ "$1" == "close" ]] ; then
+		pkill ssh-agent
+	fi
+}
+
 gitupdate (){
-	eval $(ssh-agent -s)
-	ssh-add /home/odin/.ssh/jacknapier151gmail
 	git add .
 	read -p "Commit: " input
 	git commit -m "${input}"
 	git push -u origin master
-	pkill ssh-agent
 }
 
 main (){
@@ -68,7 +76,9 @@ main (){
 		cd ..
 	done
 	rmbrokenlinks
+	controlssh "init"
 	gitupdate
+	controlssh "close"
 }
 
 main
