@@ -73,49 +73,52 @@
 | android aab | X      | X   | ―     | X    | ―  | ―      |
 
 #### Godot 3 / Godot LTS
-| Package    | Latest | Alpha | Beta | RC | StableRC | Stable |
-|:----------:|:------:|:-----:|:----:|:--:|:--------:|:------:|
-| standard   | X      | X     | X    | X  | X        | X      |
-| standard32 | X      | X     | X    | X  | X        | X      |
-| templates  | X      | X     | X    | X  | X        | X      |
-| lib        | X      | X     | X    | X  | X        | X      |
-| web        | X      | ―     | X    | X  | X        | X      |
-| headless   | X      | ―     | X    | X  | X        | X      |
-| server     | X      | ―     | X    | X  | X        | X      |
-| osx        | X      | X     | X    | X  | X        | X      |
-| win32      | X      | X     | X    | X  | X        | X      |
-| win64      | X      | X     | X    | X  | X        | X      |
-| android    | X      | X     | X    | X  | X        | X      |
+| Package     | Latest | Alpha | Beta | RC | StableRC | Stable |
+|:-----------:|:------:|:-----:|:----:|:--:|:--------:|:------:|
+| standard    | X      | X     | X    | X  | X        | X      |
+| standard32  | X      | X     | X    | X  | X        | X      |
+| templates   | X      | X     | X    | X  | X        | X      |
+| lib         | X      | X     | X    | X  | X        | X      |
+| web         | X      | ―     | X    | X  | X        | X      |
+| headless    | X      | ―     | X    | X  | X        | X      |
+| server      | X      | ―     | X    | X  | X        | X      |
+| osx         | X      | X     | X    | X  | X        | X      |
+| win32       | X      | X     | X    | X  | X        | X      |
+| win64       | X      | X     | X    | X  | X        | X      |
+| android apk | X      | X     | X    | X  | X        | X      |
+| android aab | ―      | ―     | ―    | ―  | ―        | ―      |
 
 #### Godot 2
-| Package    | StableRC | Stable |
-|:----------:|:--------:|:------:|
-| standard   | X        | X      |
-| standard32 | X        | X      |
-| templates  | ―        | ―      |
-| lib        | ―        | ―      |
-| web        | ―        | ―      |
-| headless   | X        | X      |
-| server     | X        | X      |
-| osx        | X        | X      |
-| win32      | X        | X      |
-| win64      | X        | X      |
-| android    | ―        | ―      |
+| Package     | StableRC | Stable |
+|:-----------:|:--------:|:------:|
+| standard    | X        | X      |
+| standard32  | X        | X      |
+| templates   | ―        | ―      |
+| lib         | ―        | ―      |
+| web         | ―        | ―      |
+| headless    | X        | X      |
+| server      | X        | X      |
+| osx         | X        | X      |
+| win32       | X        | X      |
+| win64       | X        | X      |
+| android apk | ―        | ―      |
+| android aab | ―        | ―      |
 
 #### Godot 1
-| Package    | Stable |
-|:----------:|:------:|
-| standard   | X      |
-| standard32 | X      |
-| templates  | ―      |
-| lib        | ―      |
-| web        | ―      |
-| headless   | ―      |
-| server     | X      |
-| osx        | X      |
-| win32      | X      |
-| win64      | X      |
-| android    | ―      |
+| Package     | Stable |
+|:-----------:|:------:|
+| standard    | X      |
+| standard32  | X      |
+| templates   | ―      |
+| lib         | ―      |
+| web         | ―      |
+| headless    | ―      |
+| server      | X      |
+| osx         | X      |
+| win32       | X      |
+| win64       | X      |
+| android apk | ―      |
+| android aab | ―      |
 
 ### Mono
 
@@ -136,16 +139,17 @@
 | android aab | ―      | ―   | ―     | ―    | ―  | ―        | ―      |
 
 #### Godot 3 / Godot LTS
-| Package    | Latest | Alpha | Beta | RC | StableRC | Stable |
-|:----------:|:------:|:-----:|:----:|:--:|:--------:|:------:|
-| standard   | X      | X     | X    | X  | X        | X      |
-| standard32 | X      | X     | X    | X  | X        | X      |
-| templates  | X      | X     | X    | X  | X        | X      |
-| lib        | X      | X     | X    | X  | X        | X      |
-| web        | ―      | ―     | ―    | ―  | ―        | ―      |
-| headless   | X      | ―     | X    | X  | X        | X      |
-| server     | X      | ―     | X    | X  | X        | X      |
-| osx        | X      | X     | X    | X  | X        | X      |
-| win32      | X      | X     | X    | X  | X        | X      |
-| win64      | X      | X     | X    | X  | X        | X      |
-| android    | ―      | ―     | ―    | ―  | ―        | ―      |
+| Package     | Latest | Alpha | Beta | RC | StableRC | Stable |
+|:-----------:|:------:|:-----:|:----:|:--:|:--------:|:------:|
+| standard    | X      | X     | X    | X  | X        | X      |
+| standard32  | X      | X     | X    | X  | X        | X      |
+| templates   | X      | X     | X    | X  | X        | X      |
+| lib         | X      | X     | X    | X  | X        | X      |
+| web         | ―      | ―     | ―    | ―  | ―        | ―      |
+| headless    | X      | ―     | X    | X  | X        | X      |
+| server      | X      | ―     | X    | X  | X        | X      |
+| osx         | X      | X     | X    | X  | X        | X      |
+| win32       | X      | X     | X    | X  | X        | X      |
+| win64       | X      | X     | X    | X  | X        | X      |
+| android apk | ―      | ―     | ―    | ―  | ―        | ―      |
+| android aab | ―      | ―     | ―    | ―  | ―        | ―      |
