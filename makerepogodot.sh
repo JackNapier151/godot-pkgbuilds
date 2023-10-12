@@ -11,6 +11,7 @@ directories=(
 # 'godot-meta'
 
 # 'godot-git' # 1 packages
+# 'godot3-git' # 1 packages
 
 'godot4-dev-bin' # 8+8=16 packages
 'godot4-alpha-bin' # 9+9=18 packages

@@ -11,6 +11,7 @@ directories=(
 # 'godot-meta'
 
 # 'godot-git'
+# 'godot3-git'
 
 'godot4-dev-bin'
 'godot4-alpha-bin'

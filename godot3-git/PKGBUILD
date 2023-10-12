@@ -1,21 +1,18 @@
 # Maintainer: JackNapier <jacknapier151@gmail.com>
 # Contributor: 
 
-_nameC="Godot"
-_name="godot"
-_pkgname="godot"
-pkgname=godot-git
+pkgname=godot3-git
 pkgrel=1
-pkgver=r49305
-pkgdesc="Godot Game Engine: An advanced, feature packed, multi-platform 2D and 3D game engine. Git Compiled Version"
+pkgver=r35222
+pkgdesc="Godot3 Game Engine: An advanced, feature packed, multi-platform 2D and 3D game engine. Git Compiled Version"
 url="http://www.godotengine.org"
 license=("MIT")
-source=("${_pkgname}::git+https://github.com/godotengine/godot.git")
-sha256sums=("SKIP")
+#source=("${godot}::git+https://github.com/godotengine/godot.git")
+#sha256sums=("SKIP")
 groups=(
 	"godot-full"
 	"godot-compiled"
-	"godot-git"
+	"godot3-git"
 	"godot${pkgver}"
 	"godot-gdscript"
 	"godot-standard"
@@ -50,12 +47,12 @@ prepare() {
 	if [ ! -d "${srcdir}/godot" ]
 	then
 		cd ${srcdir}
-		git clone https://github.com/godotengine/godot.git --branch master #--single-branch --depth 1
+		git clone https://github.com/godotengine/godot.git --branch 3.x #--single-branch --depth 1
 	else
 		cd "${srcdir}/godot"
-		#git fetch --depth 1 origin master
-		git fetch origin master
-		git reset --hard origin/master
+		#git fetch --depth 1 origin 3.x
+		git fetch origin 3.x
+		git reset --hard origin/3.x
 	fi
 }
 
@@ -77,23 +74,23 @@ pkgver() {
 
 build() {
 	cd "${srcdir}/godot"
-	scons platform=linuxbsd target=editor werror=no -j$((`nproc`+1))
+	scons platform=x11 target=release_debug tools=yes -j$((`nproc`+1))
 }
 
 package() {
 	cd "${srcdir}/godot"
 
-	install -D -m755 ./bin/godot.linuxbsd.editor.x86_64 "${pkgdir}/opt/godot/godot-git"
+	install -D -m755 ./bin/godot.x11.opt.tools.64 "${pkgdir}/opt/godot/godot3-git"
 	install -d "${pkgdir}/usr/bin/"
-	ln -s "/opt/godot/godot-git" "${pkgdir}/usr/bin/godot-git"
+	ln -s "/opt/godot/godot3-git" "${pkgdir}/usr/bin/godot3-git"
 	
 	install -d "${pkgdir}/usr/share/applications/"
-	cat > "${pkgdir}/usr/share/applications/godot-git.desktop" <<-EOF
+	cat > "${pkgdir}/usr/share/applications/godot3-git.desktop" <<-EOF
 		[Desktop Entry]
-		Name=Godot Engine Git Compiled v${pkgver}-git
+		Name=Godot3 Engine Git Compiled v${pkgver}-git
 		GenericName="Advanced cross-platform 2D and 3D libre game engine. Git Compiled Version"
 		Comment=Application for making games
-		Exec=/usr/bin/godot-git %U
+		Exec=/usr/bin/godot3-git %U
 		Icon=godot
 		Terminal=false
 		Type=Application
