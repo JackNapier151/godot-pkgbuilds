@@ -928,7 +928,7 @@ package_godotlts-beta-mono-win64-bin(){
 ##################
 # Godot 3 Latest #
 ##################
-pkgname=(
+pkgname+=(
 	"godot3-latest-src"
 	##################
 	# Godot GDScript #
