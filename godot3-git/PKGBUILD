@@ -1,7 +1,10 @@
 # Maintainer: JackNapier <jacknapier151@gmail.com>
 # Contributor: 
 
-pkgname=godot3-git
+pkgname=(
+	godot3-git
+	godotlts-git
+)
 pkgrel=1
 pkgver=r35222
 pkgdesc="Godot3 Game Engine: An advanced, feature packed, multi-platform 2D and 3D game engine. Git Compiled Version"
@@ -77,7 +80,7 @@ build() {
 	scons platform=x11 target=release_debug tools=yes -j$((`nproc`+1))
 }
 
-package() {
+package_godot3-git() {
 	cd "${srcdir}/godot"
 
 	install -D -m755 ./bin/godot.x11.opt.tools.64 "${pkgdir}/opt/godot/godot3-git"
@@ -91,6 +94,27 @@ package() {
 		GenericName="Advanced cross-platform 2D and 3D libre game engine. Git Compiled Version"
 		Comment=Application for making games
 		Exec=/usr/bin/godot3-git %U
+		Icon=godot
+		Terminal=false
+		Type=Application
+		MimeType=application/x-godot-project;
+		Categories=Development;IDE;
+	EOF
+}
+
+package_godotlts-git() {
+	cd "${srcdir}/godot"
+	install -D -m755 ./bin/godot.x11.opt.tools.64 "${pkgdir}/opt/godot/godotlts-git"
+	install -d "${pkgdir}/usr/bin/"
+	ln -s "/opt/godot/godotlts-git" "${pkgdir}/usr/bin/godotlts-git"
+	
+	install -d "${pkgdir}/usr/share/applications/"
+	cat > "${pkgdir}/usr/share/applications/godotlts-git.desktop" <<-EOF
+		[Desktop Entry]
+		Name=Godot LTS Engine Git Compiled v${pkgver}-git
+		GenericName="Advanced cross-platform 2D and 3D libre game engine. Git Compiled Version"
+		Comment=Application for making games
+		Exec=/usr/bin/godotlts-git %U
 		Icon=godot
 		Terminal=false
 		Type=Application
