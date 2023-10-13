@@ -33,7 +33,7 @@ pkgname=(
 	"godot3-stable-mono-win32-bin"
 	"godot3-stable-mono-win64-bin"
 	)
-pkgver="3.5.2"
+pkgver="3.5.3"
 pkgrel=1
 pkgdesc="Godot3 Game Engine: An advanced, feature packed, multi-platform 2D and 3D game engine."
 url="http://www.godotengine.org"
@@ -42,7 +42,7 @@ groups=(
 	"godot-full"
 	"godot3"
 	"godot35"
-	"godot352"
+	"godot353"
 	"godot-legazy"
 	"godot-bin"
 	"godot-stable"
