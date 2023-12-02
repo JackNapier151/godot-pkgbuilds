@@ -522,10 +522,10 @@ pkgname+=(
 	"godotlts-stable-rc-mono-win64-bin"
 	)
 
-pkgdescalt="Godot LTS Game Engine: An advanced, feature packed, multi-platform 2D and 3D game engine."
+pkgdesc-lts="Godot LTS Game Engine: An advanced, feature packed, multi-platform 2D and 3D game engine."
 
 package_godotlts-stable-rc-src(){
-	pkgdesc+="${pkgdescalt} LTS Stable Release Candidate SourceCode"
+	pkgdesc+="${pkgdesc-lts} LTS Stable Release Candidate SourceCode"
 	groups+=(
 		"godot-lts"
 		"godot-src"
@@ -539,7 +539,7 @@ package_godotlts-stable-rc-src(){
 ##################
 
 package_godotlts-stable-rc-bin(){
-	pkgdesc+="${pkgdescalt} LTS Stable Release Candidate Binary Version"
+	pkgdesc+="${pkgdesc-lts} LTS Stable Release Candidate Binary Version"
 	groups+=(
 		"godot-lts"
 		"godot-gdscript"
@@ -568,7 +568,7 @@ package_godotlts-stable-rc-bin(){
 }
 
 package_godotlts-stable-rc-bin32(){
-	pkgdesc+="${pkgdescalt} LTS Stable Release Candidate Binary Version 32b"
+	pkgdesc+="${pkgdesc-lts} LTS Stable Release Candidate Binary Version 32b"
 	groups+=(
 		"godot-lts"
 		"godot-gdscript"
@@ -597,7 +597,7 @@ package_godotlts-stable-rc-bin32(){
 }
 
 package_godotlts-stable-rc-export-templates-bin(){
-	pkgdesc+="${pkgdescalt} LTS Stable Release Candidate Export Templates Binary Version"
+	pkgdesc+="${pkgdesc-lts} LTS Stable Release Candidate Export Templates Binary Version"
 	groups+=(
 		"godot-lts"
 		"godot-gdscript"
@@ -607,7 +607,7 @@ package_godotlts-stable-rc-export-templates-bin(){
 }
 
 package_libgodotlts-stable-rc-bin(){
-	pkgdesc+="${pkgdescalt} LTS Stable Release Candidate LibGodot Binary Version"
+	pkgdesc+="${pkgdesc-lts} LTS Stable Release Candidate LibGodot Binary Version"
 	groups+=(
 		"godot-lts"
 		"godot-gdscript"
@@ -617,7 +617,7 @@ package_libgodotlts-stable-rc-bin(){
 }
 
 package_godotlts-stable-rc-web-bin(){
-	pkgdesc+="${pkgdescalt} LTS Stable Release Candidate Web Binary Version"
+	pkgdesc+="${pkgdesc-lts} LTS Stable Release Candidate Web Binary Version"
 	groups+=(
 		"godot-lts"
 		"godot-gdscript"
@@ -629,7 +629,7 @@ package_godotlts-stable-rc-web-bin(){
 }
 
 package_godotlts-stable-rc-headless-bin(){
-	pkgdesc+="${pkgdescalt} LTS Stable Release Candidate Headless Binary Version"
+	pkgdesc+="${pkgdesc-lts} LTS Stable Release Candidate Headless Binary Version"
 	groups+=(
 		"godot-lts"
 		"godot-gdscript"
@@ -657,7 +657,7 @@ package_godotlts-stable-rc-headless-bin(){
 }
 
 package_godotlts-stable-rc-server-bin(){
-	pkgdesc+="${pkgdescalt} LTS Stable Release Candidate Server Binary Version"
+	pkgdesc+="${pkgdesc-lts} LTS Stable Release Candidate Server Binary Version"
 	groups+=(
 		"godot-lts"
 		"godot-gdscript"
@@ -685,7 +685,7 @@ package_godotlts-stable-rc-server-bin(){
 }
 
 package_godotlts-stable-rc-osx-bin(){
-	pkgdesc+="${pkgdescalt} LTS Stable Release Candidate MacOSX Binary Version"
+	pkgdesc+="${pkgdesc-lts} LTS Stable Release Candidate MacOSX Binary Version"
 	groups+=(
 		"godot-lts"
 		"godot-gdscript"
@@ -696,7 +696,7 @@ package_godotlts-stable-rc-osx-bin(){
 }
 
 package_godotlts-stable-rc-win32-bin(){
-	pkgdesc+="${pkgdescalt} LTS Stable Release Candidate Windows Binary Version 32b"
+	pkgdesc+="${pkgdesc-lts} LTS Stable Release Candidate Windows Binary Version 32b"
 	groups+=(
 		"godot-lts"
 		"godot-gdscript"
@@ -708,7 +708,7 @@ package_godotlts-stable-rc-win32-bin(){
 }
 
 package_godotlts-stable-rc-win64-bin(){
-	pkgdesc+="${pkgdescalt} LTS Stable Release Candidate Windows Binary Version 64b"
+	pkgdesc+="${pkgdesc-lts} LTS Stable Release Candidate Windows Binary Version 64b"
 	groups+=(
 		"godot-lts"
 		"godot-gdscript"
@@ -720,7 +720,7 @@ package_godotlts-stable-rc-win64-bin(){
 }
 
 package_godotlts-stable-rc-android-bin(){
-	pkgdesc+="${pkgdescalt} LTS Stable Release Candidate Android Binary Version"
+	pkgdesc+="${pkgdesc-lts} LTS Stable Release Candidate Android Binary Version"
 	groups+=(
 		"godot-lts"
 		"godot-gdscript"
@@ -734,7 +734,7 @@ package_godotlts-stable-rc-android-bin(){
 ##############
 
 package_godotlts-stable-rc-mono-bin(){
-	pkgdesc+="${pkgdescalt} LTS Stable Release Candidate Mono Binary Version"
+	pkgdesc+="${pkgdesc-lts} LTS Stable Release Candidate Mono Binary Version"
 	depends+=("${_monodepends}")
 	groups+=(
 		"godot-lts"
@@ -766,7 +766,7 @@ package_godotlts-stable-rc-mono-bin(){
 }
 
 package_godotlts-stable-rc-mono-bin32(){
-	pkgdesc+="${pkgdescalt} LTS Stable Release Candidate Mono Binary Version 32b"
+	pkgdesc+="${pkgdesc-lts} LTS Stable Release Candidate Mono Binary Version 32b"
 	depends+=("${_monodepends}")
 	groups+=(
 		"godot-lts"
@@ -798,7 +798,7 @@ package_godotlts-stable-rc-mono-bin32(){
 }
 
 package_godotlts-stable-rc-mono-export-templates-bin(){
-	pkgdesc+="${pkgdescalt} LTS Stable Release Candidate Export Templates Mono Binary Version"
+	pkgdesc+="${pkgdesc-lts} LTS Stable Release Candidate Export Templates Mono Binary Version"
 	groups+=(
 		"godot-lts"
 		"godot-mono"
@@ -808,7 +808,7 @@ package_godotlts-stable-rc-mono-export-templates-bin(){
 }
 
 package_libgodotlts-stable-rc-mono-bin(){
-	pkgdesc+="${pkgdescalt} LTS Stable Release Candidate LibGodot Mono Binary Version"
+	pkgdesc+="${pkgdesc-lts} LTS Stable Release Candidate LibGodot Mono Binary Version"
 	groups+=(
 		"godot-lts"
 		"godot-mono"
@@ -818,7 +818,7 @@ package_libgodotlts-stable-rc-mono-bin(){
 }
 
 package_godotlts-stable-rc-headless-mono-bin(){
-	pkgdesc+="${pkgdescalt} LTS Stable Release Candidate Headless Mono Binary Version"
+	pkgdesc+="${pkgdesc-lts} LTS Stable Release Candidate Headless Mono Binary Version"
 	depends+=("${_monodepends}")
 	groups+=(
 		"godot-lts"
@@ -849,7 +849,7 @@ package_godotlts-stable-rc-headless-mono-bin(){
 }
 
 package_godotlts-stable-rc-server-mono-bin(){
-	pkgdesc+="${pkgdescalt} LTS Stable Release Candidate Server Mono Binary Version"
+	pkgdesc+="${pkgdesc-lts} LTS Stable Release Candidate Server Mono Binary Version"
 	depends+=("${_monodepends}")
 	groups+=(
 		"godot-lts"
@@ -881,7 +881,7 @@ package_godotlts-stable-rc-server-mono-bin(){
 }
 
 package_godotlts-stable-rc-mono-osx-bin(){
-	pkgdesc+="${pkgdescalt} LTS Stable Release Candidate MacOSX Mono Binary Version"
+	pkgdesc+="${pkgdesc-lts} LTS Stable Release Candidate MacOSX Mono Binary Version"
 	groups+=(
 		"godot-lts"
 		"godot-mono"
@@ -895,7 +895,7 @@ package_godotlts-stable-rc-mono-osx-bin(){
 }
 
 package_godotlts-stable-rc-mono-win32-bin(){
-	pkgdesc+="${pkgdescalt} LTS Stable Release Candidate Windows Mono Binary Version 32b"
+	pkgdesc+="${pkgdesc-lts} LTS Stable Release Candidate Windows Mono Binary Version 32b"
 	groups+=(
 		"godot-lts"
 		"godot-mono"
@@ -909,7 +909,7 @@ package_godotlts-stable-rc-mono-win32-bin(){
 }
 
 package_godotlts-stable-rc-mono-win64-bin(){
-	pkgdesc+="${pkgdescalt} LTS Stable Release Candidate Windows Mono Binary Version 64b"
+	pkgdesc+="${pkgdesc-lts} LTS Stable Release Candidate Windows Mono Binary Version 64b"
 	groups+=(
 		"godot-lts"
 		"godot-mono"
