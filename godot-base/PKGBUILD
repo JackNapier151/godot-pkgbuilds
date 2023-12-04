@@ -50,7 +50,7 @@ source=(
 	"godot_shader_small.svg::https://github.com/godotengine/godot/raw/master/misc/dist/document_icons/shader_small.svg"
 
 	"LICENSE.txt::https://github.com/godotengine/godot/raw/master/LICENSE.txt"
-	"LOGO_LICENSE.md::https://github.com/godotengine/godot/raw/master/LOGO_LICENSE.md"
+	"LOGO_LICENSE.txt::https://github.com/godotengine/godot/raw/master/LOGO_LICENSE.txt"
 	"COPYRIGHT.txt::https://github.com/godotengine/godot/raw/master/COPYRIGHT.txt"
 	"AUTHORS.md::https://github.com/godotengine/godot/raw/master/AUTHORS.md"
 	"DONORS.md::https://github.com/godotengine/godot/raw/master/DONORS.md"
@@ -145,7 +145,7 @@ package_godot-base-license() {
 		"godot-license"
 	)
 	install -Dm644 "${srcdir}"/LICENSE.txt "${pkgdir}"/usr/share/licenses/godot-base/LICENSE
-	install -Dm644 "${srcdir}"/LOGO_LICENSE.md "${pkgdir}"/usr/share/licenses/godot-base/LOGO_LICENSE.md
+	install -Dm644 "${srcdir}"/LOGO_LICENSE.txt "${pkgdir}"/usr/share/licenses/godot-base/LOGO_LICENSE.txt
 	install -Dm644 "${srcdir}"/COPYRIGHT.txt "${pkgdir}"/usr/share/licenses/godot-base/COPYRIGHT
 	install -Dm644 "${srcdir}"/AUTHORS.md "${pkgdir}"/usr/share/licenses/godot-base/AUTHORS.md
 	install -Dm644 "${srcdir}"/DONORS.md "${pkgdir}"/usr/share/licenses/godot-base/DONORS.md
