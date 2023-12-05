@@ -193,7 +193,7 @@ package_godot4-stable-win32-bin(){
 	)
 	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win32.exe" "${pkgdir}/opt/godot/godot4-stable-win32-bin.exe"
 	#install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win32_console.cmd" "${pkgdir}/opt/godot/godot4-stable-win32-bin.cmd"
-	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win32_console.exe" "${pkgdir}/opt/godot/godot4-stable-win32-bin_console.exe"
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win32_console.exe" "${pkgdir}/opt/godot/godot4-stable-win32cmd-bin.exe"
 }
 
 source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}-stable_win64.exe.zip")
@@ -208,7 +208,7 @@ package_godot4-stable-win64-bin(){
 	)
 	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win64.exe" "${pkgdir}/opt/godot/godot4-stable-win64-bin.exe"
 	#install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win64_console.cmd" "${pkgdir}/opt/godot/godot4-stable-win64-bin.cmd"
-	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win64_console.exe" "${pkgdir}/opt/godot/godot4-stable-win64-bin_console.exe"
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win64_console.exe" "${pkgdir}/opt/godot/godot4-stable-win64cmd-bin.exe"
 }
 
 source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/Godot_v${pkgver}-stable_android_editor.apk")
@@ -328,10 +328,10 @@ package_godot4-stable-mono-win32-bin(){
 		"godot-32"
 	)
 	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_win32/Godot_v${pkgver}-stable_mono_win32.exe" "${pkgdir}/opt/godot/godot4-stable-mono-win32-bin.d/godot4-stable-mono-win32-bin.exe"
-	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_win32/Godot_v${pkgver}-stable_mono_win32_console.exe" "${pkgdir}/opt/godot/godot4-stable-mono-win32-bin.d/godot4-stable-mono-win32-bin_console.exe"
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_win32/Godot_v${pkgver}-stable_mono_win32_console.exe" "${pkgdir}/opt/godot/godot4-stable-mono-win32-bin.d/godot4-stable-mono-win32cmd-bin.exe"
 	cp -r "${srcdir}/Godot_v${pkgver}-stable_mono_win32/GodotSharp" "${pkgdir}/opt/godot/godot4-stable-mono-win32-bin.d/GodotSharp"
 	ln -s "/opt/godot/godot4-stable-mono-win32-bin.d/godot4-stable-mono-win32-bin.exe" "${pkgdir}/opt/godot/godot4-stable-mono-win32-bin.exe"
-	ln -s "/opt/godot/godot4-stable-mono-win32-bin.d/godot4-stable-mono-win32-bin_console.exe" "${pkgdir}/opt/godot/godot4-stable-mono-win32-bin_console.exe"
+	ln -s "/opt/godot/godot4-stable-mono-win32-bin.d/godot4-stable-mono-win32cmd-bin.exe" "${pkgdir}/opt/godot/godot4-stable-mono-win32cmd-bin.exe"
 }
 
 source+=("https://downloads.tuxfamily.org/godotengine/${pkgver}/mono/Godot_v${pkgver}-stable_mono_win64.zip")
@@ -345,10 +345,10 @@ package_godot4-stable-mono-win64-bin(){
 		"godot-64"
 	)
 	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_win64/Godot_v${pkgver}-stable_mono_win64.exe" "${pkgdir}/opt/godot/godot4-stable-mono-win64-bin.d/godot4-stable-mono-win64-bin.exe"
-	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_win64/Godot_v${pkgver}-stable_mono_win64_console.exe" "${pkgdir}/opt/godot/godot4-stable-mono-win64-bin.d/godot4-stable-mono-win64-bin_console.exe"
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_win64/Godot_v${pkgver}-stable_mono_win64_console.exe" "${pkgdir}/opt/godot/godot4-stable-mono-win64-bin.d/godot4-stable-mono-win64cmd-bin.exe"
 	cp -r "${srcdir}/Godot_v${pkgver}-stable_mono_win64/GodotSharp" "${pkgdir}/opt/godot/godot4-stable-mono-win64-bin.d/GodotSharp"
 	ln -s "/opt/godot/godot4-stable-mono-win64-bin.d/godot4-stable-mono-win64-bin.exe" "${pkgdir}/opt/godot/godot4-stable-mono-win64-bin.exe"
-	ln -s "/opt/godot/godot4-stable-mono-win64-bin.d/godot4-stable-mono-win64-bin_console.exe" "${pkgdir}/opt/godot/godot4-stable-mono-win64-bin_console.exe"
+	ln -s "/opt/godot/godot4-stable-mono-win64-bin.d/godot4-stable-mono-win64cmd-bin.exe" "${pkgdir}/opt/godot/godot4-stable-mono-win64cmd-bin.exe"
 }
 
 #########
@@ -500,7 +500,7 @@ package_godot-stable-win32-bin(){
 	)
 	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win32.exe" "${pkgdir}/opt/godot/godot-stable-win32-bin.exe"
 	#install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win32_console.cmd" "${pkgdir}/opt/godot/godot-stable-win32-bin.cmd"
-	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win32_console.exe" "${pkgdir}/opt/godot/godot-stable-win32-bin_console.exe"
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win32_console.exe" "${pkgdir}/opt/godot/godot-stable-win32cmd-bin.exe"
 }
 
 package_godot-stable-win64-bin(){
@@ -513,7 +513,7 @@ package_godot-stable-win64-bin(){
 	)
 	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win64.exe" "${pkgdir}/opt/godot/godot-stable-win64-bin.exe"
 	#install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win64_console.cmd" "${pkgdir}/opt/godot/godot-stable-win64-bin.cmd"
-	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win64_console.exe" "${pkgdir}/opt/godot/godot-stable-win64-bin_console.exe"
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win64_console.exe" "${pkgdir}/opt/godot/godot-stable-win64cmd-bin.exe"
 }
 
 package_godot-stable-android-bin(){
@@ -621,10 +621,10 @@ package_godot-stable-mono-win32-bin(){
 		"godot-32"
 	)
 	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_win32/Godot_v${pkgver}-stable_mono_win32.exe" "${pkgdir}/opt/godot/godot-stable-mono-win32-bin.d/godot-stable-mono-win32-bin.exe"
-	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_win32/Godot_v${pkgver}-stable_mono_win32_console.exe" "${pkgdir}/opt/godot/godot-stable-mono-win32-bin.d/godot-stable-mono-win32-bin_console.exe"
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_win32/Godot_v${pkgver}-stable_mono_win32_console.exe" "${pkgdir}/opt/godot/godot-stable-mono-win32-bin.d/godot-stable-mono-win32cmd-bin.exe"
 	cp -r "${srcdir}/Godot_v${pkgver}-stable_mono_win32/GodotSharp" "${pkgdir}/opt/godot/godot-stable-mono-win32-bin.d/GodotSharp"
 	ln -s "/opt/godot/godot-stable-mono-win32-bin.d/godot-stable-mono-win32-bin.exe" "${pkgdir}/opt/godot/godot-stable-mono-win32-bin.exe"
-	ln -s "/opt/godot/godot-stable-mono-win32-bin.d/godot-stable-mono-win32-bin_console.exe" "${pkgdir}/opt/godot/godot-stable-mono-win32-bin_console.exe"
+	ln -s "/opt/godot/godot-stable-mono-win32-bin.d/godot-stable-mono-win32cmd-bin.exe" "${pkgdir}/opt/godot/godot-stable-mono-win32cmd-bin.exe"
 }
 
 package_godot-stable-mono-win64-bin(){
@@ -636,10 +636,10 @@ package_godot-stable-mono-win64-bin(){
 		"godot-64"
 	)
 	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_win64/Godot_v${pkgver}-stable_mono_win64.exe" "${pkgdir}/opt/godot/godot-stable-mono-win64-bin.d/godot-stable-mono-win64-bin.exe"
-	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_win64/Godot_v${pkgver}-stable_mono_win64_console.exe" "${pkgdir}/opt/godot/godot-stable-mono-win64-bin.d/godot-stable-mono-win64-bin_console.exe"
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_win64/Godot_v${pkgver}-stable_mono_win64_console.exe" "${pkgdir}/opt/godot/godot-stable-mono-win64-bin.d/godot-stable-mono-win64cmd-bin.exe"
 	cp -r "${srcdir}/Godot_v${pkgver}-stable_mono_win64/GodotSharp" "${pkgdir}/opt/godot/godot-stable-mono-win64-bin.d/GodotSharp"
 	ln -s "/opt/godot/godot-stable-mono-win64-bin.d/godot-stable-mono-win64-bin.exe" "${pkgdir}/opt/godot/godot-stable-mono-win64-bin.exe"
-	ln -s "/opt/godot/godot-stable-mono-win64-bin.d/godot-stable-mono-win64-bin_console.exe" "${pkgdir}/opt/godot/godot-stable-mono-win64-bin_console.exe"
+	ln -s "/opt/godot/godot-stable-mono-win64-bin.d/godot-stable-mono-win64cmd-bin.exe" "${pkgdir}/opt/godot/godot-stable-mono-win64cmd-bin.exe"
 }
 
 
@@ -800,7 +800,7 @@ package_godot-latest-win32-bin(){
 	)
 	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win32.exe" "${pkgdir}/opt/godot/godot-latest-win32-bin.exe"
 	#install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win32_console.cmd" "${pkgdir}/opt/godot/godot-latest-win32-bin.cmd"
-	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win32_console.exe" "${pkgdir}/opt/godot/godot-latest-win32-bin_console.exe"
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win32_console.exe" "${pkgdir}/opt/godot/godot-latest-win32cmd-bin.exe"
 }
 
 package_godot-latest-win64-bin(){
@@ -814,7 +814,7 @@ package_godot-latest-win64-bin(){
 	)
 	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win64.exe" "${pkgdir}/opt/godot/godot-latest-win64-bin.exe"
 	#install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win64_console.cmd" "${pkgdir}/opt/godot/godot-latest-win64-bin.cmd"
-	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win64_console.exe" "${pkgdir}/opt/godot/godot-latest-win64-bin_console.exe"
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win64_console.exe" "${pkgdir}/opt/godot/godot-latest-win64cmd-bin.exe"
 }
 
 package_godot-latest-android-bin(){
@@ -927,10 +927,10 @@ package_godot-latest-mono-win32-bin(){
 		"godot-32"
 	)
 	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_win32/Godot_v${pkgver}-stable_mono_win32.exe" "${pkgdir}/opt/godot/godot-latest-mono-win32-bin.d/godot-latest-mono-win32-bin.exe"
-	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_win32/Godot_v${pkgver}-stable_mono_win32_console.exe" "${pkgdir}/opt/godot/godot-latest-mono-win32-bin.d/godot-latest-mono-win32-bin_console.exe"
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_win32/Godot_v${pkgver}-stable_mono_win32_console.exe" "${pkgdir}/opt/godot/godot-latest-mono-win32-bin.d/godot-latest-mono-win32cmd-bin.exe"
 	cp -r "${srcdir}/Godot_v${pkgver}-stable_mono_win32/GodotSharp" "${pkgdir}/opt/godot/godot-latest-mono-win32-bin.d/GodotSharp"
 	ln -s "/opt/godot/godot-latest-mono-win32-bin.d/godot-latest-mono-win32-bin.exe" "${pkgdir}/opt/godot/godot-latest-mono-win32-bin.exe"
-	ln -s "/opt/godot/godot-latest-mono-win32-bin.d/godot-latest-mono-win32-bin_console.exe" "${pkgdir}/opt/godot/godot-latest-mono-win32-bin_console.exe"
+	ln -s "/opt/godot/godot-latest-mono-win32-bin.d/godot-latest-mono-win32cmd-bin.exe" "${pkgdir}/opt/godot/godot-latest-mono-win32cmd-bin.exe"
 }
 
 package_godot-latest-mono-win64-bin(){
@@ -943,10 +943,10 @@ package_godot-latest-mono-win64-bin(){
 		"godot-64"
 	)
 	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_win64/Godot_v${pkgver}-stable_mono_win64.exe" "${pkgdir}/opt/godot/godot-latest-mono-win64-bin.d/godot-latest-mono-win64-bin.exe"
-	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_win64/Godot_v${pkgver}-stable_mono_win64_console.exe" "${pkgdir}/opt/godot/godot-latest-mono-win64-bin.d/godot-latest-mono-win64-bin_console.exe"
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_win64/Godot_v${pkgver}-stable_mono_win64_console.exe" "${pkgdir}/opt/godot/godot-latest-mono-win64-bin.d/godot-latest-mono-win64cmd-bin.exe"
 	cp -r "${srcdir}/Godot_v${pkgver}-stable_mono_win64/GodotSharp" "${pkgdir}/opt/godot/godot-latest-mono-win64-bin.d/GodotSharp"
 	ln -s "/opt/godot/godot-latest-mono-win64-bin.d/godot-latest-mono-win64-bin.exe" "${pkgdir}/opt/godot/godot-latest-mono-win64-bin.exe"
-	ln -s "/opt/godot/godot-latest-mono-win64-bin.d/godot-latest-mono-win64-bin_console.exe" "${pkgdir}/opt/godot/godot-latest-mono-win64-bin_console.exe"
+	ln -s "/opt/godot/godot-latest-mono-win64-bin.d/godot-latest-mono-win64cmd-bin.exe" "${pkgdir}/opt/godot/godot-latest-mono-win64cmd-bin.exe"
 }
 
 
@@ -1107,7 +1107,7 @@ package_godot4-latest-win32-bin(){
 	)
 	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win32.exe" "${pkgdir}/opt/godot/godot4-latest-win32-bin.exe"
 	#install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win32_console.cmd" "${pkgdir}/opt/godot/godot4-latest-win32-bin.cmd"
-	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win32_console.exe" "${pkgdir}/opt/godot/godot4-latest-win32-bin_console.exe"
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win32_console.exe" "${pkgdir}/opt/godot/godot4-latest-win32cmd-bin.exe"
 }
 
 package_godot4-latest-win64-bin(){
@@ -1121,7 +1121,7 @@ package_godot4-latest-win64-bin(){
 	)
 	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win64.exe" "${pkgdir}/opt/godot/godot4-latest-win64-bin.exe"
 	#install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win64_console.cmd" "${pkgdir}/opt/godot/godot4-latest-win64-bin.cmd"
-	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win64_console.exe" "${pkgdir}/opt/godot/godot4-latest-win64-bin_console.exe"
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_win64_console.exe" "${pkgdir}/opt/godot/godot4-latest-win64cmd-bin.exe"
 }
 
 package_godot4-latest-android-bin(){
@@ -1234,10 +1234,10 @@ package_godot4-latest-mono-win32-bin(){
 		"godot-32"
 	)
 	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_win32/Godot_v${pkgver}-stable_mono_win32.exe" "${pkgdir}/opt/godot/godot4-latest-mono-win32-bin.d/godot4-latest-mono-win32-bin.exe"
-	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_win32/Godot_v${pkgver}-stable_mono_win32_console.exe" "${pkgdir}/opt/godot/godot4-latest-mono-win32-bin.d/godot4-latest-mono-win32-bin_console.exe"
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_win32/Godot_v${pkgver}-stable_mono_win32_console.exe" "${pkgdir}/opt/godot/godot4-latest-mono-win32-bin.d/godot4-latest-mono-win32cmd-bin.exe"
 	cp -r "${srcdir}/Godot_v${pkgver}-stable_mono_win32/GodotSharp" "${pkgdir}/opt/godot/godot4-latest-mono-win32-bin.d/GodotSharp"
 	ln -s "/opt/godot/godot4-latest-mono-win32-bin.d/godot4-latest-mono-win32-bin.exe" "${pkgdir}/opt/godot/godot4-latest-mono-win32-bin.exe"
-	ln -s "/opt/godot/godot4-latest-mono-win32-bin.d/godot4-latest-mono-win32-bin_console.exe" "${pkgdir}/opt/godot/godot4-latest-mono-win32-bin_console.exe"
+	ln -s "/opt/godot/godot4-latest-mono-win32-bin.d/godot4-latest-mono-win32cmd-bin.exe" "${pkgdir}/opt/godot/godot4-latest-mono-win32cmd-bin.exe"
 }
 
 package_godot4-latest-mono-win64-bin(){
@@ -1250,8 +1250,8 @@ package_godot4-latest-mono-win64-bin(){
 		"godot-64"
 	)
 	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_win64/Godot_v${pkgver}-stable_mono_win64.exe" "${pkgdir}/opt/godot/godot4-latest-mono-win64-bin.d/godot4-latest-mono-win64-bin.exe"
-	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_win64/Godot_v${pkgver}-stable_mono_win64_console.exe" "${pkgdir}/opt/godot/godot4-latest-mono-win64-bin.d/godot4-latest-mono-win64-bin_console.exe"
+	install -Dm755 "${srcdir}/Godot_v${pkgver}-stable_mono_win64/Godot_v${pkgver}-stable_mono_win64_console.exe" "${pkgdir}/opt/godot/godot4-latest-mono-win64-bin.d/godot4-latest-mono-win64cmd-bin.exe"
 	cp -r "${srcdir}/Godot_v${pkgver}-stable_mono_win64/GodotSharp" "${pkgdir}/opt/godot/godot4-latest-mono-win64-bin.d/GodotSharp"
 	ln -s "/opt/godot/godot4-latest-mono-win64-bin.d/godot4-latest-mono-win64-bin.exe" "${pkgdir}/opt/godot/godot4-latest-mono-win64-bin.exe"
-	ln -s "/opt/godot/godot4-latest-mono-win64-bin.d/godot4-latest-mono-win64-bin_console.exe" "${pkgdir}/opt/godot/godot4-latest-mono-win64-bin_console.exe"
+	ln -s "/opt/godot/godot4-latest-mono-win64-bin.d/godot4-latest-mono-win64cmd-bin.exe" "${pkgdir}/opt/godot/godot4-latest-mono-win64cmd-bin.exe"
 }

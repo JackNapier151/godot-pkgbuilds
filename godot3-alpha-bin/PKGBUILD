@@ -168,7 +168,7 @@ package_godot3-alpha-win32-bin(){
 		"godot-32"
 	)
 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_win32.exe" "${pkgdir}/opt/godot/godot3-alpha-win32-bin.exe"
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_win32_console.cmd" "${pkgdir}/opt/godot/godot3-alpha-win32-bin_console.cmd"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_win32_console.cmd" "${pkgdir}/opt/godot/godot3-alpha-win32-bin.cmd"
 }
 
 source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/alpha${_pkgverb}/Godot_v${_pkgver}-alpha${_pkgverb}_win64.exe.zip")
@@ -182,7 +182,7 @@ package_godot3-alpha-win64-bin(){
 		"godot-64"
 	)
 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_win64.exe" "${pkgdir}/opt/godot/godot3-alpha-win64-bin.exe"
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_win64_console.cmd" "${pkgdir}/opt/godot/godot3-alpha-win64-bin_console.cmd"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_win64_console.cmd" "${pkgdir}/opt/godot/godot3-alpha-win64-bin.cmd"
 }
 
 ##############
@@ -291,10 +291,10 @@ package_godot3-alpha-mono-win32-bin(){
 		"godot-32"
 	)
 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win32/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win32.exe" "${pkgdir}/opt/godot/godot3-alpha-mono-win32-bin.d/godot3-alpha-mono-win32-bin.exe"
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win32/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win32_console.cmd" "${pkgdir}/opt/godot/godot3-alpha-mono-win32-bin.d/godot3-alpha-mono-win32-bin_console.cmd"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win32/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win32_console.cmd" "${pkgdir}/opt/godot/godot3-alpha-mono-win32-bin.d/godot3-alpha-mono-win32-bin.cmd"
 	cp -r "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win32/GodotSharp" "${pkgdir}/opt/godot/godot3-alpha-mono-win32-bin.d/GodotSharp"
 	ln -s "/opt/godot/godot3-alpha-mono-win32-bin.d/godot3-alpha-mono-win32-bin.exe" "${pkgdir}/opt/godot/godot3-alpha-mono-win32-bin.exe"
-	ln -s "/opt/godot/godot3-alpha-mono-win32-bin.d/godot3-alpha-mono-win32-bin_console.cmd" "${pkgdir}/opt/godot/godot3-alpha-mono-win32-bin_console.cmd"
+	ln -s "/opt/godot/godot3-alpha-mono-win32-bin.d/godot3-alpha-mono-win32-bin.cmd" "${pkgdir}/opt/godot/godot3-alpha-mono-win32-bin.cmd"
 }
 
 source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/alpha${_pkgverb}/mono/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win64.zip")
@@ -308,10 +308,10 @@ package_godot3-alpha-mono-win64-bin(){
 		"godot-64"
 	)
 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win64/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win64.exe" "${pkgdir}/opt/godot/godot3-alpha-mono-win64-bin.d/godot3-alpha-mono-win64-bin.exe"
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win64/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win64_console.cmd" "${pkgdir}/opt/godot/godot3-alpha-mono-win64-bin.d/godot3-alpha-mono-win64-bin_console.cmd"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win64/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win64_console.cmd" "${pkgdir}/opt/godot/godot3-alpha-mono-win64-bin.d/godot3-alpha-mono-win64-bin.cmd"
 	cp -r "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win64/GodotSharp" "${pkgdir}/opt/godot/godot3-alpha-mono-win64-bin.d/GodotSharp"
 	ln -s "/opt/godot/godot3-alpha-mono-win64-bin.d/godot3-alpha-mono-win64-bin.exe" "${pkgdir}/opt/godot/godot3-alpha-mono-win64-bin.exe"
-	ln -s "/opt/godot/godot3-alpha-mono-win64-bin.d/godot3-alpha-mono-win64-bin_console.cmd" "${pkgdir}/opt/godot/godot3-alpha-mono-win64-bin_console.cmd"
+	ln -s "/opt/godot/godot3-alpha-mono-win64-bin.d/godot3-alpha-mono-win64-bin.cmd" "${pkgdir}/opt/godot/godot3-alpha-mono-win64-bin.cmd"
 }
 
 
@@ -446,7 +446,7 @@ package_godotlts-alpha-win32-bin(){
 		"godot-32"
 	)
 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_win32.exe" "${pkgdir}/opt/godot/godotlts-alpha-win32-bin.exe"
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_win32_console.cmd" "${pkgdir}/opt/godot/godotlts-alpha-win32-bin_console.cmd"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_win32_console.cmd" "${pkgdir}/opt/godot/godotlts-alpha-win32-bin.cmd"
 }
 
 package_godotlts-alpha-win64-bin(){
@@ -459,7 +459,7 @@ package_godotlts-alpha-win64-bin(){
 		"godot-64"
 	)
 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_win64.exe" "${pkgdir}/opt/godot/godotlts-alpha-win64-bin.exe"
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_win64_console.cmd" "${pkgdir}/opt/godot/godotlts-alpha-win64-bin_console.cmd"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_win64_console.cmd" "${pkgdir}/opt/godot/godotlts-alpha-win64-bin.cmd"
 }
 
 ##############
@@ -563,10 +563,10 @@ package_godotlts-alpha-mono-win32-bin(){
 		"godot-32"
 	)
 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win32/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win32.exe" "${pkgdir}/opt/godot/godotlts-alpha-mono-win32-bin.d/godotlts-alpha-mono-win32-bin.exe"
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win32/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win32_console.cmd" "${pkgdir}/opt/godot/godotlts-alpha-mono-win32-bin.d/godotlts-alpha-mono-win32-bin_console.cmd"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win32/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win32_console.cmd" "${pkgdir}/opt/godot/godotlts-alpha-mono-win32-bin.d/godotlts-alpha-mono-win32-bin.cmd"
 	cp -r "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win32/GodotSharp" "${pkgdir}/opt/godot/godotlts-alpha-mono-win32-bin.d/GodotSharp"
 	ln -s "/opt/godot/godotlts-alpha-mono-win32-bin.d/godotlts-alpha-mono-win32-bin.exe" "${pkgdir}/opt/godot/godotlts-alpha-mono-win32-bin.exe"
-	ln -s "/opt/godot/godotlts-alpha-mono-win32-bin.d/godotlts-alpha-mono-win32-bin_console.cmd" "${pkgdir}/opt/godot/godotlts-alpha-mono-win32-bin_console.cmd"
+	ln -s "/opt/godot/godotlts-alpha-mono-win32-bin.d/godotlts-alpha-mono-win32-bin.cmd" "${pkgdir}/opt/godot/godotlts-alpha-mono-win32-bin.cmd"
 }
 
 package_godotlts-alpha-mono-win64-bin(){
@@ -579,8 +579,8 @@ package_godotlts-alpha-mono-win64-bin(){
 		"godot-64"
 	)
 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win64/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win64.exe" "${pkgdir}/opt/godot/godotlts-alpha-mono-win64-bin.d/godotlts-alpha-mono-win64-bin.exe"
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win64/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win64_console.cmd" "${pkgdir}/opt/godot/godotlts-alpha-mono-win64-bin.d/godotlts-alpha-mono-win64-bin_console.cmd"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win64/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win64_console.cmd" "${pkgdir}/opt/godot/godotlts-alpha-mono-win64-bin.d/godotlts-alpha-mono-win64-bin.cmd"
 	cp -r "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_mono_win64/GodotSharp" "${pkgdir}/opt/godot/godotlts-alpha-mono-win64-bin.d/GodotSharp"
 	ln -s "/opt/godot/godotlts-alpha-mono-win64-bin.d/godotlts-alpha-mono-win64-bin.exe" "${pkgdir}/opt/godot/godotlts-alpha-mono-win64-bin.exe"
-	ln -s "/opt/godot/godotlts-alpha-mono-win64-bin.d/godotlts-alpha-mono-win64-bin_console.cmd" "${pkgdir}/opt/godot/godotlts-alpha-mono-win64-bin_console.cmd"
+	ln -s "/opt/godot/godotlts-alpha-mono-win64-bin.d/godotlts-alpha-mono-win64-bin.cmd" "${pkgdir}/opt/godot/godotlts-alpha-mono-win64-bin.cmd"
 }
