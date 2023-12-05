@@ -906,8 +906,10 @@ package_godotlts-rc-mono-win32-bin(){
 		"godot-32"
 	)
 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_mono_win32/Godot_v${_pkgver}-rc${_pkgverb}_mono_win32.exe" "${pkgdir}/opt/godot/mono/godotlts/rc/bin/win32/godotlts-rc-mono-win32-bin.exe"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_mono_win32/Godot_v${_pkgver}-rc${_pkgverb}_mono_win32_console.cmd" "${pkgdir}/opt/godot/mono/godotlts/rc/bin/win32/godotlts-rc-mono-win32-bin_console.cmd"
 	cp -r "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_mono_win32/GodotSharp" "${pkgdir}/opt/godot/mono/godotlts/rc/bin/win32/GodotSharp"
 	ln -s "/opt/godot/mono/godotlts/rc/bin/win32/godotlts-rc-mono-win32-bin.exe" "${pkgdir}/opt/godot/godotlts-rc-mono-win32-bin.exe"
+	ln -s "/opt/godot/mono/godotlts/rc/bin/win32/godotlts-rc-mono-win32-bin_console.cmd" "${pkgdir}/opt/godot/godotlts-rc-mono-win32-bin_console.cmd"
 }
 
 package_godotlts-rc-mono-win64-bin(){
@@ -920,6 +922,8 @@ package_godotlts-rc-mono-win64-bin(){
 		"godot-64"
 	)
 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_mono_win64/Godot_v${_pkgver}-rc${_pkgverb}_mono_win64.exe" "${pkgdir}/opt/godot/mono/godotlts/rc/bin/win64/godotlts-rc-mono-win64-bin.exe"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_mono_win64/Godot_v${_pkgver}-rc${_pkgverb}_mono_win64_console.cmd" "${pkgdir}/opt/godot/mono/godotlts/rc/bin/win64/godotlts-rc-mono-win64-bin_console.cmd"
 	cp -r "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_mono_win64/GodotSharp" "${pkgdir}/opt/godot/mono/godotlts/rc/bin/win64/GodotSharp"
 	ln -s "/opt/godot/mono/godotlts/rc/bin/win64/godotlts-rc-mono-win64-bin.exe" "${pkgdir}/opt/godot/godotlts-rc-mono-win64-bin.exe"
+	ln -s "/opt/godot/mono/godotlts/rc/bin/win64/godotlts-rc-mono-win64-bin_console.cmd" "${pkgdir}/opt/godot/godotlts-rc-mono-win64-bin_console.cmd"
 }
