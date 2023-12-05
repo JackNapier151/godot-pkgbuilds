@@ -148,7 +148,7 @@ package_godot3-rc-export-templates-bin(){
 		"godot-gdscript"
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot3-rc-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/godot3-rc-export-templates-bin.tpz"
 }
 
 source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/rc${_pkgverb}/godot-lib.${_pkgver}.rc${_pkgverb}.release.aar")
@@ -365,7 +365,7 @@ package_godot3-rc-mono-export-templates-bin(){
 		"godot-mono"
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot3-rc-mono-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/godot3-rc-mono-export-templates-bin.tpz"
 }
 
 source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/rc${_pkgverb}/mono/godot-lib.${_pkgver}.rc${_pkgverb}.mono.release.aar")
@@ -604,7 +604,7 @@ package_godotlts-rc-export-templates-bin(){
 		"godot-gdscript"
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godotlts-rc-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/godotlts-rc-export-templates-bin.tpz"
 }
 
 package_libgodotlts-rc-bin(){
@@ -807,7 +807,7 @@ package_godotlts-rc-mono-export-templates-bin(){
 		"godot-mono"
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godotlts-rc-mono-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/godotlts-rc-mono-export-templates-bin.tpz"
 }
 
 package_libgodotlts-rc-mono-bin(){

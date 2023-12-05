@@ -142,7 +142,7 @@ package_godot3-alpha-export-templates-bin(){
 		"godot-gdscript"
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot3-alpha-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/godot3-alpha-export-templates-bin.tpz"
 }
 
 source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/alpha${_pkgverb}/Godot_v${_pkgver}-alpha${_pkgverb}_osx.64.zip")
@@ -263,7 +263,7 @@ package_godot3-alpha-mono-export-templates-bin(){
 		"godot-mono"
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot3-alpha-mono-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/godot3-alpha-mono-export-templates-bin.tpz"
 }
 
 source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/alpha${_pkgverb}/mono/Godot_v${_pkgver}-alpha${_pkgverb}_mono_osx.64.zip")
@@ -422,7 +422,7 @@ package_godotlts-alpha-export-templates-bin(){
 		"godot-gdscript"
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godotlts-alpha-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/godotlts-alpha-export-templates-bin.tpz"
 }
 
 package_godotlts-alpha-osx-bin(){
@@ -537,7 +537,7 @@ package_godotlts-alpha-mono-export-templates-bin(){
 		"godot-mono"
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godotlts-alpha-mono-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/godotlts-alpha-mono-export-templates-bin.tpz"
 }
 
 package_godotlts-alpha-mono-osx-bin(){

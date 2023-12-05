@@ -142,7 +142,7 @@ package_godot4-rc-export-templates-bin(){
 		"godot-gdscript"
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot4-rc-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/godot4-rc-export-templates-bin.tpz"
 }
 
 source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/rc${_pkgverb}/godot-lib.${_pkgver}.rc${_pkgverb}.template_release.aar")
@@ -301,7 +301,7 @@ package_godot4-rc-mono-export-templates-bin(){
 		"godot-mono"
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot4-rc-mono-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/godot4-rc-mono-export-templates-bin.tpz"
 }
 
 source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/rc${_pkgverb}/mono/Godot_v${_pkgver}-rc${_pkgverb}_mono_macos.universal.zip")
@@ -458,7 +458,7 @@ package_godot-rc-export-templates-bin(){
 		"godot-gdscript"
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot-rc-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/godot-rc-export-templates-bin.tpz"
 }
 
 package_libgodot-rc-bin(){
@@ -597,7 +597,7 @@ package_godot-rc-mono-export-templates-bin(){
 		"godot-mono"
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot-rc-mono-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/godot-rc-mono-export-templates-bin.tpz"
 }
 
 package_godot-rc-mono-osx-bin(){
@@ -753,7 +753,7 @@ package_godot-rc-mono-win64-bin(){
 # 		"godot-gdscript"
 # 		"godot-export-templates"
 # 	)
-# 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot-latest-export-templates-bin.tpz"
+# 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/godot-latest-export-templates-bin.tpz"
 # }
 
 # package_libgodot-latest-bin(){
@@ -901,7 +901,7 @@ package_godot-rc-mono-win64-bin(){
 # 		"godot-mono"
 # 		"godot-export-templates"
 # 	)
-# 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot-latest-mono-export-templates-bin.tpz"
+# 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/godot-latest-mono-export-templates-bin.tpz"
 # }
 
 # package_godot-latest-mono-osx-bin(){
@@ -1059,7 +1059,7 @@ package_godot-rc-mono-win64-bin(){
 # 		"godot-gdscript"
 # 		"godot-export-templates"
 # 	)
-# 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot4-latest-export-templates-bin.tpz"
+# 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/godot4-latest-export-templates-bin.tpz"
 # }
 
 # package_libgodot4-latest-bin(){
@@ -1207,7 +1207,7 @@ package_godot-rc-mono-win64-bin(){
 # 		"godot-mono"
 # 		"godot-export-templates"
 # 	)
-# 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot4-latest-mono-export-templates-bin.tpz"
+# 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/godot4-latest-mono-export-templates-bin.tpz"
 # }
 
 # package_godot4-latest-mono-osx-bin(){

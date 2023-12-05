@@ -149,7 +149,7 @@ package_godot3-beta-export-templates-bin(){
 		"godot-gdscript"
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot3-beta-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/godot3-beta-export-templates-bin.tpz"
 }
 
 source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/beta${_pkgverb}/godot-lib.${_pkgver}.beta${_pkgverb}.release.aar")
@@ -366,7 +366,7 @@ package_godot3-beta-mono-export-templates-bin(){
 		"godot-mono"
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot3-beta-mono-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/godot3-beta-mono-export-templates-bin.tpz"
 }
 
 source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/beta${_pkgverb}/mono/godot-lib.${_pkgver}.beta${_pkgverb}.mono.release.aar")
@@ -609,7 +609,7 @@ package_godotlts-beta-export-templates-bin(){
 		"godot-gdscript"
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godotlts-beta-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/godotlts-beta-export-templates-bin.tpz"
 }
 
 package_libgodotlts-beta-bin(){
@@ -812,7 +812,7 @@ package_godotlts-beta-mono-export-templates-bin(){
 		"godot-mono"
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godotlts-beta-mono-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/godotlts-beta-mono-export-templates-bin.tpz"
 }
 
 package_libgodotlts-beta-mono-bin(){
@@ -1046,7 +1046,7 @@ package_godot3-latest-export-templates-bin(){
 		"godot-gdscript"
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot3-latest-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/godot3-latest-export-templates-bin.tpz"
 }
 
 package_libgodot3-latest-bin(){
@@ -1249,7 +1249,7 @@ package_godot3-latest-mono-export-templates-bin(){
 		"godot-mono"
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot3-latest-mono-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/godot3-latest-mono-export-templates-bin.tpz"
 }
 
 package_libgodot3-latest-mono-bin(){
@@ -1489,7 +1489,7 @@ package_godotlts-latest-export-templates-bin(){
 		"godot-gdscript"
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godotlts-latest-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/godotlts-latest-export-templates-bin.tpz"
 }
 
 package_libgodotlts-latest-bin(){
@@ -1703,7 +1703,7 @@ package_godotlts-latest-mono-export-templates-bin(){
 		"godot-mono"
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godotlts-latest-mono-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_mono_export_templates.tpz" "${pkgdir}/opt/godot/godotlts-latest-mono-export-templates-bin.tpz"
 }
 
 package_libgodotlts-latest-mono-bin(){

@@ -133,7 +133,7 @@ package_godot4-alpha-export-templates-bin(){
 	groups+=(
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot4-alpha-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/godot4-alpha-export-templates-bin.tpz"
 }
 
 source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/alpha${_pkgverb}/godot-lib.${_pkgver}.alpha${_pkgverb}.release.aar")
@@ -289,7 +289,7 @@ package_godot-alpha-export-templates-bin(){
 	groups+=(
 		"godot-export-templates"
 	)
-	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/export_templates/godot-alpha-export-templates-bin.tpz"
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-alpha${_pkgverb}_export_templates.tpz" "${pkgdir}/opt/godot/godot-alpha-export-templates-bin.tpz"
 }
 
 package_libgodot-alpha-bin(){
