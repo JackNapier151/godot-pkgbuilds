@@ -166,9 +166,9 @@ package_godot4-rc-web-bin(){
 		"godot-gdscript"
 		"godot-web"
 	)
-	unzip "Godot_v${_pkgver}-rc${_pkgverb}_web_editor.zip" -d "${srcdir}/godot4-rc-bin"
-	install -d "${pkgdir}/opt/godot/web/"
-	cp -r "${srcdir}/godot4-rc-bin" "${pkgdir}/opt/godot/web/"
+	unzip "Godot_v${_pkgver}-rc${_pkgverb}_web_editor.zip" -d "${srcdir}/godot4-rc-web-bin.d"
+	install -d "${pkgdir}/opt/godot/"
+	cp -r "${srcdir}/godot4-rc-web-bin.d" "${pkgdir}/opt/godot/"
 }
 
 source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/rc${_pkgverb}/Godot_v${_pkgver}-rc${_pkgverb}_macos.universal.zip")
@@ -476,9 +476,9 @@ package_godot-rc-web-bin(){
 		"godot-gdscript"
 		"godot-web"
 	)
-	unzip "Godot_v${_pkgver}-rc${_pkgverb}_web_editor.zip" -d "${srcdir}/godot-rc-bin"
-	install -d "${pkgdir}/opt/godot/web/"
-	cp -r "${srcdir}/godot-rc-bin" "${pkgdir}/opt/godot/web/"
+	unzip "Godot_v${_pkgver}-rc${_pkgverb}_web_editor.zip" -d "${srcdir}/godot-rc-web-bin.d"
+	install -d "${pkgdir}/opt/godot/"
+	cp -r "${srcdir}/godot-rc-web-bin.d" "${pkgdir}/opt/godot/"
 }
 
 package_godot-rc-osx-bin(){
@@ -773,9 +773,9 @@ package_godot-rc-mono-win64-bin(){
 # 		"godot-gdscript"
 # 		"godot-web"
 # 	)
-# 	unzip "Godot_v${_pkgver}-rc${_pkgverb}_web_editor.zip" -d "${srcdir}/godot-latest-bin"
-# 	install -d "${pkgdir}/opt/godot/web/"
-# 	cp -r "${srcdir}/godot-latest-bin" "${pkgdir}/opt/godot/web/"
+# 	unzip "Godot_v${_pkgver}-rc${_pkgverb}_web_editor.zip" -d "${srcdir}/godot-latest-web-bin.d"
+# 	install -d "${pkgdir}/opt/godot/"
+# 	cp -r "${srcdir}/godot-latest-web-bin.d" "${pkgdir}/opt/godot/"
 # }
 
 # package_godot-latest-osx-bin(){
@@ -1079,9 +1079,9 @@ package_godot-rc-mono-win64-bin(){
 # 		"godot-gdscript"
 # 		"godot-web"
 # 	)
-# 	unzip "Godot_v${_pkgver}-rc${_pkgverb}_web_editor.zip" -d "${srcdir}/godot4-latest-bin"
-# 	install -d "${pkgdir}/opt/godot/web/"
-# 	cp -r "${srcdir}/godot4-latest-bin" "${pkgdir}/opt/godot/web/"
+# 	unzip "Godot_v${_pkgver}-rc${_pkgverb}_web_editor.zip" -d "${srcdir}/godot4-latest-web-bin.d"
+# 	install -d "${pkgdir}/opt/godot/
+# 	cp -r "${srcdir}/godot4-latest-web-bin.d" "${pkgdir}/opt/godot"
 # }
 
 # package_godot4-latest-osx-bin(){

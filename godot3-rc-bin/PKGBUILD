@@ -172,9 +172,9 @@ package_godot3-rc-web-bin(){
 		"godot-gdscript"
 		"godot-web"
 	)
-	unzip "Godot_v${_pkgver}-rc${_pkgverb}_web_editor.zip" -d "${srcdir}/godot3-rc-bin"
-	install -d "${pkgdir}/opt/godot/web/"
-	cp -r "${srcdir}/godot3-rc-bin" "${pkgdir}/opt/godot/web/"
+	unzip "Godot_v${_pkgver}-rc${_pkgverb}_web_editor.zip" -d "${srcdir}/godot3-rc-web-bin.d"
+	install -d "${pkgdir}/opt/godot/"
+	cp -r "${srcdir}/godot3-rc-web-bin.d" "${pkgdir}/opt/godot/"
 }
 
 source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/rc${_pkgverb}/Godot_v${_pkgver}-rc${_pkgverb}_linux_headless.64.zip")
@@ -624,9 +624,9 @@ package_godotlts-rc-web-bin(){
 		"godot-gdscript"
 		"godot-web"
 	)
-	unzip "Godot_v${_pkgver}-rc${_pkgverb}_web_editor.zip" -d "${srcdir}/godotlts-rc-bin"
-	install -d "${pkgdir}/opt/godot/web/"
-	cp -r "${srcdir}/godotlts-rc-bin" "${pkgdir}/opt/godot/web/"
+	unzip "Godot_v${_pkgver}-rc${_pkgverb}_web_editor.zip" -d "${srcdir}/godotlts-rc-web-bin.d"
+	install -d "${pkgdir}/opt/godot/"
+	cp -r "${srcdir}/godotlts-rc-web-bin.d" "${pkgdir}/opt/godot/"
 }
 
 package_godotlts-rc-headless-bin(){

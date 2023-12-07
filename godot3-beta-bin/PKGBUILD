@@ -173,9 +173,9 @@ package_godot3-beta-web-bin(){
 		"godot-gdscript"
 		"godot-web"
 	)
-	unzip "Godot_v${_pkgver}-beta${_pkgverb}_web_editor.zip" -d "${srcdir}/godot3-beta-bin"
-	install -d "${pkgdir}/opt/godot/web/"
-	cp -r "${srcdir}/godot3-beta-bin" "${pkgdir}/opt/godot/web/"
+	unzip "Godot_v${_pkgver}-beta${_pkgverb}_web_editor.zip" -d "${srcdir}/godot3-beta-web-bin.d"
+	install -d "${pkgdir}/opt/godot/"
+	cp -r "${srcdir}/godot3-beta-web-bin.d" "${pkgdir}/opt/godot/"
 }
 
 source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/beta${_pkgverb}/Godot_v${_pkgver}-beta${_pkgverb}_linux_headless.64.zip")
@@ -629,9 +629,9 @@ package_godotlts-beta-web-bin(){
 		"godot-gdscript"
 		"godot-web"
 	)
-	unzip "Godot_v${_pkgver}-beta${_pkgverb}_web_editor.zip" -d "${srcdir}/godotlts-beta-bin"
-	install -d "${pkgdir}/opt/godot/web/"
-	cp -r "${srcdir}/godotlts-beta-bin" "${pkgdir}/opt/godot/web/"
+	unzip "Godot_v${_pkgver}-beta${_pkgverb}_web_editor.zip" -d "${srcdir}/godotlts-beta-web-bin.d"
+	install -d "${pkgdir}/opt/godot/"
+	cp -r "${srcdir}/godotlts-beta-web-bin.d" "${pkgdir}/opt/godot/"
 }
 
 package_godotlts-beta-headless-bin(){
@@ -1066,9 +1066,9 @@ package_godot3-latest-web-bin(){
 		"godot-gdscript"
 		"godot-web"
 	)
-	unzip "Godot_v${_pkgver}-beta${_pkgverb}_web_editor.zip" -d "${srcdir}/godot3-latest-bin"
-	install -d "${pkgdir}/opt/godot/web/"
-	cp -r "${srcdir}/godot3-latest-bin" "${pkgdir}/opt/godot/web/"
+	unzip "Godot_v${_pkgver}-beta${_pkgverb}_web_editor.zip" -d "${srcdir}/godot3-latest-web-bin.d"
+	install -d "${pkgdir}/opt/godot/"
+	cp -r "${srcdir}/godot3-latest-web-bin.d" "${pkgdir}/opt/godot/"
 }
 
 package_godot3-latest-headless-bin(){
@@ -1511,9 +1511,9 @@ package_godotlts-latest-web-bin(){
 		"godot-gdscript"
 		"godot-web"
 	)
-	unzip "Godot_v${_pkgver}-beta${_pkgverb}_web_editor.zip" -d "${srcdir}/godotlts-latest-bin"
-	install -d "${pkgdir}/opt/godot/web/"
-	cp -r "${srcdir}/godotlts-latest-bin" "${pkgdir}/opt/godot/web/"
+	unzip "Godot_v${_pkgver}-beta${_pkgverb}_web_editor.zip" -d "${srcdir}/godotlts-latest-web-bin.d"
+	install -d "${pkgdir}/opt/godot/"
+	cp -r "${srcdir}/godotlts-latest-web-bin.d" "${pkgdir}/opt/godot/"
 }
 
 package_godotlts-latest-headless-bin(){
