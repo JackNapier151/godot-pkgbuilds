@@ -2,8 +2,10 @@
 # vim: ft=bash fileencoding=utf-8 sts=4 sw=4 et:
 # -*- coding: utf-8 -*-
 
-srdir='/directorio/en/el/que/estoy/' # Manual
+srdir='/directory/in/which/I/am/' # Manual
 srdir=$(cat ./makegodot.env) # In .env file (rename by removing .bak)
+agent='/directory/in/which/it/is/' # Manual
+agent=$(cat ./makegodotagent.env) # In .env file (rename by removing .bak)
 
 directories=(
 'godot-base'
@@ -35,7 +37,14 @@ directories=(
 makerepo () {
 	ln -s ${srdir}/${1}/*.pkg.tar.zst ${srdir}/godot-repo/
 	ln -s ${srdir}/${1}/*.pkg.tar.zst.sig ${srdir}/godot-repo/
-	repo-add -R -n -p ${srdir}/godot-repo/godot.db.tar.zst ${srdir}/${1}/*.pkg.tar.zst
+	repo-add -R -n -p --verify --sign ${srdir}/godot-repo/godot.db.tar.zst ${srdir}/${1}/*.pkg.tar.zst
+}
+
+makesign (){
+	for pkg in $(find ./*.tar.zst -type f);do
+		echo "$(tput setaf 1) $pkg $(tput sgr 0)"
+		gpg -v --output "${pkg}".sig --detach-sig "${pkg}"
+	done
 }
 
 rmbrokenlinks (){
@@ -46,14 +55,14 @@ rmbrokenlinks (){
 }
 
 makeapp () {
-	makepkg -c --sign --allsource
-	makepkg -c --sign
+	makepkg -c --allsource #--sign
+	makepkg -c #--sign
 }
 
 controlssh (){
 	if [[ "$1" == "init" ]] ; then
 		eval $(ssh-agent -s)
-		ssh-add /home/odin/.ssh/jacknapier151gmail
+		ssh-add "${agent}"
 	fi
 
 	if [[ "$1" == "close" ]] ; then
@@ -69,10 +78,18 @@ gitupdate (){
 }
 
 main (){
+	# First make the packages
 	for makedir in "${directories[@]}"  
 	do
 		cd "${makedir}"
 		makeapp
+		cd ..
+	done
+	# Make the sign
+	for makedir in "${directories[@]}"  
+	do
+		cd "${makedir}"
+		makesign
 		makerepo ${makedir}
 		cd ..
 	done
