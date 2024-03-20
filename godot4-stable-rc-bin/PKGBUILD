@@ -17,7 +17,8 @@ pkgname=(
 	"godot4-stable-rc-osx-bin"
 	"godot4-stable-rc-win32-bin"
 	"godot4-stable-rc-win64-bin"
-	"godot4-stable-rc-android-bin"
+	"godot4-stable-rc-android-apk-bin"
+	"godot4-stable-rc-android-aab-bin"
 	##############
 	# Godot Mono #
 	##############
@@ -216,12 +217,28 @@ package_godot4-stable-rc-win64-bin(){
 source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/rc${_pkgverb}/Godot_v${_pkgver}-rc${_pkgverb}_android_editor.apk")
 noextract+=("Godot_v${_pkgver}-rc${_pkgverb}_android_editor.apk")
 sha512sums+=("SKIP")
-package_godot4-stable-rc-android-bin(){
+package_godot4-stable-rc-android-apk-bin(){
+	pkgdesc+=" Stable Release Candidate Android APK Binary Version"
 	groups+=(
 		"godot-gdscript"
+		"godot-android-apk"
 		"godot-android"
 	)
 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_android_editor.apk" "${pkgdir}/opt/godot/godot4-stable-rc-android-bin.apk"
+}
+
+
+source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/rc${_pkgverb}/Godot_v${_pkgver}-rc${_pkgverb}_android_editor.aab")
+noextract+=("Godot_v${_pkgver}-rc${_pkgverb}_android_editor.aab")
+sha512sums+=("SKIP")
+package_godot4-stable-rc-android-aab-bin(){
+	pkgdesc+=" Stable Release Candidate Android AAB Binary Version"
+	groups+=(
+		"godot-gdscript"
+		"godot-android-aab"
+		"godot-android"
+	)
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_android_editor.aab" "${pkgdir}/opt/godot/godot4-stable-rc-android-bin.aab"
 }
 
 ##############
@@ -370,7 +387,8 @@ pkgname+=(
 	"godot-stable-rc-osx-bin"
 	"godot-stable-rc-win32-bin"
 	"godot-stable-rc-win64-bin"
-	"godot-stable-rc-android-bin"
+	"godot-stable-rc-android-apk-bin"
+	"godot-stable-rc-android-aab-bin"
 	##############
 	# Godot Mono #
 	##############
@@ -518,13 +536,24 @@ package_godot-stable-rc-win64-bin(){
 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_win64_console.exe" "${pkgdir}/opt/godot/godot-stable-rc-win64cmd-bin.exe"
 }
 
-package_godot-stable-rc-android-bin(){
-	pkgdesc="${pkgdescalt} Stable Release Candidate Android Binary Version"
+package_godot-stable-rc-android-apk-bin(){
+	pkgdesc="${pkgdescalt} Stable Release Candidate Android APK Binary Version"
 	groups+=(
 		"godot-gdscript"
+		"godot-android-apk"
 		"godot-android"
 	)
 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_android_editor.apk" "${pkgdir}/opt/godot/godot-stable-rc-android-bin.apk"
+}
+
+package_godot-stable-rc-android-aab-bin(){
+	pkgdesc="${pkgdescalt} Stable Release Candidate Android AAB Binary Version"
+	groups+=(
+		"godot-gdscript"
+		"godot-android-aab"
+		"godot-android"
+	)
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_android_editor.aab" "${pkgdir}/opt/godot/godot-stable-rc-android-bin.aab"
 }
 
 ##############
@@ -652,6 +681,7 @@ package_godot-stable-rc-mono-win64-bin(){
 # 	"godot-latest-src"
 # 	##################
 # 	# Godot GDScript #
+#   ##################
 # 	"godot-latest-bin"
 # 	"godot-latest-bin32"
 # 	"godot-latest-export-templates-bin"
@@ -660,7 +690,8 @@ package_godot-stable-rc-mono-win64-bin(){
 # 	"godot-latest-osx-bin"
 # 	"godot-latest-win32-bin"
 # 	"godot-latest-win64-bin"
-# 	"godot-latest-android-bin"
+# 	"godot-latest-android-apk-bin"
+# 	"godot-latest-android-aab-bin"
 # 	##############
 # 	# Godot Mono #
 # 	##############
@@ -817,14 +848,26 @@ package_godot-stable-rc-mono-win64-bin(){
 # 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_win64_console.exe" "${pkgdir}/opt/godot/godot-latest-win64cmd-bin.exe"
 # }
 
-# package_godot-latest-android-bin(){
-# 	pkgdesc="${pkgdesclatest} Latest Android Binary Version"
+# package_godot-latest-android-apk-bin(){
+# 	pkgdesc="${pkgdesclatest} Latest Android APK Binary Version"
 # 	groups+=(
 # 		"godot-latest"
 # 		"godot-gdscript"
+# 		"godot-android-aab"
 # 		"godot-android"
 # 	)
 # 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_android_editor.apk" "${pkgdir}/opt/godot/godot-latest-android-bin.apk"
+# }
+
+# package_godot-latest-android-aab-bin(){
+# 	pkgdesc="${pkgdesclatest} Latest Android AAB Binary Version"
+# 	groups+=(
+# 		"godot-latest"
+# 		"godot-gdscript"
+# 		"godot-android-aab"
+# 		"godot-android"
+# 	)
+# 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_android_editor.aab" "${pkgdir}/opt/godot/godot-latest-android-bin.aab"
 # }
 
 # ##############
@@ -967,7 +1010,8 @@ package_godot-stable-rc-mono-win64-bin(){
 # 	"godot4-latest-osx-bin"
 # 	"godot4-latest-win32-bin"
 # 	"godot4-latest-win64-bin"
-# 	"godot4-latest-android-bin"
+# 	"godot4-latest-android-apk-bin"
+# 	"godot4-latest-android-aab-bin"
 # 	##############
 # 	# Godot Mono #
 # 	##############
@@ -1124,14 +1168,26 @@ package_godot-stable-rc-mono-win64-bin(){
 # 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_win64_console.exe" "${pkgdir}/opt/godot/godot4-latest-win64cmd-bin.exe"
 # }
 
-# package_godot4-latest-android-bin(){
-# 	pkgdesc="${pkgdescaltlatest} Latest Android Binary Version"
+# package_godot4-latest-android-apk-bin(){
+# 	pkgdesc="${pkgdescaltlatest} Latest Android APK Binary Version"
 # 	groups+=(
 # 		"godot-latest"
 # 		"godot-gdscript"
+# 		"godot-android-apk"
 # 		"godot-android"
 # 	)
 # 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_android_editor.apk" "${pkgdir}/opt/godot/godot4-latest-android-bin.apk"
+# }
+
+# package_godot4-latest-android-aab-bin(){
+# 	pkgdesc="${pkgdescaltlatest} Latest Android AAB Binary Version"
+# 	groups+=(
+# 		"godot-latest"
+# 		"godot-gdscript"
+# 		"godot-android-aab"
+# 		"godot-android"
+# 	)
+# 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-rc${_pkgverb}_android_editor.aab" "${pkgdir}/opt/godot/godot4-latest-android-bin.aab"
 # }
 
 # ##############

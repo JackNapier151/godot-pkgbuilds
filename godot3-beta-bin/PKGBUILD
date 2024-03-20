@@ -19,7 +19,8 @@ pkgname=(
 	"godot3-beta-osx-bin"
 	"godot3-beta-win32-bin"
 	"godot3-beta-win64-bin"
-	"godot3-beta-android-bin"
+	"godot3-beta-android-apk-bin"
+	"godot3-beta-android-aab-bin"
 	##############
 	# Godot Mono #
 	##############
@@ -279,13 +280,27 @@ package_godot3-beta-win64-bin(){
 source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/beta${_pkgverb}/Godot_v${_pkgver}-beta${_pkgverb}_android_editor.apk")
 noextract+=("Godot_v${_pkgver}-beta${_pkgverb}_android_editor.apk")
 sha512sums+=("SKIP")
-package_godot3-beta-android-bin(){
-	pkgdesc+=" Beta Android Binary Version"
+package_godot3-beta-android-apk-bin(){
+	pkgdesc+=" Beta Android APK Binary Version"
 	groups+=(
 		"godot-gdscript"
+		"godot-android-apk"
 		"godot-android"
 	)
 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_android_editor.apk" "${pkgdir}/opt/godot/godot3-beta-android-bin.apk"
+}
+
+source+=("https://downloads.tuxfamily.org/godotengine/${_pkgver}/beta${_pkgverb}/Godot_v${_pkgver}-beta${_pkgverb}_android_editor.aab")
+noextract+=("Godot_v${_pkgver}-beta${_pkgverb}_android_editor.aab")
+sha512sums+=("SKIP")
+package_godot3-beta-android-aab-bin(){
+	pkgdesc+=" Beta Android AAB Binary Version"
+	groups+=(
+		"godot-gdscript"
+		"godot-android-aab"
+		"godot-android"
+	)
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_android_editor.aab" "${pkgdir}/opt/godot/godot3-beta-android-bin.aab"
 }
 
 ##############
@@ -513,7 +528,8 @@ pkgname+=(
 	"godotlts-beta-osx-bin"
 	"godotlts-beta-win32-bin"
 	"godotlts-beta-win64-bin"
-	"godotlts-beta-android-bin"
+	"godotlts-beta-android-apk-bin"
+	"godotlts-beta-android-aab-bin"
 	##############
 	# Godot Mono #
 	##############
@@ -727,14 +743,25 @@ package_godotlts-beta-win64-bin(){
 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_win64_console.cmd" "${pkgdir}/opt/godot/godotlts-beta-win64-bin.cmd"
 }
 
-package_godotlts-beta-android-bin(){
-	pkgdesc="${pkgdesclts} LTS Beta Android Binary Version"
+package_godotlts-beta-android-apk-bin(){
+	pkgdesc="${pkgdesclts} LTS Beta Android APK Binary Version"
 	groups+=(
 		"godot-lts"
 		"godot-gdscript"
+		"godot-android-apk"
 		"godot-android"
 	)
 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_android_editor.apk" "${pkgdir}/opt/godot/godotlts-beta-android-bin.apk"
+
+package_godotlts-beta-android-aab-bin(){
+	pkgdesc="${pkgdesclts} LTS Beta Android AAB Binary Version"
+	groups+=(
+		"godot-lts"
+		"godot-gdscript"
+		"godot-android-aab"
+		"godot-android"
+	)
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_android_editor.aab" "${pkgdir}/opt/godot/godotlts-beta-android-bin.aab"
 }
 
 ##############
@@ -951,7 +978,8 @@ pkgname+=(
 	"godot3-latest-osx-bin"
 	"godot3-latest-win32-bin"
 	"godot3-latest-win64-bin"
-	"godot3-latest-android-bin"
+	"godot3-latest-android-apk-bin"
+	"godot3-latest-android-aab-bin"
 	##############
 	# Godot Mono #
 	##############
@@ -1164,14 +1192,26 @@ package_godot3-latest-win64-bin(){
 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_win64_console.cmd" "${pkgdir}/opt/godot/godot3-latest-win64-bin.cmd"
 }
 
-package_godot3-latest-android-bin(){
-	pkgdesc="${pkgdesc-latest} Latest Android Binary Version"
+package_godot3-latest-android-apk-bin(){
+	pkgdesc="${pkgdesc-latest} Latest Android APK Binary Version"
 	groups+=(
 		"godot-latest"
 		"godot-gdscript"
+		"godot-android-apk"
 		"godot-android"
 	)
 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_android_editor.apk" "${pkgdir}/opt/godot/godot3-latest-android-bin.apk"
+}
+
+package_godot3-latest-android-aab-bin(){
+	pkgdesc="${pkgdesc-latest} Latest Android AAB Binary Version"
+	groups+=(
+		"godot-latest"
+		"godot-gdscript"
+		"godot-android-aab"
+		"godot-android"
+	)
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_android_editor.aab" "${pkgdir}/opt/godot/godot3-latest-android-bin.aab"
 }
 
 ##############
@@ -1389,7 +1429,8 @@ pkgname+=(
 	"godotlts-latest-osx-bin"
 	"godotlts-latest-win32-bin"
 	"godotlts-latest-win64-bin"
-	"godotlts-latest-android-bin"
+	"godotlts-latest-android-apk-bin"
+	"godotlts-latest-android-aab-bin"
 	##############
 	# Godot Mono #
 	##############
@@ -1615,14 +1656,27 @@ package_godotlts-latest-win64-bin(){
 }
 
 package_godotlts-latest-android-bin(){
-	pkgdesc="${pkgdescltslatest} LTS Latest Android Binary Version"
+	pkgdesc="${pkgdescltslatest} LTS Latest Android APK Binary Version"
 	groups+=(
 		"godot-latest"
 		"godot-lts"
 		"godot-gdscript"
+		"godot-android-apk"
 		"godot-android"
 	)
 	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_android_editor.apk" "${pkgdir}/opt/godot/godotlts-latest-android-bin.apk"
+}
+
+package_godotlts-latest-android-bin(){
+	pkgdesc="${pkgdescltslatest} LTS Latest Android APK Binary Version"
+	groups+=(
+		"godot-latest"
+		"godot-lts"
+		"godot-gdscript"
+		"godot-android-aab"
+		"godot-android"
+	)
+	install -Dm755 "${srcdir}/Godot_v${_pkgver}-beta${_pkgverb}_android_editor.aab" "${pkgdir}/opt/godot/godotlts-latest-android-bin.aab"
 }
 
 ##############

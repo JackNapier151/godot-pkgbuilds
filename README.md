@@ -88,7 +88,7 @@
 | win32        | X      | X     | X    | X  | X        | X      |
 | win64        | X      | X     | X    | X  | X        | X      |
 | android apk  | X      | X     | X    | X  | X        | X      |
-| android aab  | ―      | ―     | X    | ―  | ―        | ―      |
+| android aab  | X      | ―     | X    | X  | X        | X      |
 
 #### Godot 2
 | Package      | StableRC | Stable |
